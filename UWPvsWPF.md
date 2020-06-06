@@ -2,7 +2,7 @@ Last Updated 6 June 2020
 
 # Overview of WPF & UWP Differences
 
-The Universal Windows Platform (UWP) has its roots in SilverLight instead of being based on the Windows Presentation Foundation (WPF). UWP is implemented natively in C++ instead of WPF which was written in C# and C++ for lower-level functions. Due to being a completely different imlementation of XAML, there are several differences in UWP compared to WPF. These differences may be new functionalitly in UWP, slightly different ways of doing things or, more commonly, WPF features missing in UWP. These differences are not documented by Microsoft as a summary which is prohibite for developers familiar with WPF and that have to port existing code. This document is intended to provide an overview of the differences.
+The Universal Windows Platform (UWP) has its roots in SilverLight instead of being based on the Windows Presentation Foundation (WPF). UWP is implemented natively in C++ instead of WPF which was written in C# and C++ for lower-level functions. Due to being a completely different imlementation of XAML, there are several differences in UWP compared to WPF. These differences may be new functionalitly in UWP, slightly different ways of doing things or, more commonly, WPF features missing in UWP. These differences are not summarized by Microsoft which is prohibitive for developers familiar with WPF and that have to port existing code. This document is intended to provide an overview of the differences.
 
 ## XAML Features
 
@@ -86,8 +86,8 @@ This section lists the main differences (primarily from a XAML viewpoint) betwee
  <tr>
   <td>ICommand</td>
   <td>&#10004;</td>
-  <td>&#10006;</td>
-  <td>While the interface technically xists, ICommand is nothing like what it was in WPF. The programmer is now responsible for doing every little part of the command.</td>
+  <td>&#8213;</td>
+  <td>While the interface technically exists, ICommand is nothing like what it was in WPF. The programmer is now responsible for doing every little part of the command.</td>
  </tr>
 </table>
 
@@ -171,7 +171,7 @@ This section lists the main differences (primarily from a XAML viewpoint) betwee
   <td>Sub-pixel anti-aliasing</td>
   <td>&#10004;</td>
   <td>&#10006;</td>
-  <td>Anti-aliasing in UWP along with rendering in general is poor compared to WPF. It's assumed this is for performance reasons on mobile devices and the web (silverlight).</td>
+  <td>Anti-aliasing in UWP along with rendering in general is poor compared to WPF. It's assumed this is for performance reasons on mobile devices and the web (Silverlight).</td>
  </tr>
 </table>
  
