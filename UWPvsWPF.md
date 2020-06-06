@@ -1,3 +1,5 @@
+Last Updated 6 June 2020
+
 # Overview of WPF & UWP Differences
 
 The Universal Windows Platform (UWP) has its roots in SilverLight instead of being based on the Windows Presentation Foundation (WPF). UWP is implemented natively in C++ instead of WPF which was written in C# and C++ for lower-level functions. Due to being a completely different imlementation of XAML, there are several differences in UWP compared to WPF. These differences may be new functionalitly in UWP, slightly different ways of doing things or, more commonly, WPF features missing in UWP. These differences are not documented by Microsoft as a summary which is prohibite for developers familiar with WPF and that have to port existing code. This document is intended to provide an overview of the differences.
@@ -29,8 +31,8 @@ This section lists the main differences (primarily from a XAML viewpoint) betwee
  </tr>
   <tr>
   <td>x:Array</td>
-  <td></td>
-  <td></td>
+  <td>&#10004;</td>
+  <td>&#10006;</td>
   <td>x:Array isn't supported in UWP.</td>
  </tr>
  <tr>
@@ -190,9 +192,111 @@ This section lists the main differences (primarily from a XAML viewpoint) betwee
 
 ## Controls
 
-This section describes the differences in controls in vanilla WPF and UWP. Note that this section is likely incomplete and needs further review.
+This section describes the differences in controls in vanilla WPF and UWP. It excludes some primitives and shapes (Ellipse, Rect, etc.) Note that this section is likely incomplete and needs further review.
 
-TODO
+| WPF |	UWP |	Comments |
+|-----|-----|----------|
+|                          |	AppBarButton	          | |
+|                          |	AppBarSeparator	       | |
+|                          | AppBarToggleButton	    | |
+|                          |	AutoSuggestBox	        | |
+| Border                   |	Border	                | |
+| BulletDecorator	         |	                       | |
+| Button                   |	Button	                | |
+| DatePicker               |	CalendarDatePicker	    | UWP DatePicker is different from WPF DatePicker. The WPF DatePicker is closer to the UWP CalendarDatePicker in functionality. |
+| Calendar	                | CalendarView	          | |
+| Canvas	                  | Canvas                 | |	
+|                          |	CaptureElement	        | |
+| CheckBox                 |	CheckBox	              | |
+|                          |	ColorPicker	           | |
+| ComboBox	                | ComboBox               | |	
+| ToolBar                  |	CommandBar	            | |
+|                          |	CommandBarFlyout	      | First introduced in the Windows UI Library |	
+|                          | ContentControl	        | |
+|                          |	ContentPresenter	      | |
+| DataGrid	                |                        | Available for UWP in the Windows Community Toolkit (albeit with many bugs) |
+|                          |	DatePicker	            | A picker to select a date without a calendar view does not exist in WPF. |
+|                          |	DatePickerFlyout	      | |
+| DockPanel		              |	                       | |
+| DocumentViewer		         |	                       | |
+|                          |	DropDownButton	        | First introduced in the Windows UI Library |
+| Expander	                |                        |	Available for UWP in the Windows Community Toolkit |
+|                          |	FlipView	              | |
+| FlowDocumentPageViewer		 |	                       | |
+| FlowDocumentReader		     |	                       | |
+| FlowDocumentScrollViewer |	                       | |
+|                          |	Flyout	                | |
+| Frame                    |	Frame	                 | |
+| Grid                     |	Grid                   | |	
+| GridSplitter	            |                        |	Available for UWP in the Windows Community Toolkit |
+|                          |	GridView	              | |
+| GroupBox		               |                        | |
+|                          |	Hub	                   | |
+|                          |	HubSection	            | |
+|                          |	HyperlinkButton	       | |
+| Image                    |	Image	                 | |
+|                          |	InkCanvas	             | |
+|                          |	InkToolbar	            | |
+|                          |	ItemsControl	          | |
+|                          |	ItemsPresenter	        | |
+|                          |	ItemsRepeater	         | First introduced in the Windows UI Library |
+| Label		                  |                        | For compatiblity with Windows Forms |
+| ListBox                  |	ListBox	               | |
+| ListView	                | ListView	              | |
+|                          | MapControl	            | |
+|                          |	MediaElement	          | |
+|                          |	MediaTransportControls	| |
+| Menu                     |	MenuBar	               | First introduced in the Windows Community Toolkit then Windows UI Library |
+| ContextMenu	             | MenuFlyout	            | |
+|                          |	NavigationView	        | |
+| Panel		                  |                        | |
+|                          |	ParallaxView	          | |
+| PasswordBox              |	PasswordBox	           | |
+|                          |	PersonPicture		        | |
+|                          |	Pivot		                | |
+|                          |	PivotItem		            | |
+| Popup                    |	Popup		                | |
+| PrintDialog		            |	                       | |
+| ProgressBar              |	ProgressBar		          | |
+|                          |	ProgressRing		         | |
+|                          |	PullToRefresh		        | |
+| RadioButton	             | RadioButton		          | |
+|                          |	RatingControl		        | |
+|                          |	Rectangle		            | |
+|                          |	RefreshContainer	      | First introduced in the Windows UI Library |
+|                          |	RelativePanel		        | |
+| RepeatButton             |	RepeatButton	          | |
+| RichTextBox              |	RichEditBox	           | |
+|                          |	RichTextBlock	         | |
+|                          |	RichTextBlockOverflow	 | |
+| ScrollBar	               | ScrollBar	             | |
+|                          |	ScrollContentPresenter	| |
+| ScrollViewer	            | ScrollViewer	          | |
+|                          |	SemanticZoom	          | |
+| Separator		              |                        | |
+| Slider	                  | Slider                 | |
+|                          |	SplitButton	           | First introduced in the Windows UI Library |
+|                          |	SplitView	             | |
+| StackPanel	              | StackPanel	            | |
+| StatusBar		              |                        | No longer a UI convention |
+|                          | SwipeControl	          | First introduced in the Windows UI Library |
+| TabControl	              | TabView	               | First introduced in the Windows UI Library |
+|                          |	TeachingTip            |	First introduced in the Windows UI Library |
+| TextBlock                |	TextBlock	             | |
+| TextBox                  |	TextBox	               | |
+|                          |	TimePicker	            | |
+|                          |	TimePickerFlyout	      | |
+|                          |	ToggleButton	          | |
+|                          |	ToggleSplitButton	     | First introduced in the Windows UI Library |
+|                          |	ToggleSwitch	          | |
+| ToolTip	                 | ToolTip	               | |
+| TreeView                 |	TreeView	              | |
+|                          |	TwoPaneView	           | First introduced in the Windows UI Library |
+|                          |	VariableSizedWrapGrid	 | |
+| Viewbox	                 | Viewbox	               | |
+|                          | WebView	               | |
+| WrapPanel		              |                        | Available for UWP in the Windows Community Toolkit |
+| Window	                  |                        |	There is no top-level window concept in UWP |
 
 ### References
 
