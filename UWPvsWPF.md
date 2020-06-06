@@ -4,11 +4,11 @@ Last Updated 6 June 2020
 
 The Universal Windows Platform (UWP) has its roots in SilverLight instead of being based on the Windows Presentation Foundation (WPF). UWP is implemented natively in C++ instead of WPF which was written in C# and C++ for lower-level functions. Due to being a completely different imlementation of XAML, there are several differences in UWP compared to WPF. These differences may be new functionalitly in UWP, slightly different ways of doing things or, more commonly, WPF features missing in UWP. These differences are not summarized by Microsoft which is prohibitive for developers familiar with WPF and that have to port existing code. This document is intended to provide an overview of the differences.
 
-## XAML Features
+## XAML / Object Model
 
 This section lists the main differences (primarily from a XAML viewpoint) between UWP and WPF. A check under the WPF or UWP column indicates the platform has the feature. An 'X' means the feature is missing or, in some cases, is not as powerful.
 
-### XAML Markup Extension
+### Markup Extension
 
 <table>
  <tr>
@@ -156,12 +156,6 @@ This section lists the main differences (primarily from a XAML viewpoint) betwee
   <td>Layout transform is needed to transform elements before layouting. This allows for easily changing textbox direction and then putting it in a table. RenderTransform, as it applies after layout, does not resize parent controls for transformed children.</td>
  </tr>
  <tr>
-  <td>Window</td>
-  <td>&#10004;</td>
-  <td>&#10006;</td>
-  <td>For some good reasons UWP has no concept of a window. This is fine for mobile devices but can be a problem for purely desktop applications.</td>
- </tr>
- <tr>
   <td>Custom Cursor at runtime</td>
   <td>&#10004;</td>
   <td>&#10006;</td>
@@ -175,15 +169,7 @@ This section lists the main differences (primarily from a XAML viewpoint) betwee
  </tr>
 </table>
  
-## Other Quirks
-
- * Several UWP controls have reentrancy issues. For example, changing the selected item while in a ComboBox SelectionChanged event is largely not possible and will result in a crash. This makes validation directly in the event handler nearly impossible.
- * UWP controls are generally not as powerful as the WPF counterparts. For example, for several years the ComboBox in UWP was not editable. The UWP DatePicker also does not allow typing in a specific date.
- * The UWP styling system is different enough from WPF to require extra effort during porting. UWP uses the VistualStateManger instead of concepts like DataTriggers or EventTriggers from WPF. Styling/Templating are one of the main differences.
- * UWP seems to follow only the XAML/2006 spec instead of [XAML/2009]((https://docs.microsoft.com/en-us/dotnet/desktop-wpf/xaml-services/xaml-2009-language-features)) supported by WPF 
- * Several UWP controls are sealed and new controls cannot derive from them
-
-## Object Model Differences
+### Object Model Differences
 
 <table>
  <tr>
@@ -198,7 +184,19 @@ This section lists the main differences (primarily from a XAML viewpoint) betwee
   <td>Thickness</td>
   <td>The Thickness struct exposes fields for Top, Bottom, Left and Right instead of dependency properties as in WPF. This means you cannot Bind or asign resources to an individual thickness parameter.</td>
  </tr>
+ <tr>
+  <td>Window</td>
+  <td>For some good reasons UWP has no concept of a window. This is fine for mobile devices but can be a problem for purely desktop applications. There are currently proposals to add this in the transition to WinUI 3.0.</td>
+ </tr>
 </table>
+ 
+## Quirks
+
+ * Several UWP controls have reentrancy issues. For example, changing the selected item while in a ComboBox SelectionChanged event is largely not possible and will result in a crash. This makes validation directly in the event handler nearly impossible.
+ * UWP controls are generally not as powerful as the WPF counterparts. For example, for several years the ComboBox in UWP was not editable. The UWP DatePicker also does not allow typing in a specific date.
+ * The UWP styling system is different enough from WPF to require extra effort during porting. UWP uses the VistualStateManger instead of concepts like DataTriggers or EventTriggers from WPF. Styling/Templating are one of the main differences.
+ * UWP seems to follow only the XAML/2006 spec instead of [XAML/2009]((https://docs.microsoft.com/en-us/dotnet/desktop-wpf/xaml-services/xaml-2009-language-features)) supported by WPF 
+ * Several UWP controls are sealed and new controls cannot derive from them
 
 ## Controls
 
