@@ -2,11 +2,17 @@ Last Updated 6 June 2020
 
 # Overview of WPF & UWP Differences
 
-The Universal Windows Platform (UWP) has its roots in SilverLight instead of being based on the Windows Presentation Foundation (WPF). UWP is implemented natively in C++ instead of WPF which was written in C# and C++ for lower-level functions. Due to being a completely different imlementation of XAML, there are several differences in UWP compared to WPF. These differences may be new functionalitly in UWP, slightly different ways of doing things or, more commonly, WPF features missing in UWP. These differences are not summarized by Microsoft which is prohibitive for developers familiar with WPF and that have to port existing code. This document is intended to provide an overview of the differences.
+The Universal Windows Platform (UWP) has its roots in SilverLight instead of being based on the Windows Presentation Foundation (WPF). UWP is implemented natively in C++ instead of WPF which was written in C# and C++ for lower-level functions. Due to being a completely different imlementation of XAML, designed to include more resource constrained devices, and support for more programming languages, there are several differences in UWP compared to WPF. These differences may be new functionality in UWP, slightly different ways of doing things or, more commonly, WPF features missing in UWP. These differences are not summarized by Microsoft which is prohibitive for developers familiar with WPF and that have to port existing code. This document is intended to provide an overview of the differences.
 
 ## XAML / Object Model
 
-This section lists the main differences (primarily from a XAML viewpoint) between UWP and WPF. A check under the WPF or UWP column indicates the platform has the feature. An 'X' means the feature is missing or, in some cases, is not as powerful.
+This section lists the main differences (primarily from a XAML viewpoint) between UWP and WPF. 
+
+Legend:
+
+ * ✔ Indicates the platform (defined by the WPF or UWP column) has the feature
+ * ✖ Indicates the feature is generally missing in the platform
+ * ⚡ Indicates the feature is only partially implemented compared to other platforms
 
 ### Markup Extension
 
@@ -19,38 +25,38 @@ This section lists the main differences (primarily from a XAML viewpoint) betwee
  </tr>
  <tr>
   <td>x:Uid for localization</td>
-  <td>&#10006;</td>
-  <td>&#10004;</td>
+  <td>✖</td>
+  <td>✔</td>
   <td>x:uid is a powerful localization system similar to what exists in Windows Forms. WPF is sorely missing this type of localization support. This is a clear advantage of UWP.</td>
  </tr>
  <tr>
   <td>x:Bind</td>
-  <td>&#10006;</td>
-  <td>&#10004;</td>
+  <td>✖</td>
+  <td>✔</td>
   <td>x:Bind has also become a powerful feature of UWP over WPF. Compiled bindings can be used for nearly anything and can replace other missing features like MultiBinding. Other advantages include debugging support as well as increased performance.</td>
  </tr>
   <tr>
   <td>x:Array</td>
-  <td>&#10004;</td>
-  <td>&#10006;</td>
+  <td>✔</td>
+  <td>✖</td>
   <td>x:Array isn't supported in UWP.</td>
  </tr>
  <tr>
   <td>x:Static</td>
-  <td>&#10004;</td>
-  <td>&#10006;</td>
+  <td>✔</td>
+  <td>✖</td>
   <td></td>
  </tr>
  <tr>
   <td>x:Type</td>
-  <td>&#10004;</td>
-  <td>&#10006;</td>
+  <td>✔</td>
+  <td>✖</td>
   <td></td>
  </tr>
  <tr>
   <td>Full Markup Extension</td>
-  <td>&#10004;</td>
-  <td>&#10006;</td>
+  <td>✔</td>
+  <td>✖</td>
   <td>UWP only implements a subset of the full markup extension support in WPF. This area needs to be expanded upon in the future.</td>
  </tr>
 </table>
@@ -66,28 +72,40 @@ This section lists the main differences (primarily from a XAML viewpoint) betwee
  </tr>
  <tr>
   <td>OneWayToSource BindingMode</td>
-  <td>&#10004;</td>
-  <td>&#10006;</td>
+  <td>✔</td>
+  <td>✖</td>
   <td></td>
  </tr>
  <tr>
   <td>Binding to ConverterParameter</td>
-  <td>&#10004;</td>
-  <td>&#10006;</td>
+  <td>✔</td>
+  <td>✖</td>
   <td></td>
  </tr>
  <tr>
   <td>MultiBinding /
   IMultiValueConverter</td>
-  <td>&#10004;</td>
-  <td>&#10006;</td>
+  <td>✔</td>
+  <td>✖</td>
   <td>Very useful feature in WPF for advanced binding scenearios no longer exists for UWP. UWP does have function binding with x:Bind though (Used to re-implement converter logic).</td>
  </tr>
  <tr>
   <td>ICommand</td>
-  <td>&#10004;</td>
-  <td>&#8213;</td>
-  <td>While the interface technically exists, ICommand is nothing like what it was in WPF. The programmer is now responsible for doing every little part of the command.</td>
+  <td>✔</td>
+  <td>⚡</td>
+  <td>While the interface technically exists, ICommand is nothing like what it was in WPF. The programmer is now responsible for doing every little part of the command. This was improved in Windows 10 version 1809 which added XamlUICommand and StandardUICommand.</td>
+ </tr>
+ <tr>
+  <td>RelativeSource / AncestorType</td>
+  <td>✔</td>
+  <td>⚡</td>
+  <td>Not nearly as powerful in UWP, relative source only supports `{RelativeSource Self}` and `{RelativeSource TemplatedParent}` as compared to more powerful expressions in WPF like `{RelativeSource PreviousData}` or `{Binding RelativeSource={RelativeSource Mode=PreviousData, AncestorType={x:Type TextBox}}`.</td>
+ </tr>
+ <tr>
+  <td>StringFormat</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>XAML such as `{Binding DateValue, StringFormat=Date: {0:dddd yyyy-MM-dd}}` isn't supported in UWP and requires custom converters.</td>
  </tr>
 </table>
 
@@ -101,36 +119,36 @@ This section lists the main differences (primarily from a XAML viewpoint) betwee
    <th>Notes</th>
  </tr>
  <tr>
-  <td>DataTriggers</td>
-  <td>&#10004;</td>
-  <td>&#10006;</td>
+  <td>DataTriggers / PropertyTrigger / EventTrigger within Style.Triggers</td>
+  <td>✔</td>
+  <td>✖</td>
   <td></td>
  </tr>
  <tr>
   <td>VisualStateManager</td>
-  <td>&#8213;</td>
-  <td>&#10004;</td>
+  <td>⚡</td>
+  <td>✔</td>
   <td>A different concept from WPF that takes the place of DataTriggers, this is very verbose and more often than not increases complexity compared to data triggers.
 
 @Felix-Dev VisualStateManager does exist in WPF (it was added in .NET Framework 4.0). It's not as elegant as in UWP though, i.e. it has no VisuaStateManager.Setters property. That means you have to use Storyboards to set your values.</td>
  </tr>
  <tr>
   <td>Implicit DataTemplate</td>
-  <td>&#10004;</td>
-  <td>&#10006;</td>
+  <td>✔</td>
+  <td>✖</td>
   <td>Set the DataType property of the DataTemplate to the corresponding type and the template is then applied automatically to all instances of that particular type</td>
  </tr>
  <tr>
   <td>Binding in Style setter</td>
-  <td>&#10004;</td>
-  <td>&#10006;</td>
+  <td>✔</td>
+  <td>✖</td>
   <td>Any other than TemplateBinding isn't support in a template/style within UWP</td>
  </tr>
  <tr>
   <td>BasedOn</td>
-  <td>&#10004;</td>
-  <td>&#10006;</td>
-  <td>BasedOn={StaticResource {x:Type TextBlock} isn't supported in UWP</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>Something like `BasedOn={StaticResource {x:Type TextBlock}` isn't supported in UWP but works in WPF.</td>
  </tr>
 </table>
 
@@ -145,28 +163,58 @@ This section lists the main differences (primarily from a XAML viewpoint) betwee
  </tr>
  <tr>
   <td>x:TypeArguments directive</td>
-  <td>&#10004;</td>
-  <td>&#10006;</td>
+  <td>✔</td>
+  <td>✖</td>
   <td>The TypeArguments directive isn't implemented in UWP which causes problems with generics. Missing this requires some work-arounds with classes and creating a non-generic class to use in XAML from a generic one.</td>
  </tr>
  <tr>
   <td>LayoutTransform</td>
-  <td>&#10004;</td>
-  <td>&#10006;</td>
+  <td>✔</td>
+  <td>✖</td>
   <td>Layout transform is needed to transform elements before layouting. This allows for easily changing textbox direction and then putting it in a table. RenderTransform, as it applies after layout, does not resize parent controls for transformed children.</td>
  </tr>
  <tr>
+  <td>VisualBrush / DrawingBrush</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>VisualBrush is not a XAML brush in UWP. Instead, must fall back to composition brushes which are not 1:1 equivalent. DrawingBrush is not supported at all in UWP.</td>
+ </tr>
+ <tr>
   <td>Custom Cursor at runtime</td>
-  <td>&#10004;</td>
-  <td>&#10006;</td>
+  <td>✔</td>
+  <td>✖</td>
   <td></td>
  </tr>
  <tr>
   <td>Sub-pixel anti-aliasing</td>
-  <td>&#10004;</td>
-  <td>&#10006;</td>
+  <td>✔</td>
+  <td>✖</td>
   <td>Anti-aliasing in UWP along with rendering in general is poor compared to WPF. It's assumed this is for performance reasons on mobile devices and the web (Silverlight).</td>
  </tr>
+ <tr>
+  <td>Supplemental Shapes: Arrow, Callout, Star, etc</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>Several shapes present in WPF are missing in UWP.</td>
+ </tr>
+ <tr>
+  <td>Nested Types in XAML</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>Nesting different types in XAML is generally not possible in UWP. Code such as `&lt;ListBox.ItemsSource&gt;&lt;x:Array&gt;&lt;s:string&gt;foo&lt;s/:string&gt;&lt;x/:Array&gt;` works in WPF but not in UWP.</td>
+ </tr>
+ <tr>
+  <td>Adorner</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>https://docs.microsoft.com/en-us/dotnet/framework/wpf/controls/adorners-overview</td>
+ </tr>
+ <tr>
+  <td>UIElement.IsVisible / IsVisibleChanged</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>UWP has no way of tracking which controls are actually visible.</td>
+ </tr?>
 </table>
  
 ### Object Model Differences
@@ -188,6 +236,10 @@ This section lists the main differences (primarily from a XAML viewpoint) betwee
   <td>Window</td>
   <td>For some good reasons UWP has no concept of a window. This is fine for mobile devices but can be a problem for purely desktop applications. There are currently proposals to add this in the transition to WinUI 3.0.</td>
  </tr>
+ <tr>
+  <td>Event Tunneling / Event Bubbling / Routed Events</td>
+  <td>A lot more events are simply direct in UWP. Some cases of event bubbling such as ButtonBase.Click to parent are not supported in UWP.</td>
+ </tr>
 </table>
  
 ## Quirks
@@ -195,8 +247,10 @@ This section lists the main differences (primarily from a XAML viewpoint) betwee
  * Several UWP controls have reentrancy issues. For example, changing the selected item while in a ComboBox SelectionChanged event is largely not possible and will result in a crash. This makes validation directly in the event handler nearly impossible.
  * UWP controls are generally not as powerful as the WPF counterparts. For example, for several years the ComboBox in UWP was not editable. The UWP DatePicker also does not allow typing in a specific date.
  * The UWP styling system is different enough from WPF to require extra effort during porting. UWP uses the VistualStateManger instead of concepts like DataTriggers or EventTriggers from WPF. Styling/Templating are one of the main differences.
+ * The ResourceDictionary XAML markup in UWP supports far fewer features than in WPF.
  * UWP seems to follow only the XAML/2006 spec instead of [XAML/2009]((https://docs.microsoft.com/en-us/dotnet/desktop-wpf/xaml-services/xaml-2009-language-features)) supported by WPF 
  * Several UWP controls are sealed and new controls cannot derive from them
+ * For advanced rendering, UWP has fewer features built in. This requires falling back to Win2D or composition more often.
 
 ## Controls
 
