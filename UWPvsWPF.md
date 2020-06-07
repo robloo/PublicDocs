@@ -14,7 +14,7 @@ Legend:
  * ✖ Indicates the feature is generally missing in the platform
  * ⚡ Indicates the feature is only partially implemented compared to other platforms
 
-### Markup Extension
+### Markup Extensions
 
 <table>
  <tr>
@@ -148,7 +148,7 @@ Legend:
   <td>BasedOn default Style</td>
   <td>✔</td>
   <td>⚡</td>
-  <td>`BasedOn={StaticResource {x:Type TextBlock}` isn't supported in UWP but works in WPF.</td>
+  <td>`BasedOn={StaticResource {x:Type TextBlock}` isn't supported in UWP but works in WPF. Instead, BasedOn requires the use of a key which is a problem as not all default styles define one. This is a specific example of the missing x:Type markup extension in UWP.</td>
  </tr>
 </table>
 
@@ -162,10 +162,22 @@ Legend:
    <th>Notes</th>
  </tr>
  <tr>
+  <td>Coercion</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>Coercion of Dependency Properties is not supported in UWP.</td>
+ </tr>
+ <tr>
   <td>x:TypeArguments directive</td>
   <td>✔</td>
   <td>✖</td>
   <td>The TypeArguments directive isn't implemented in UWP which causes problems with generics. Missing this requires some work-arounds with classes and creating a non-generic class to use in XAML from a generic one.</td>
+ </tr>
+ <tr>
+  <td>UIElement.IsVisible / IsVisibleChanged</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>UWP has no way of tracking which controls are actually visible on the display. WPF has the UIElement.IsVisible property and the IsVisibleChanged event. This hinders the ability to optimize controls for performance.</td>
  </tr>
  <tr>
   <td>LayoutTransform</td>
@@ -180,6 +192,24 @@ Legend:
   <td>VisualBrush is not a XAML brush in UWP. Instead, must fall back to composition brushes which are not 1:1 equivalent. DrawingBrush is not supported at all in UWP.</td>
  </tr>
  <tr>
+  <td>Supplemental Shapes: Arrow, Callout, Star, etc</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>Several shapes present in WPF are missing in UWP.</td>
+ </tr>
+ <tr>
+  <td>Adorner</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>https://docs.microsoft.com/en-us/dotnet/framework/wpf/controls/adorners-overview</td>
+ </tr>
+ <tr>
+  <td>Thickness</td>
+  <td>✔</td>
+  <td>⚡</td>
+  <td>The Thickness struct exposes fields for Top, Bottom, Left and Right instead of dependency properties as in WPF. This means you cannot Bind or asign resources to an individual thickness parameter.</td>
+ </tr>
+ <tr>
   <td>Custom Cursor at runtime</td>
   <td>✔</td>
   <td>✖</td>
@@ -192,56 +222,25 @@ Legend:
   <td>Anti-aliasing in UWP along with rendering in general is poor compared to WPF. It's assumed this is for performance reasons on mobile devices and the web (Silverlight).</td>
  </tr>
  <tr>
-  <td>Supplemental Shapes: Arrow, Callout, Star, etc</td>
-  <td>✔</td>
-  <td>✖</td>
-  <td>Several shapes present in WPF are missing in UWP.</td>
- </tr>
- <tr>
   <td>Nested Types in XAML</td>
   <td>✔</td>
   <td>✖</td>
   <td>Nesting different types in XAML is generally not possible in UWP. Code such as `&lt;ListBox.ItemsSource&gt;&lt;x:Array&gt;&lt;s:string&gt;foo&lt;s/:string&gt;&lt;x/:Array&gt;` works in WPF but not in UWP.</td>
  </tr>
  <tr>
-  <td>Adorner</td>
+  <td>Event Tunneling / Event Bubbling / Routed Events</td>
   <td>✔</td>
-  <td>✖</td>
-  <td>https://docs.microsoft.com/en-us/dotnet/framework/wpf/controls/adorners-overview</td>
- </tr>
- <tr>
-  <td>UIElement.IsVisible / IsVisibleChanged</td>
-  <td>✔</td>
-  <td>✖</td>
-  <td>UWP has no way of tracking which controls are actually visible.</td>
- </tr?>
-</table>
- 
-### Object Model Differences
-
-<table>
- <tr>
-   <th>Item</th>
-   <th>Difference</th>
- </tr>
- <tr>
-  <td>Coercion</td>
-  <td>Coercion of Dependency Properties is not supported in UWP.</td>
- </tr>
- <tr>
-  <td>Thickness</td>
-  <td>The Thickness struct exposes fields for Top, Bottom, Left and Right instead of dependency properties as in WPF. This means you cannot Bind or asign resources to an individual thickness parameter.</td>
+  <td>⚡</td>
+  <td>A lot more events are simply direct in UWP. Some cases of event bubbling such as ButtonBase.Click to parent are not supported in UWP.</td>
  </tr>
  <tr>
   <td>Window</td>
+  <td>✔</td>
+  <td>✖</td>
   <td>For some good reasons UWP has no concept of a window. This is fine for mobile devices but can be a problem for purely desktop applications. There are currently proposals to add this in the transition to WinUI 3.0.</td>
  </tr>
- <tr>
-  <td>Event Tunneling / Event Bubbling / Routed Events</td>
-  <td>A lot more events are simply direct in UWP. Some cases of event bubbling such as ButtonBase.Click to parent are not supported in UWP.</td>
- </tr>
 </table>
- 
+
 ## Quirks
 
  * Several UWP controls have reentrancy issues. For example, changing the selected item while in a ComboBox SelectionChanged event is largely not possible and will result in a crash. This makes validation directly in the event handler nearly impossible.
@@ -360,7 +359,7 @@ This section describes the differences in controls in vanilla WPF and UWP. It ex
 | WrapPanel		              | &#10006;               | Available for UWP in the Windows Community Toolkit |
 | Window	                  | &#10006;               |	There is no top-level window concept in UWP |
 
-### References
+## References
 
  1. http://dansuleski.com/so-what-else-could-be-missing-in-uwp/
  2. https://github.com/microsoft/microsoft-ui-xaml/issues/719
