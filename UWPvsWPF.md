@@ -145,10 +145,10 @@ Legend:
   <td>Any other than TemplateBinding isn't support in a template/style within UWP</td>
  </tr>
  <tr>
-  <td>BasedOn</td>
+  <td>BasedOn default Style</td>
   <td>✔</td>
-  <td>✖</td>
-  <td>Something like `BasedOn={StaticResource {x:Type TextBlock}` isn't supported in UWP but works in WPF.</td>
+  <td>⚡</td>
+  <td>`BasedOn={StaticResource {x:Type TextBlock}` isn't supported in UWP but works in WPF.</td>
  </tr>
 </table>
 
@@ -348,7 +348,7 @@ This section describes the differences in controls in vanilla WPF and UWP. It ex
 | TextBox                  |	TextBox	               | |
 | &#10006;                 |	TimePicker	            | |
 | &#10006;                 |	TimePickerFlyout	      | |
-| &#10006;                 |	ToggleButton	          | |
+| ToggleButton             |	ToggleButton	          | |
 | &#10006;                 |	ToggleSplitButton	     | First introduced in the Windows UI Library |
 | &#10006;                 |	ToggleSwitch	          | |
 | ToolTip	                 | ToolTip	               | |
