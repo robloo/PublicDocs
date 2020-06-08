@@ -290,7 +290,7 @@ This section describes the differences in controls in vanilla WPF and UWP. It ex
 | DataGrid	                | &#10006;               | Available for UWP in the Windows Community Toolkit (albeit with many bugs) |
 | &#10006;                 |	DatePicker	            | A picker to select a date without a calendar view does not exist in WPF. |
 | &#10006;                 |	DatePickerFlyout	      | |
-| DockPanel		              |	&#10006;               | |
+| DockPanel		              |	&#10006;               | Available for UWP in the Windows Community Toolkit |
 | DocumentViewer		         |	&#10006;               | |
 | &#10006;                 |	DropDownButton	        | First introduced in the Windows UI Library |
 | Expander	                | &#10006;               |	Available for UWP in the Windows Community Toolkit |
