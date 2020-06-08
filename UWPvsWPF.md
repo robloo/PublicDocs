@@ -1,4 +1,4 @@
-Last Updated 6 June 2020
+Last Updated 7 June 2020
 
 # Overview of WPF & UWP Differences
 
@@ -178,6 +178,18 @@ Legend:
   <td>✔</td>
   <td>✖</td>
   <td>UWP has no way of tracking which controls are actually visible on the display. WPF has the UIElement.IsVisible property and the IsVisibleChanged event. This hinders the ability to optimize controls for performance.</td>
+ </tr>
+ <tr>
+  <td>UIElement.Clip</td>
+  <td>✔</td>
+  <td>⚡</td>
+  <td>Both WPF and UWP have UIElement.Clip properties. However, WPF can take any Geometry allowing for non-rectangular clipping. UWP can only use a RectangleGeometry for clipping. WPF: public Geometry UIElement.Clip, UWP: public RectangleGeometry UIElement.Clip</td>
+ </tr>
+ <tr>
+  <td>UIElement.ClipToBounds</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>In WPF it's possible to clip child contents to the parents bounds by setting ClipToBounds to True. UWP doesn't have this property at all. The work-around is to use UIElement.Clip which can only do rectangular clipping.</td>
  </tr>
  <tr>
   <td>LayoutTransform</td>
