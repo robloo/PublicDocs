@@ -186,6 +186,12 @@ Legend:
   <td>UWP has no way of tracking which controls are actually visible on the display. WPF has the UIElement.IsVisible property and the IsVisibleChanged event. This hinders the ability to optimize controls for performance.</td>
  </tr>
  <tr>
+  <td>UIElement.Visibility / Visibility.Hidden</td>
+  <td>✔</td>
+  <td>⚡</td>
+  <td>UWP does not include the Visibility.Hidden enum value used for UIElement.Visibility. Hidden in WPF allowed a control to still be used in measure/layout but appear invisible when rendered for display.</td>
+ </tr>
+ <tr>
   <td>UIElement.Clip</td>
   <td>✔</td>
   <td>⚡</td>
