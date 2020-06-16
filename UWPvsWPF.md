@@ -1,4 +1,4 @@
-Last Updated 7 June 2020
+Last Updated 15 June 2020
 
 # Overview of WPF & UWP Differences
 
@@ -168,6 +168,12 @@ Legend:
   <td>Coercion of Dependency Properties is not supported in UWP.</td>
  </tr>
  <tr>
+  <td>Data (Input) Validation</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>The entire WPF data validation system including the classes/inferfaces: ValidationRule (and all standard implementations), Binding.ValidationRules, IDataErrorInfo, INotifyDataErrorInfo, Binding.ValidatesOnNotifyDataErrors, etc. is not implemented in UWP. This will be added in WinUI 3.0 but the story for using this within the UWP app model with WinUI 3.0 is less clear.</td>
+ </tr>
+ <tr>
   <td>x:TypeArguments directive</td>
   <td>✔</td>
   <td>✖</td>
@@ -222,6 +228,12 @@ Legend:
   <td>The Thickness struct exposes fields for Top, Bottom, Left and Right instead of dependency properties as in WPF. This means you cannot Bind or asign resources to an individual thickness parameter.</td>
  </tr>
  <tr>
+  <td>Size / Rect / Point</td>
+  <td>✔</td>
+  <td>✔</td>
+  <td>Size, Rect and Point are fully supported in both WPF and UWP. However, UWP uses single-precision float types for properties isntead of dobule in WPF. This creates an incompatiblity when porting code.</td>
+ </tr>
+ <tr>
   <td>Custom Cursor at runtime</td>
   <td>✔</td>
   <td>✖</td>
@@ -243,13 +255,13 @@ Legend:
   <td>Event Tunneling / Event Bubbling / Routed Events</td>
   <td>✔</td>
   <td>⚡</td>
-  <td>A lot more events are simply direct in UWP. Some cases of event bubbling such as ButtonBase.Click to parent are not supported in UWP.</td>
+  <td>A lot more events are simply direct in UWP. Some cases of event bubbling such as ButtonBase.Click to parent are not supported in UWP. Event Tunneling, a concept fully supported in WPF, isn't support at all in UWP.</td>
  </tr>
  <tr>
   <td>Window</td>
   <td>✔</td>
   <td>✖</td>
-  <td>For some good reasons UWP has no concept of a window. This is fine for mobile devices but can be a problem for purely desktop applications. There are currently proposals to add this in the transition to WinUI 3.0.</td>
+  <td>For some good reasons UWP has no concept of a window. This is fine for mobile devices but can be a problem for purely desktop applications. Without a window, there is no way to control an app's size or position. There are currently proposals to add this in the transition to WinUI 3.0.</td>
  </tr>
 </table>
 
@@ -257,12 +269,14 @@ Legend:
 
  * Several UWP controls have reentrancy issues. For example, changing the selected item while in a ComboBox SelectionChanged event is largely not possible and will result in a crash. This makes validation directly in the event handler nearly impossible.
  * UWP controls are generally not as powerful as the WPF counterparts. For example, for several years the ComboBox in UWP was not editable. The UWP DatePicker also does not allow typing in a specific date.
+ * UWP has no support for data (input) validation. This is a large issue for line-of-business apps migrating from WPF to UWP that heavily use this feature in view models or binding.
  * The UWP styling system is different enough from WPF to require extra effort during porting. UWP uses the VistualStateManger instead of concepts like DataTriggers or EventTriggers from WPF. Styling/Templating are one of the main differences.
  * The ResourceDictionary XAML markup in UWP supports far fewer features than in WPF.
  * UWP seems to follow only the XAML/2006 spec instead of [XAML/2009]((https://docs.microsoft.com/en-us/dotnet/desktop-wpf/xaml-services/xaml-2009-language-features)) supported by WPF 
  * Several UWP controls are sealed and new controls cannot derive from them
  * For advanced rendering, UWP has fewer features built in. This requires falling back to Win2D or composition more often.
-
+ * There are several namespaces differences in UWP and WPF. For example, WPF has System.Windows.Media.Colors while UWP moves this to Windows.UI.Colors.
+ 
 ## Controls
 
 This section describes the differences in controls in vanilla WPF and UWP. It excludes some primitives and shapes (Ellipse, Rect, etc.) Note that this section is likely incomplete and needs further review.
