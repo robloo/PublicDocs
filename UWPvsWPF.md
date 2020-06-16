@@ -335,7 +335,7 @@ This section describes the differences in controls in vanilla WPF and UWP. It ex
 | &#10006;                 |	PullToRefresh		        | |
 | RadioButton	             | RadioButton		          | |
 | &#10006;                 |	RatingControl		        | |
-| &#10006;                 |	Rectangle		            | |
+| Rectangle                |	Rectangle		            | |
 | &#10006;                 |	RefreshContainer	      | First introduced in the Windows UI Library |
 | &#10006;                 |	RelativePanel		        | |
 | RepeatButton             |	RepeatButton	          | |
