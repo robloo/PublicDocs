@@ -285,7 +285,7 @@ Legend:
  
 ## Controls
 
-This section describes the differences in controls in vanilla WPF and UWP. It excludes some primitives and shapes (Ellipse, Rect, etc.) Note that this section is likely incomplete and needs further review.
+This section describes the differences in controls in vanilla WPF and UWP (with the WinUI 2.x library). It excludes some primitives and shapes (Ellipse, Rect, etc.)
 
 | WPF |	UWP |	Comments |
 |-----|-----|----------|
