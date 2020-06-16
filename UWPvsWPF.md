@@ -231,7 +231,13 @@ Legend:
   <td>Size / Rect / Point</td>
   <td>✔</td>
   <td>✔</td>
-  <td>Size, Rect and Point are fully supported in both WPF and UWP. However, UWP uses single-precision float types for properties isntead of dobule in WPF. This creates an incompatiblity when porting code.</td>
+  <td>Size, Rect and Point are fully supported in both WPF and UWP. However, UWP uses single-precision float types for properties instead of double in WPF. This creates an incompatiblity when porting code.</td>
+ </tr>
+ <tr>
+  <td>ItemsControl.AlternationIndex / ItemsControl.AlternationCount</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>WPF has an easy way to change the style of items in a list using ItemsControl.AlternationIndex and ItemsControl.AlternationCount. This allows, for example, to change the background color of a listed item for even/odd entries. UWP doesn't support this at all in any controls. The partial work-around in UWP is to create a new control deriving from the framework's implementation and override the PrepareContainerForItemOverride() method.</td>
  </tr>
  <tr>
   <td>Custom Cursor at runtime</td>
