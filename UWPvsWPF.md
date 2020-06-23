@@ -170,7 +170,7 @@ Legend:
  </tr>
 </table>
 
-### Class/Object Differences
+### Classes/Objects
 
 **UIElement**
 
@@ -246,6 +246,18 @@ Legend:
   <td>✔</td>
   <td>Size, Rect and Point are fully supported in both WPF and UWP. However, UWP uses single-precision float types for properties instead of double in WPF. This creates an incompatiblity when porting code.</td>
  </tr>
+ <tr>
+  <td>StackPanel.Spacing</td>
+  <td>✖</td>
+  <td>✔</td>
+  <td>The Spacing property is a quick way to set a uniform distance between all child controls in a StackPanel. This was added to UWP and does not exist in WPF.</td>
+ </tr>
+ <tr>
+  <td>Grid.ColumnSpacing / Grid.RowSpacing</td>
+  <td>✖</td>
+  <td>✔</td>
+  <td>Similar to StackPanel.Spacing, the Grid's ColumnSpacing and RowSpacing properties provide a quick way to set a uniform horizortal and/or vertical distance between all child controls in a Grid. This was added to UWP and does not exist in WPF.</td>
+ </tr>
 </table>
 
 **Unimplemented Classes**
@@ -283,7 +295,7 @@ Legend:
  </tr>
 </table>
 
-### Other Differences
+### Other
 
 <table>
  <tr>
