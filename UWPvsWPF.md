@@ -158,7 +158,120 @@ Legend:
  </tr>
 </table>
 
-### Other
+### Class/Object Differences
+
+**UIElement**
+
+<table>
+ <tr>
+   <th>Item</th>
+   <th>WPF</th>
+   <th>UWP</th>
+   <th>Notes</th>
+ </tr>
+<tr>
+  <td>IsVisible / IsVisibleChanged Event</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>UWP has no way of tracking which controls are actually visible on the display. WPF has the UIElement.IsVisible property and the IsVisibleChanged event. This hinders the ability to optimize controls for performance.</td>
+ </tr>
+ <tr>
+  <td>Visibility with Visibility.Hidden</td>
+  <td>✔</td>
+  <td>⚡</td>
+  <td>UWP does not include the Visibility.Hidden enum value used for UIElement.Visibility. Hidden in WPF allowed a control to still be used in measure/layout but appear invisible when rendered for display.</td>
+ </tr>
+ <tr>
+  <td>Clip</td>
+  <td>✔</td>
+  <td>⚡</td>
+  <td>Both WPF and UWP have UIElement.Clip properties. However, WPF can take any Geometry allowing for non-rectangular clipping. UWP can only use a RectangleGeometry for clipping. WPF: public Geometry UIElement.Clip, UWP: public RectangleGeometry UIElement.Clip</td>
+ </tr>
+ <tr>
+  <td>ClipToBounds</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>In WPF it's possible to clip child contents to the parents bounds by setting ClipToBounds to True. UWP doesn't have this property at all. The work-around is to use UIElement.Clip which can only do rectangular clipping.</td>
+ </tr>
+ <tr>
+  <td>LayoutTransform</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>Layout transform is needed to transform elements before layouting. This allows for easily changing textbox direction and then putting it in a table. RenderTransform, as it applies after layout, does not resize parent controls for transformed children. See Transform3D for the UWP equivalent.</td>
+ </tr>
+ <tr>
+  <td>Projection</td>
+  <td>✖</td>
+  <td>✔</td>
+  <td>A 3-D projection effect applied to the element. Is more or less obsolete, use Transform3D instead.</td>
+ </tr>
+ <tr>
+  <td>Transform3D</td>
+  <td>✖</td>
+  <td>✔</td>
+  <td>Use the Transform3D property to apply a 3-D transform matrix to a XAML element. This lets you create effects where two-dimensional UI appears to exist in 3-D space relative to the user. Transform3D behaves much like RenderTransform, but allows transforms in three-dimensional space and not just two dimensions. It also support animations.</td>
+ </tr>
+</table>
+
+**Minor Changes**
+
+<table>
+ <tr>
+   <th>Item</th>
+   <th>WPF</th>
+   <th>UWP</th>
+   <th>Notes</th>
+ </tr>
+ <tr>
+  <td>Thickness</td>
+  <td>✔</td>
+  <td>⚡</td>
+  <td>The Thickness struct exposes fields for Top, Bottom, Left and Right instead of dependency properties as in WPF. This means you cannot Bind or asign resources to an individual thickness parameter.</td>
+ </tr>
+ <tr>
+  <td>Size / Rect / Point</td>
+  <td>✔</td>
+  <td>✔</td>
+  <td>Size, Rect and Point are fully supported in both WPF and UWP. However, UWP uses single-precision float types for properties instead of double in WPF. This creates an incompatiblity when porting code.</td>
+ </tr>
+</table>
+
+**Unimplemented Classes**
+
+<table>
+ <tr>
+   <th>Item</th>
+   <th>WPF</th>
+   <th>UWP</th>
+   <th>Notes</th>
+ </tr>
+ <tr>
+  <td>Adorner</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>https://docs.microsoft.com/en-us/dotnet/framework/wpf/controls/adorners-overview</td>
+ </tr>
+ <tr>
+  <td>Supplemental Shapes: Arrow, Callout, Star, etc</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>Several shapes present in WPF are missing in UWP.</td>
+ </tr>
+ <tr>
+  <td>VisualBrush / DrawingBrush</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>VisualBrush is not a XAML brush in UWP. Instead, must fall back to composition brushes which are not 1:1 equivalent. DrawingBrush is not supported at all in UWP.</td>
+ </tr>
+ <tr>
+  <td>Window</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>For some good reasons UWP has no concept of a window. This is fine for mobile devices but can be a problem for purely desktop applications. Without a window, there is no way to control an app's size or position. There are currently proposals to add this in the transition to WinUI 3.0.</td>
+ </tr>
+</table>
+
+### Other Differences
 
 <table>
  <tr>
@@ -184,66 +297,6 @@ Legend:
   <td>✔</td>
   <td>✖</td>
   <td>The TypeArguments directive isn't implemented in UWP which causes problems with generics. Missing this requires some work-arounds with classes and creating a non-generic class to use in XAML from a generic one.</td>
- </tr>
- <tr>
-  <td>UIElement.IsVisible / IsVisibleChanged</td>
-  <td>✔</td>
-  <td>✖</td>
-  <td>UWP has no way of tracking which controls are actually visible on the display. WPF has the UIElement.IsVisible property and the IsVisibleChanged event. This hinders the ability to optimize controls for performance.</td>
- </tr>
- <tr>
-  <td>UIElement.Visibility / Visibility.Hidden</td>
-  <td>✔</td>
-  <td>⚡</td>
-  <td>UWP does not include the Visibility.Hidden enum value used for UIElement.Visibility. Hidden in WPF allowed a control to still be used in measure/layout but appear invisible when rendered for display.</td>
- </tr>
- <tr>
-  <td>UIElement.Clip</td>
-  <td>✔</td>
-  <td>⚡</td>
-  <td>Both WPF and UWP have UIElement.Clip properties. However, WPF can take any Geometry allowing for non-rectangular clipping. UWP can only use a RectangleGeometry for clipping. WPF: public Geometry UIElement.Clip, UWP: public RectangleGeometry UIElement.Clip</td>
- </tr>
- <tr>
-  <td>UIElement.ClipToBounds</td>
-  <td>✔</td>
-  <td>✖</td>
-  <td>In WPF it's possible to clip child contents to the parents bounds by setting ClipToBounds to True. UWP doesn't have this property at all. The work-around is to use UIElement.Clip which can only do rectangular clipping.</td>
- </tr>
- <tr>
-  <td>LayoutTransform</td>
-  <td>✔</td>
-  <td>✖</td>
-  <td>Layout transform is needed to transform elements before layouting. This allows for easily changing textbox direction and then putting it in a table. RenderTransform, as it applies after layout, does not resize parent controls for transformed children.</td>
- </tr>
- <tr>
-  <td>VisualBrush / DrawingBrush</td>
-  <td>✔</td>
-  <td>✖</td>
-  <td>VisualBrush is not a XAML brush in UWP. Instead, must fall back to composition brushes which are not 1:1 equivalent. DrawingBrush is not supported at all in UWP.</td>
- </tr>
- <tr>
-  <td>Supplemental Shapes: Arrow, Callout, Star, etc</td>
-  <td>✔</td>
-  <td>✖</td>
-  <td>Several shapes present in WPF are missing in UWP.</td>
- </tr>
- <tr>
-  <td>Adorner</td>
-  <td>✔</td>
-  <td>✖</td>
-  <td>https://docs.microsoft.com/en-us/dotnet/framework/wpf/controls/adorners-overview</td>
- </tr>
- <tr>
-  <td>Thickness</td>
-  <td>✔</td>
-  <td>⚡</td>
-  <td>The Thickness struct exposes fields for Top, Bottom, Left and Right instead of dependency properties as in WPF. This means you cannot Bind or asign resources to an individual thickness parameter.</td>
- </tr>
- <tr>
-  <td>Size / Rect / Point</td>
-  <td>✔</td>
-  <td>✔</td>
-  <td>Size, Rect and Point are fully supported in both WPF and UWP. However, UWP uses single-precision float types for properties instead of double in WPF. This creates an incompatiblity when porting code.</td>
  </tr>
  <tr>
   <td>ItemsControl.AlternationIndex / ItemsControl.AlternationCount</td>
@@ -274,24 +327,6 @@ Legend:
   <td>✔</td>
   <td>⚡</td>
   <td>A lot more events are simply direct in UWP. Some cases of event bubbling such as ButtonBase.Click to parent are not supported in UWP. Event Tunneling, a concept fully supported in WPF, isn't support at all in UWP.</td>
- </tr>
- <tr>
-  <td>Window</td>
-  <td>✔</td>
-  <td>✖</td>
-  <td>For some good reasons UWP has no concept of a window. This is fine for mobile devices but can be a problem for purely desktop applications. Without a window, there is no way to control an app's size or position. There are currently proposals to add this in the transition to WinUI 3.0.</td>
- </tr>
- <tr>
-  <td>Projection</td>
-  <td>✖</td>
-  <td>✔</td>
-  <td>A 3-D projection effect applied to the element. Is more or less obsolete, use Transform3D instead.</td>
- </tr>
- <tr>
-  <td>Transform3D</td>
-  <td>✖</td>
-  <td>✔</td>
-  <td>Use the Transform3D property to apply a 3-D transform matrix to a XAML element. This lets you create effects where two-dimensional UI appears to exist in 3-D space relative to the user. Transform3D behaves much like RenderTransform, but allows transforms in three-dimensional space and not just two dimensions. It also support animations.</td>
  </tr>
 </table>
 
