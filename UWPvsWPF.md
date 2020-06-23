@@ -235,6 +235,12 @@ Legend:
    <th>Notes</th>
  </tr>
  <tr>
+  <td>Header / HeaderTemplate</td>
+  <td>✖</td>
+  <td>✔</td>
+  <td>Several controls in UWP support an additional Header content and HeaderTemplate property. This allows for quickly adding a description or title above a control which is useful in data-input scenarios. UWP controls with a header property include: ComboBox, DatePicker, ListViewBase, PasswordBox, TextBox, TimePicker, ToggleSwitch. Notably, the header property is not present on some controls such as: Button and CheckBox.</td>
+ </tr>
+ <tr>
   <td>ItemsControl. AlternationIndex / AlternationCount</td>
   <td>✔</td>
   <td>✖</td>
