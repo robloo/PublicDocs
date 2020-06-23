@@ -67,7 +67,7 @@ Legend:
  </tr>
 </table>
  
-### Binding
+### Binding / Dependency Property System
  
 <table>
  <tr>
@@ -75,6 +75,18 @@ Legend:
    <th>WPF</th>
    <th>UWP</th>
    <th>Notes</th>
+ </tr>
+ <tr>
+  <td>Coercion</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>Coercion of Dependency Properties is not supported in UWP.</td>
+ </tr>
+ <tr>
+  <td>Data (Input) Validation</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>The entire WPF data validation system including the classes/inferfaces: ValidationRule (and all standard implementations), Binding.ValidationRules, IDataErrorInfo, INotifyDataErrorInfo, Binding.ValidatesOnNotifyDataErrors, etc. is not implemented in UWP. This will be added in WinUI 3.0 but the story for using this within the UWP app model with WinUI 3.0 is less clear.</td>
  </tr>
  <tr>
   <td>OneWayToSource BindingMode</td>
@@ -279,18 +291,6 @@ Legend:
    <th>WPF</th>
    <th>UWP</th>
    <th>Notes</th>
- </tr>
- <tr>
-  <td>Coercion</td>
-  <td>✔</td>
-  <td>✖</td>
-  <td>Coercion of Dependency Properties is not supported in UWP.</td>
- </tr>
- <tr>
-  <td>Data (Input) Validation</td>
-  <td>✔</td>
-  <td>✖</td>
-  <td>The entire WPF data validation system including the classes/inferfaces: ValidationRule (and all standard implementations), Binding.ValidationRules, IDataErrorInfo, INotifyDataErrorInfo, Binding.ValidatesOnNotifyDataErrors, etc. is not implemented in UWP. This will be added in WinUI 3.0 but the story for using this within the UWP app model with WinUI 3.0 is less clear.</td>
  </tr>
  <tr>
   <td>x:TypeArguments directive</td>
