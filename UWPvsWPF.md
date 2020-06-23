@@ -1,4 +1,4 @@
-Last Updated 15 June 2020
+Last Updated 23 June 2020 | License CC BY-SA 4.0
 
 # Overview of WPF & UWP Differences
 
@@ -420,3 +420,6 @@ This section describes the differences in controls in vanilla WPF and UWP (with 
  1. http://dansuleski.com/so-what-else-could-be-missing-in-uwp/
  2. https://github.com/microsoft/microsoft-ui-xaml/issues/719
 
+## License
+
+This document is licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). For full text see: https://creativecommons.org/licenses/by-sa/4.0/legalcode
