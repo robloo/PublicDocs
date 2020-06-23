@@ -54,6 +54,12 @@ Legend:
   <td></td>
  </tr>
  <tr>
+  <td>x:Load</td>
+  <td>✖</td>
+  <td>✔</td>
+  <td>You can use x:Load to optimize the startup, visual tree creation, and memory usage of your XAML app. Using x:Load has a similar visual effect to Visibility, except that when the element is not loaded, its memory is released and internally a small placeholder is used to mark its place in the visual tree.</td>
+ </tr>
+ <tr>
   <td>Full Markup Extension</td>
   <td>✔</td>
   <td>✖</td>
