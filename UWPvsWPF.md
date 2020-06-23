@@ -235,6 +235,12 @@ Legend:
    <th>Notes</th>
  </tr>
  <tr>
+  <td>ItemsControl.AlternationIndex / ItemsControl.AlternationCount</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>WPF has an easy way to change the style of items in a list using ItemsControl.AlternationIndex and ItemsControl.AlternationCount. This allows, for example, to change the background color of a listed item for even/odd entries. UWP doesn't support this at all in any controls. The partial work-around in UWP is to create a new control deriving from the framework's implementation and override the PrepareContainerForItemOverride() method.</td>
+ </tr>
+ <tr>
   <td>Thickness</td>
   <td>✔</td>
   <td>⚡</td>
@@ -309,12 +315,6 @@ Legend:
   <td>✔</td>
   <td>✖</td>
   <td>The TypeArguments directive isn't implemented in UWP which causes problems with generics. Missing this requires some work-arounds with classes and creating a non-generic class to use in XAML from a generic one.</td>
- </tr>
- <tr>
-  <td>ItemsControl.AlternationIndex / ItemsControl.AlternationCount</td>
-  <td>✔</td>
-  <td>✖</td>
-  <td>WPF has an easy way to change the style of items in a list using ItemsControl.AlternationIndex and ItemsControl.AlternationCount. This allows, for example, to change the background color of a listed item for even/odd entries. UWP doesn't support this at all in any controls. The partial work-around in UWP is to create a new control deriving from the framework's implementation and override the PrepareContainerForItemOverride() method.</td>
  </tr>
  <tr>
   <td>Custom Cursor at runtime</td>
