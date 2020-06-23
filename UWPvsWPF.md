@@ -281,6 +281,18 @@ Legend:
   <td>✖</td>
   <td>For some good reasons UWP has no concept of a window. This is fine for mobile devices but can be a problem for purely desktop applications. Without a window, there is no way to control an app's size or position. There are currently proposals to add this in the transition to WinUI 3.0.</td>
  </tr>
+ <tr>
+  <td>Projection</td>
+  <td>✖</td>
+  <td>✔</td>
+  <td>A 3-D projection effect applied to the element. Is more or less obsolete, use Transform3D instead.</td>
+ </tr>
+ <tr>
+  <td>Transform3D</td>
+  <td>✖</td>
+  <td>✔</td>
+  <td>Use the Transform3D property to apply a 3-D transform matrix to a XAML element. This lets you create effects where two-dimensional UI appears to exist in 3-D space relative to the user. Transform3D behaves much like RenderTransform, but allows transforms in three-dimensional space and not just two dimensions. It also support animations.</td>
+ </tr>
 </table>
 
 ## Quirks
