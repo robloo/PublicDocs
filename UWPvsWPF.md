@@ -172,7 +172,7 @@ Legend:
 
 ### Classes/Objects
 
-This section primarily describes differences in properties at the object or class level. As the number of differences in this section may become quite large, classes and properties are listed alphabetically.
+This section primarily describes differences in properties at the object or class level. As the number of differences in this section may become quite large, classes and properties are listed alphabetically and grouped together where it makes sense.
 
 **Grid**
 
@@ -223,6 +223,8 @@ This section primarily describes differences in properties at the object or clas
 
 **StackPanel**
 
+Additional properties such as WPF's `HasLogicalOrientation`, `HorizontalOffset` and `VerticalOffset` are purposely excluded from this section as they aren't considered useful.
+
 <table>
  <tr>
    <th>Item</th>
@@ -235,6 +237,12 @@ This section primarily describes differences in properties at the object or clas
   <td>✖</td>
   <td>✔</td>
   <td>Information on snapping points does not exist in WPF's StackPanel.</td>
+ </tr>
+ <tr>
+  <td>BackgroundSizing</td>
+  <td>✖</td>
+  <td>✔</td>
+  <td>https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel.backgroundsizing</td>
  </tr>
  <tr>
   <td>BorderBrush</td>
@@ -253,6 +261,18 @@ This section primarily describes differences in properties at the object or clas
   <td>✖</td>
   <td>✔</td>
   <td>This property does not exist in WPF's StackPanel. It was added in UWP to help flatten the visual tree instead of requiring the use of a Border.</td>
+ </tr>
+ <tr>
+  <td>ExtentHeight</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.stackpanel.extentheight</td>
+ </tr>
+ <tr>
+  <td>ExtentWidth</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.stackpanel.extentwidth</td>
  </tr>
  <tr>
   <td>Padding</td>
