@@ -54,6 +54,12 @@ Legend:
   <td></td>
  </tr>
  <tr>
+  <td>x:TypeArguments</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>The TypeArguments directive isn't implemented in UWP which causes problems with generics. Missing this requires some work-arounds with classes and creating a non-generic class to use in XAML from a generic one.</td>
+ </tr>
+ <tr>
   <td>x:Load</td>
   <td>✖</td>
   <td>✔</td>
@@ -440,12 +446,6 @@ Additional properties such as WPF's `HasLogicalOrientation`, `HorizontalOffset` 
    <th>WPF</th>
    <th>UWP</th>
    <th>Notes</th>
- </tr>
- <tr>
-  <td>x:TypeArguments directive</td>
-  <td>✔</td>
-  <td>✖</td>
-  <td>The TypeArguments directive isn't implemented in UWP which causes problems with generics. Missing this requires some work-arounds with classes and creating a non-generic class to use in XAML from a generic one.</td>
  </tr>
  <tr>
   <td>Custom Cursor at runtime</td>
