@@ -484,7 +484,8 @@ Additional properties such as WPF's `HasLogicalOrientation`, `HorizontalOffset` 
  * Several UWP controls are sealed and new controls cannot derive from them
  * For advanced rendering, UWP has fewer features built in. This requires falling back to Win2D or composition more often.
  * There are several namespaces differences in UWP and WPF. For example, WPF has System.Windows.Media.Colors while UWP moves this to Windows.UI.Colors.
- 
+ * TextBlock and TextBox, for example, do not allow 'null' values for string-type Text properties. Setting null to `Text` will crash the app at runtime. This is one of the largest concerns when porting over from WPF as WPF accepts null without an issue; yet the same code may crash in UWP. The solution is to use `.Text = stringValue ?? string.Empty;` for all controls instead of setting a string directly.
+
 ## Controls
 
 This section describes the differences in controls in vanilla WPF and UWP (with the WinUI 2.x library). It excludes some primitives and shapes (Ellipse, Rect, etc.)
