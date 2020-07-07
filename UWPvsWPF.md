@@ -24,10 +24,10 @@ Legend:
    <th>Notes</th>
  </tr>
  <tr>
-  <td>x:Uid for localization</td>
-  <td>✖</td>
+  <td>x:Uid / .resw for localization</td>
+  <td>⚡</td>
   <td>✔</td>
-  <td>x:uid is a powerful localization system similar to what exists in Windows Forms. WPF is sorely missing this type of localization support. This is a clear advantage of UWP.</td>
+  <td>x:Uid exists in both WPF and UWP. However, using it to localize properties is quite a bit more complex in WPF (using LocBaml, csv files, the commmand line in a manual process). UWP provides a much more integrated localization system using x:Uid and .resw files similar to what existed in Windows Forms. WPF is sorely missing this type of localization support and this is a clear advantage of UWP.</td>
  </tr>
  <tr>
   <td>x:Bind</td>
@@ -58,6 +58,12 @@ Legend:
   <td>✖</td>
   <td>✔</td>
   <td>You can use x:Load to optimize the startup, visual tree creation, and memory usage of your XAML app. Using x:Load has a similar visual effect to Visibility, except that when the element is not loaded, its memory is released and internally a small placeholder is used to mark its place in the visual tree.</td>
+ </tr>
+ <tr>
+  <td>DynamicResource</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>The dynamic resource markup extension which is fairly common in WPF doesn't exist in UWP. A partial work-around requires custom markup extensions.</td>
  </tr>
  <tr>
   <td>Full Markup Extension</td>
