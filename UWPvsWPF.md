@@ -14,7 +14,7 @@ Legend:
  * ✖ Indicates the feature is generally missing in the platform
  * ⚡ Indicates the feature is only partially implemented compared to other platforms
 
-### Markup Extensions
+### Markup Extensions & Directives
 
 <table>
  <tr>
@@ -24,10 +24,10 @@ Legend:
    <th>Notes</th>
  </tr>
  <tr>
-  <td>x:Uid / .resw for localization</td>
-  <td>⚡</td>
+  <td>x:Array</td>
   <td>✔</td>
-  <td>x:Uid exists in both WPF and UWP. However, using it to localize properties is quite a bit more complex in WPF (using LocBaml, csv files, the commmand line in a manual process). UWP provides a much more integrated localization system using x:Uid and .resw files similar to what existed in Windows Forms. WPF is sorely missing this type of localization support and this is a clear advantage of UWP.</td>
+  <td>✖</td>
+  <td>x:Array isn't supported in UWP.</td>
  </tr>
  <tr>
   <td>x:Bind</td>
@@ -35,11 +35,11 @@ Legend:
   <td>✔</td>
   <td>x:Bind has also become a powerful feature of UWP over WPF. Compiled bindings can be used for nearly anything and can replace other missing features like MultiBinding. Other advantages include debugging support as well as increased performance.</td>
  </tr>
-  <tr>
-  <td>x:Array</td>
-  <td>✔</td>
+ <tr>
+  <td>x:Load</td>
   <td>✖</td>
-  <td>x:Array isn't supported in UWP.</td>
+  <td>✔</td>
+  <td>You can use x:Load to optimize the startup, visual tree creation, and memory usage of your XAML app. Using x:Load has a similar visual effect to Visibility, except that when the element is not loaded, its memory is released and internally a small placeholder is used to mark its place in the visual tree.</td>
  </tr>
  <tr>
   <td>x:Static</td>
@@ -60,10 +60,10 @@ Legend:
   <td>The TypeArguments directive isn't implemented in UWP which causes problems with generics. Missing this requires some work-arounds with classes and creating a non-generic class to use in XAML from a generic one.</td>
  </tr>
  <tr>
-  <td>x:Load</td>
-  <td>✖</td>
+  <td>x:Uid / .resw for localization</td>
+  <td>⚡</td>
   <td>✔</td>
-  <td>You can use x:Load to optimize the startup, visual tree creation, and memory usage of your XAML app. Using x:Load has a similar visual effect to Visibility, except that when the element is not loaded, its memory is released and internally a small placeholder is used to mark its place in the visual tree.</td>
+  <td>x:Uid exists in both WPF and UWP. However, using it to localize properties is quite a bit more complex in WPF (using LocBaml, csv files, the commmand line in a manual process). UWP provides a much more integrated localization system using x:Uid and .resw files similar to what existed in Windows Forms. WPF is sorely missing this type of localization support and this is a clear advantage of UWP.</td>
  </tr>
  <tr>
   <td>DynamicResource</td>
