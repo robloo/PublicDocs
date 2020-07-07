@@ -1,4 +1,4 @@
-Last Updated 23 June 2020 | License CC BY-SA 4.0
+Last Updated 7 July 2020 | License CC BY-SA 4.0
 
 # Overview of WPF & UWP Differences
 
@@ -172,6 +172,102 @@ Legend:
 
 ### Classes/Objects
 
+This section primarily describes differences in properties at the object or class level. As the number of differences in this section may become quite large, classes and properties are listed alphabetically.
+
+**Grid**
+
+<table>
+ <tr>
+   <th>Item</th>
+   <th>WPF</th>
+   <th>UWP</th>
+   <th>Notes</th>
+ </tr>
+ <tr>
+  <td>BorderBrush</td>
+  <td>✖</td>
+  <td>✔</td>
+  <td>This property does not exist in WPF's Grid. It was added in UWP to help flatten the visual tree instead of requiring the use of a Border.</td>
+ </tr>
+ <tr>
+  <td>BorderThickness</td>
+  <td>✖</td>
+  <td>✔</td>
+  <td>This property does not exist in WPF's Grid. It was added in UWP to help flatten the visual tree instead of requiring the use of a Border.</td>
+ </tr>
+ <tr>
+  <td>ColumnSpacing / RowSpacing</td>
+  <td>✖</td>
+  <td>✔</td>
+  <td>Similar to StackPanel.Spacing, the Grid's ColumnSpacing and RowSpacing properties provide a quick way to set a uniform horizortal and/or vertical distance between all child controls in a Grid. This was added to UWP and does not exist in WPF.</td>
+ </tr>
+ <tr>
+  <td>CornerRadius</td>
+  <td>✖</td>
+  <td>✔</td>
+  <td>This property does not exist in WPF's Grid. It was added in UWP to help flatten the visual tree instead of requiring the use of a Border.</td>
+ </tr>
+ <tr>
+  <td>Padding</td>
+  <td>✖</td>
+  <td>✔</td>
+  <td>This property does not exist in WPF's Grid. It was added in UWP to help flatten the visual tree instead of requiring the use of a Border.</td>
+ </tr>
+ <tr>
+  <td>ShowGridLines</td>
+  <td>✔</td>
+  <td>✖</td>
+  <td>While this property exists in WPF, it was only intended for debugging purposes and not production quality code (https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.grid.showgridlines). As such, it was removed from UWP.</td>
+ </tr>
+</table>
+
+**StackPanel**
+
+<table>
+ <tr>
+   <th>Item</th>
+   <th>WPF</th>
+   <th>UWP</th>
+   <th>Notes</th>
+ </tr>
+ <tr>
+  <td>AreHorizontalSnapPointsRegular / AreScrollSnapPointsRegular / AreVerticalSnapPointsRegular</td>
+  <td>✖</td>
+  <td>✔</td>
+  <td>Information on snapping points does not exist in WPF's StackPanel.</td>
+ </tr>
+ <tr>
+  <td>BorderBrush</td>
+  <td>✖</td>
+  <td>✔</td>
+  <td>This property does not exist in WPF's StackPanel. It was added in UWP to help flatten the visual tree instead of requiring the use of a Border.</td>
+ </tr>
+ <tr>
+  <td>BorderThickness</td>
+  <td>✖</td>
+  <td>✔</td>
+  <td>This property does not exist in WPF's StackPanel. It was added in UWP to help flatten the visual tree instead of requiring the use of a Border.</td>
+ </tr>
+ <tr>
+  <td>CornerRadius</td>
+  <td>✖</td>
+  <td>✔</td>
+  <td>This property does not exist in WPF's StackPanel. It was added in UWP to help flatten the visual tree instead of requiring the use of a Border.</td>
+ </tr>
+ <tr>
+  <td>Padding</td>
+  <td>✖</td>
+  <td>✔</td>
+  <td>This property does not exist in WPF's StackPanel. It was added in UWP to help flatten the visual tree instead of requiring the use of a Border.</td>
+ </tr>
+ <tr>
+  <td>Spacing</td>
+  <td>✖</td>
+  <td>✔</td>
+  <td>The Spacing property is a quick way to set a uniform distance between all child controls in a StackPanel. This was added to UWP and does not exist in WPF.</td>
+ </tr>
+</table>
+
 **UIElement**
 
 <table>
@@ -257,18 +353,6 @@ Legend:
   <td>✔</td>
   <td>✔</td>
   <td>Size, Rect and Point are fully supported in both WPF and UWP. However, UWP uses single-precision float types for properties instead of double in WPF. This creates an incompatiblity when porting code.</td>
- </tr>
- <tr>
-  <td>StackPanel.Spacing</td>
-  <td>✖</td>
-  <td>✔</td>
-  <td>The Spacing property is a quick way to set a uniform distance between all child controls in a StackPanel. This was added to UWP and does not exist in WPF.</td>
- </tr>
- <tr>
-  <td>Grid.ColumnSpacing / Grid.RowSpacing</td>
-  <td>✖</td>
-  <td>✔</td>
-  <td>Similar to StackPanel.Spacing, the Grid's ColumnSpacing and RowSpacing properties provide a quick way to set a uniform horizortal and/or vertical distance between all child controls in a Grid. This was added to UWP and does not exist in WPF.</td>
  </tr>
 </table>
 
