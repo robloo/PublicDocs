@@ -24,49 +24,49 @@ Legend:
    <th>Notes</th>
  </tr>
  <tr>
-  <td>x:Array</td>
+  <td>x:Array Extension</td>
   <td>✔</td>
   <td>✖</td>
   <td>x:Array isn't supported in UWP.</td>
  </tr>
  <tr>
-  <td>x:Bind</td>
+  <td>x:Bind Extension</td>
   <td>✖</td>
   <td>✔</td>
-  <td>x:Bind has also become a powerful feature of UWP over WPF. Compiled bindings can be used for nearly anything and can replace other missing features like MultiBinding. Other advantages include debugging support as well as increased performance.</td>
+  <td>The x:Bind markup extension has become a powerful feature of UWP over WPF. Compiled bindings can be used for nearly anything and can replace other missing features like MultiBinding. Other advantages include debugging support as well as increased performance.</td>
  </tr>
  <tr>
-  <td>x:Load</td>
+  <td>x:Load Attribute</td>
   <td>✖</td>
   <td>✔</td>
   <td>You can use x:Load to optimize the startup, visual tree creation, and memory usage of your XAML app. Using x:Load has a similar visual effect to Visibility, except that when the element is not loaded, its memory is released and internally a small placeholder is used to mark its place in the visual tree.</td>
  </tr>
  <tr>
-  <td>x:Static</td>
+  <td>x:Static Extension</td>
   <td>✔</td>
   <td>✖</td>
-  <td></td>
+  <td>The x:Static markup extension isn't implemented in UWP. In WPF this is used to access a static by-value code entity (constant, property, field, or enum).</td>
  </tr>
  <tr>
-  <td>x:Type</td>
+  <td>x:Type Extension</td>
   <td>✔</td>
   <td>✖</td>
-  <td></td>
+  <td>The x:Type markup extension isn't implemented in UWP. In WPF this is used to get a type similar to `Type.GetType()`.</td>
  </tr>
  <tr>
-  <td>x:TypeArguments</td>
+  <td>x:TypeArguments Directive</td>
   <td>✔</td>
   <td>✖</td>
-  <td>The TypeArguments directive isn't implemented in UWP which causes problems with generics. Missing this requires some work-arounds with classes and creating a non-generic class to use in XAML from a generic one.</td>
+  <td>The x:TypeArguments directive isn't implemented in UWP which causes problems with generics. Missing this requires some work-arounds with classes and creating a non-generic class to use in XAML from a generic one.</td>
  </tr>
  <tr>
-  <td>x:Uid / .resw for localization</td>
+  <td>x:Uid Directive / .resw for localization</td>
   <td>⚡</td>
   <td>✔</td>
   <td>x:Uid exists in both WPF and UWP. However, using it to localize properties is quite a bit more complex in WPF (using LocBaml, csv files, the commmand line in a manual process). UWP provides a much more integrated localization system using x:Uid and .resw files similar to what existed in Windows Forms. WPF is sorely missing this type of localization support and this is a clear advantage of UWP.</td>
  </tr>
  <tr>
-  <td>DynamicResource</td>
+  <td>{DynamicResource} Extension</td>
   <td>✔</td>
   <td>✖</td>
   <td>The dynamic resource markup extension which is fairly common in WPF doesn't exist in UWP. A partial work-around requires custom markup extensions.</td>
