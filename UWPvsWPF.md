@@ -1,4 +1,4 @@
-Last Updated 7 July 2020 | License CC BY-SA 4.0
+Last Updated 28 July 2020 | License CC BY-SA 4.0
 
 # Overview of WPF & UWP Differences
 
@@ -568,6 +568,7 @@ This section describes the differences in controls in vanilla WPF and UWP (with 
 | ScrollBar	               | ScrollBar	             | |
 | &#10006;                 |	ScrollContentPresenter	| |
 | ScrollViewer	            | ScrollViewer	          | |
+| &#10006;                 | SearchBox              | |
 | &#10006;                 |	SemanticZoom	          | |
 | Separator		              | &#10006;               | |
 | Slider	                  | Slider                 | |
