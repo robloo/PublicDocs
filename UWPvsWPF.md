@@ -508,8 +508,8 @@ This section describes the differences in controls in vanilla WPF and UWP (with 
 | ComboBox	                | ComboBox               | |	
 | ToolBar                  |	CommandBar	            | |
 | &#10006;                 |	CommandBarFlyout	      | First introduced in the Windows UI Library |	
-| &#10006;                 | ContentControl	        | |
-| &#10006;                 |	ContentPresenter	      | |
+| ContentControl           | ContentControl	        | |
+| ContentPresenter         |	ContentPresenter	      | |
 | DataGrid	                | &#10006;               | Available for UWP in the Windows Community Toolkit (albeit with many bugs) |
 | &#10006;                 |	DatePicker	            | A picker to select a date without a calendar view does not exist in WPF. |
 | &#10006;                 |	DatePickerFlyout	      | |
