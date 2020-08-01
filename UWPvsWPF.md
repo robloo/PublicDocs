@@ -600,6 +600,10 @@ This section describes the differences in controls in vanilla WPF and UWP (with 
  1. http://dansuleski.com/so-what-else-could-be-missing-in-uwp/
  2. https://github.com/microsoft/microsoft-ui-xaml/issues/719
 
+## Additional Resources
+
+ * https://github.com/jbe2277/waf/wiki/UWP-vs.-WPF
+
 ## License
 
 This document is licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). For full text see: https://creativecommons.org/licenses/by-sa/4.0/legalcode
