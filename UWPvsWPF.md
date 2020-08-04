@@ -1,4 +1,4 @@
-Last Updated 28 July 2020 | License CC BY-SA 4.0
+Last Updated 4 August 2020 | License CC BY-SA 4.0
 
 # Overview of WPF & UWP Differences
 
@@ -485,6 +485,7 @@ Additional properties such as WPF's `HasLogicalOrientation`, `HorizontalOffset` 
  * For advanced rendering, UWP has fewer features built in. This requires falling back to Win2D or composition more often.
  * There are several namespaces differences in UWP and WPF. For example, WPF has System.Windows.Media.Colors while UWP moves this to Windows.UI.Colors.
  * TextBlock and TextBox, for example, do not allow 'null' values for string-type Text properties. Setting null to `Text` will crash the app at runtime. This is one of the largest concerns when porting over from WPF as WPF accepts null without an issue; yet the same code may crash in UWP. The solution is to use `.Text = stringValue ?? string.Empty;` for all controls instead of setting a string directly.
+ * In WPF it was possible to build templates using the [FrameworkElementFactory Class](https://docs.microsoft.com/en-us/dotnet/api/system.windows.frameworkelementfactory?view=netcore-3.1) without using XAML. This allowed for entire UI's to be created without markup (since instantiating controls is already possible in C# directly). However, the burden of maintaining two different ways of doing things became too much and Microsoft dropped this ability in UWP and deprecated it for WPF. Instead, it's necessary to write template XAML as a string in code then pass it to XamlReader.Load().
 
 ## Controls
 
