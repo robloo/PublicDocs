@@ -1,4 +1,4 @@
-Last Updated 4 August 2020 | License CC BY-SA 4.0
+Last Updated 5 August 2020 | License CC BY-SA 4.0
 
 # Overview of WPF & UWP Differences
 
@@ -33,7 +33,7 @@ Legend:
   <td>x:Bind Extension</td>
   <td>✖</td>
   <td>✔</td>
-  <td>The x:Bind markup extension has become a powerful feature of UWP over WPF. Compiled bindings can be used for nearly anything and can replace other missing features like MultiBinding. Other advantages include debugging support as well as increased performance.</td>
+  <td>The x:Bind markup extension has become a powerful feature of UWP over WPF. Compiled function bindings can be used for nearly anything and can replace other missing features like MultiBinding in most situations (Importantly, x:Bind isn't supported in control templates so it cannot replace MultiBinding there). Other advantages of x:Bind include debugging support as well as increased performance because it's compiled.</td>
  </tr>
  <tr>
   <td>x:Load Attribute</td>
