@@ -1,4 +1,4 @@
-Last Updated 5 August 2020 | License CC BY-SA 4.0
+Last Updated 9 August 2020 | License CC BY-SA 4.0
 
 # Overview of WPF & UWP Differences
 
@@ -534,10 +534,10 @@ This section describes the differences in controls in vanilla WPF and UWP (with 
 | Image                    |	Image	                 | |
 | &#10006;                 |	InkCanvas	             | |
 | &#10006;                 |	InkToolbar	            | |
-| &#10006;                 |	ItemsControl	          | |
+| ItemsControl             |	ItemsControl	          | |
 | &#10006;                 |	ItemsPresenter	        | |
 | &#10006;                 |	ItemsRepeater	         | First introduced in the Windows UI Library |
-| Label		                  | &#10006;               | For compatiblity with Windows Forms |
+| Label		                  | &#10006;               | Exists in WPF to align with Windows Forms |
 | ListBox                  |	ListBox	               | |
 | ListView	                | ListView	              | |
 | &#10006;                 | MapControl	            | |
@@ -567,7 +567,7 @@ This section describes the differences in controls in vanilla WPF and UWP (with 
 | &#10006;                 |	RichTextBlock	         | |
 | &#10006;                 |	RichTextBlockOverflow	 | |
 | ScrollBar	               | ScrollBar	             | |
-| &#10006;                 |	ScrollContentPresenter	| |
+| ScrollContentPresenter   |	ScrollContentPresenter	| |
 | ScrollViewer	            | ScrollViewer	          | |
 | &#10006;                 | SearchBox              | |
 | &#10006;                 |	SemanticZoom	          | |
@@ -578,7 +578,7 @@ This section describes the differences in controls in vanilla WPF and UWP (with 
 | StackPanel	              | StackPanel	            | |
 | StatusBar		              | &#10006;               | No longer a UI convention |
 | &#10006;                 | SwipeControl	          | First introduced in the Windows UI Library |
-| TabControl	              | TabView	               | First introduced in the Windows UI Library |
+| TabControl	              | TabView	               | First introduced in the Windows UI Library but now exists as part of WinUI. Originally, Pivot was used to replace tabs. |
 | &#10006;                 |	TeachingTip            |	First introduced in the Windows UI Library |
 | TextBlock                |	TextBlock	             | |
 | TextBox                  |	TextBox	               | |
