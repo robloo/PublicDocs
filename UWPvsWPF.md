@@ -11,7 +11,7 @@ This section lists the main differences (primarily from a XAML viewpoint) betwee
 Legend:
 
  * ✔ Indicates the platform (defined by the WPF or UWP column) has the feature
- * ✖ Indicates the feature is generally missing in the platform
+ * ❌ Indicates the feature is generally missing in the platform
  * ⚡ Indicates the feature is only partially implemented compared to other platforms
 
 ### Markup Extensions & Directives
@@ -26,37 +26,37 @@ Legend:
  <tr>
   <td>x:Array Extension</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>x:Array isn't supported in UWP.</td>
  </tr>
  <tr>
   <td>x:Bind Extension</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>✔</td>
   <td>The x:Bind markup extension has become a powerful feature of UWP over WPF. Compiled function bindings can be used for nearly anything and can replace other missing features like MultiBinding in most situations (Importantly, x:Bind isn't supported in control templates so it cannot replace MultiBinding there). Other advantages of x:Bind include debugging support as well as increased performance because it's compiled.</td>
  </tr>
  <tr>
   <td>x:Load Attribute</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>✔</td>
   <td>You can use x:Load to optimize the startup, visual tree creation, and memory usage of your XAML app. Using x:Load has a similar visual effect to Visibility, except that when the element is not loaded, its memory is released and internally a small placeholder is used to mark its place in the visual tree.</td>
  </tr>
  <tr>
   <td>x:Static Extension</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>The x:Static markup extension isn't implemented in UWP. In WPF this is used to access a static by-value code entity (constant, property, field, or enum).</td>
  </tr>
  <tr>
   <td>x:Type Extension</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>The x:Type markup extension isn't implemented in UWP. In WPF this is used to get a type similar to `Type.GetType()`.</td>
  </tr>
  <tr>
   <td>x:TypeArguments Directive</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>The x:TypeArguments directive isn't implemented in UWP which causes problems with generics. Missing this requires some work-arounds with classes and creating a non-generic class to use in XAML from a generic one.</td>
  </tr>
  <tr>
@@ -68,13 +68,13 @@ Legend:
  <tr>
   <td>{DynamicResource} Extension</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>The dynamic resource markup extension which is fairly common in WPF doesn't exist in UWP. A partial work-around requires custom markup extensions.</td>
  </tr>
  <tr>
   <td>Full Markup Extension</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>UWP only implements a subset of the full markup extension support in WPF. This area needs to be expanded upon in the future.</td>
  </tr>
 </table>
@@ -91,32 +91,32 @@ Legend:
  <tr>
   <td>Coercion</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>Coercion of Dependency Properties is not supported in UWP.</td>
  </tr>
  <tr>
   <td>Data (Input) Validation</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>The entire WPF data validation system including the classes/inferfaces: ValidationRule (and all standard implementations), Binding.ValidationRules, IDataErrorInfo, INotifyDataErrorInfo, Binding.ValidatesOnNotifyDataErrors, etc. is not implemented in UWP. This will be added in WinUI 3.0 but the story for using this within the UWP app model with WinUI 3.0 is less clear.</td>
  </tr>
  <tr>
   <td>OneWayToSource BindingMode</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td></td>
  </tr>
  <tr>
   <td>Binding to ConverterParameter</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td></td>
  </tr>
  <tr>
   <td>MultiBinding /
   IMultiValueConverter</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>Very useful feature in WPF for advanced binding scenearios no longer exists for UWP. UWP does have function binding with x:Bind though (Used to re-implement converter logic).</td>
  </tr>
  <tr>
@@ -134,7 +134,7 @@ Legend:
  <tr>
   <td>StringFormat</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>XAML such as `{Binding DateValue, StringFormat=Date: {0:dddd yyyy-MM-dd}}` isn't supported in UWP and requires custom converters.</td>
  </tr>
 </table>
@@ -151,7 +151,7 @@ Legend:
  <tr>
   <td>DataTriggers / PropertyTrigger / EventTrigger within Style.Triggers</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td></td>
  </tr>
  <tr>
@@ -165,13 +165,13 @@ Legend:
  <tr>
   <td>Implicit DataTemplate</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>Set the DataType property of the DataTemplate to the corresponding type and the template is then applied automatically to all instances of that particular type</td>
  </tr>
  <tr>
   <td>Binding in Style setter</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>Any other than TemplateBinding isn't support in a template/style within UWP</td>
  </tr>
  <tr>
@@ -200,38 +200,38 @@ This section primarily describes differences in properties at the object or clas
  </tr>
  <tr>
   <td>BorderBrush</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>✔</td>
   <td>This property does not exist in WPF's Grid. It was added in UWP to help flatten the visual tree instead of requiring the use of a Border.</td>
  </tr>
  <tr>
   <td>BorderThickness</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>✔</td>
   <td>This property does not exist in WPF's Grid. It was added in UWP to help flatten the visual tree instead of requiring the use of a Border.</td>
  </tr>
  <tr>
   <td>ColumnSpacing / RowSpacing</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>✔</td>
   <td>Similar to StackPanel.Spacing, the Grid's ColumnSpacing and RowSpacing properties provide a quick way to set a uniform horizortal and/or vertical distance between all child controls in a Grid. This was added to UWP and does not exist in WPF.</td>
  </tr>
  <tr>
   <td>CornerRadius</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>✔</td>
   <td>This property does not exist in WPF's Grid. It was added in UWP to help flatten the visual tree instead of requiring the use of a Border.</td>
  </tr>
  <tr>
   <td>Padding</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>✔</td>
   <td>This property does not exist in WPF's Grid. It was added in UWP to help flatten the visual tree instead of requiring the use of a Border.</td>
  </tr>
  <tr>
   <td>ShowGridLines</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>While this property exists in WPF, it was only intended for debugging purposes and not production quality code (https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.grid.showgridlines). As such, it was removed from UWP.</td>
  </tr>
 </table>
@@ -254,55 +254,55 @@ Additional properties such as WPF's `HasLogicalOrientation`, `HorizontalOffset` 
  </tr>
  <tr>
   <td>AreHorizontalSnapPointsRegular / AreScrollSnapPointsRegular / AreVerticalSnapPointsRegular</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>✔</td>
   <td>Information on snapping points does not exist in WPF's StackPanel.</td>
  </tr>
  <tr>
   <td>BackgroundSizing</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>✔</td>
   <td>https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel.backgroundsizing</td>
  </tr>
  <tr>
   <td>BorderBrush</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>✔</td>
   <td>This property does not exist in WPF's StackPanel. It was added in UWP to help flatten the visual tree instead of requiring the use of a Border.</td>
  </tr>
  <tr>
   <td>BorderThickness</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>✔</td>
   <td>This property does not exist in WPF's StackPanel. It was added in UWP to help flatten the visual tree instead of requiring the use of a Border.</td>
  </tr>
  <tr>
   <td>CornerRadius</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>✔</td>
   <td>This property does not exist in WPF's StackPanel. It was added in UWP to help flatten the visual tree instead of requiring the use of a Border.</td>
  </tr>
  <tr>
   <td>ExtentHeight</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.stackpanel.extentheight</td>
  </tr>
  <tr>
   <td>ExtentWidth</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.stackpanel.extentwidth</td>
  </tr>
  <tr>
   <td>Padding</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>✔</td>
   <td>This property does not exist in WPF's StackPanel. It was added in UWP to help flatten the visual tree instead of requiring the use of a Border.</td>
  </tr>
  <tr>
   <td>Spacing</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>✔</td>
   <td>The Spacing property is a quick way to set a uniform distance between all child controls in a StackPanel. This was added to UWP and does not exist in WPF.</td>
  </tr>
@@ -325,7 +325,7 @@ Additional properties such as WPF's `HasLogicalOrientation`, `HorizontalOffset` 
 <tr>
   <td>IsVisible / IsVisibleChanged Event</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>UWP has no way of tracking which controls are actually visible on the display. WPF has the UIElement.IsVisible property and the IsVisibleChanged event. This hinders the ability to optimize controls for performance.</td>
  </tr>
  <tr>
@@ -343,24 +343,24 @@ Additional properties such as WPF's `HasLogicalOrientation`, `HorizontalOffset` 
  <tr>
   <td>ClipToBounds</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>In WPF it's possible to clip child contents to the parents bounds by setting ClipToBounds to True. UWP doesn't have this property at all. The work-around is to use UIElement.Clip which can only do rectangular clipping.</td>
  </tr>
  <tr>
   <td>LayoutTransform</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>Layout transform is needed to transform elements before layouting. This allows for easily changing textbox direction and then putting it in a table. RenderTransform, as it applies after layout, does not resize parent controls for transformed children. See Transform3D for the UWP equivalent.</td>
  </tr>
  <tr>
   <td>Projection</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>✔</td>
   <td>A 3-D projection effect applied to the element. Is more or less obsolete, use Transform3D instead.</td>
  </tr>
  <tr>
   <td>Transform3D</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>✔</td>
   <td>Use the Transform3D property to apply a 3-D transform matrix to a XAML element. This lets you create effects where two-dimensional UI appears to exist in 3-D space relative to the user. Transform3D behaves much like RenderTransform, but allows transforms in three-dimensional space and not just two dimensions. It also support animations.</td>
  </tr>
@@ -379,14 +379,14 @@ Additional properties such as WPF's `HasLogicalOrientation`, `HorizontalOffset` 
  </tr>
  <tr>
   <td>Header / HeaderTemplate</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>✔</td>
   <td>Several controls in UWP support an additional Header content and HeaderTemplate property. This allows for quickly adding a description or title above a control which is useful in data-input scenarios. UWP controls with a header property include: ComboBox, DatePicker, ListViewBase, PasswordBox, TextBox, TimePicker, ToggleSwitch. Notably, the header property is not present on some controls such as: Button and CheckBox.</td>
  </tr>
  <tr>
   <td>ItemsControl. AlternationIndex / AlternationCount</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>WPF has an easy way to change the style of items in a list using ItemsControl.AlternationIndex and ItemsControl.AlternationCount. This allows, for example, to change the background color of a listed item for even/odd entries. UWP doesn't support this at all in any controls. The partial work-around in UWP is to create a new control deriving from the framework's implementation and override the PrepareContainerForItemOverride() method.</td>
  </tr>
  <tr>
@@ -415,25 +415,25 @@ Additional properties such as WPF's `HasLogicalOrientation`, `HorizontalOffset` 
  <tr>
   <td>Adorner</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>https://docs.microsoft.com/en-us/dotnet/framework/wpf/controls/adorners-overview</td>
  </tr>
  <tr>
   <td>Supplemental Shapes: Arrow, Callout, Star, etc</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>Several shapes present in WPF are missing in UWP.</td>
  </tr>
  <tr>
   <td>VisualBrush / DrawingBrush</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>VisualBrush is not a XAML brush in UWP. Instead, must fall back to composition brushes which are not 1:1 equivalent. DrawingBrush is not supported at all in UWP.</td>
  </tr>
  <tr>
   <td>Window</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>For some good reasons UWP has no concept of a window. This is fine for mobile devices but can be a problem for purely desktop applications. Without a window, there is no way to control an app's size or position. There are currently proposals to add this in the transition to WinUI 3.0.</td>
  </tr>
 </table>
@@ -450,19 +450,19 @@ Additional properties such as WPF's `HasLogicalOrientation`, `HorizontalOffset` 
  <tr>
   <td>Custom Cursor at runtime</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td></td>
  </tr>
  <tr>
   <td>Sub-pixel anti-aliasing</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>Anti-aliasing in UWP along with rendering in general is poor compared to WPF. It's assumed this is for performance reasons on mobile devices and the web (Silverlight).</td>
  </tr>
  <tr>
   <td>Nested Types in XAML</td>
   <td>✔</td>
-  <td>✖</td>
+  <td>❌</td>
   <td>Nesting different types in XAML is generally not possible in UWP. Code such as `&lt;ListBox.ItemsSource&gt;&lt;x:Array&gt;&lt;s:string&gt;foo&lt;s/:string&gt;&lt;x/:Array&gt;` works in WPF but not in UWP.</td>
  </tr>
  <tr>
