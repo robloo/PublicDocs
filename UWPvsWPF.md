@@ -188,9 +188,6 @@ This section primarily describes differences in properties at the object or clas
 
 **Grid**
 
-<details>
-  <summary>Differences</summary>
-
 <table>
  <tr>
    <th>Item</th>
@@ -236,14 +233,9 @@ This section primarily describes differences in properties at the object or clas
  </tr>
 </table>
 
-</details>
-
 **StackPanel**
 
 Additional properties such as WPF's `HasLogicalOrientation`, `HorizontalOffset` and `VerticalOffset` are purposely excluded from this section as they aren't considered useful.
-
-<details>
-  <summary>Differences</summary>
 
 <table>
  <tr>
@@ -308,12 +300,7 @@ Additional properties such as WPF's `HasLogicalOrientation`, `HorizontalOffset` 
  </tr>
 </table>
 
-</details>
-
 **UIElement**
-
-<details>
-  <summary>Differences</summary>
 
 <table>
  <tr>
@@ -365,8 +352,6 @@ Additional properties such as WPF's `HasLogicalOrientation`, `HorizontalOffset` 
   <td>Use the Transform3D property to apply a 3-D transform matrix to a XAML element. This lets you create effects where two-dimensional UI appears to exist in 3-D space relative to the user. Transform3D behaves much like RenderTransform, but allows transforms in three-dimensional space and not just two dimensions. It also support animations.</td>
  </tr>
 </table>
-
-</details>
 
 **Minor Changes**
 
