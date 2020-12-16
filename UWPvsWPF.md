@@ -1,4 +1,4 @@
-Last Updated 9 August 2020 | License CC BY-SA 4.0
+Last Updated 16 December 2020 | License CC BY-SA 4.0
 
 # Overview of WPF & UWP Differences
 
@@ -181,6 +181,8 @@ Legend:
   <td>`BasedOn={StaticResource {x:Type TextBlock}` isn't supported in UWP but works in WPF. Instead, BasedOn requires the use of a key which is a problem as not all default styles define one. This is a specific example of the missing x:Type markup extension in UWP.</td>
  </tr>
 </table>
+
+---
 
 ### Classes/Objects
 
@@ -422,6 +424,8 @@ Additional properties such as WPF's `HasLogicalOrientation`, `HorizontalOffset` 
   <td>For some good reasons UWP has no concept of a window. This is fine for mobile devices but can be a problem for purely desktop applications. Without a window, there is no way to control an app's size or position. There are currently proposals to add this in the transition to WinUI 3.0.</td>
  </tr>
 </table>
+
+---
 
 ### Other
 
