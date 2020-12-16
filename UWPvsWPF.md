@@ -491,6 +491,7 @@ This section describes the differences in controls in vanilla WPF and UWP (with 
 | &#10006;                 |	AppBarButton	          | |
 | &#10006;                 |	AppBarSeparator	       | |
 | &#10006;                 | AppBarToggleButton	    | |
+| &#10006;                 | AnimatedVisualPlayer   | First introduced in Windows UI Library version 2.1 |	
 | &#10006;                 |	AutoSuggestBox	        | |
 | Border                   |	Border	                | |
 | BulletDecorator	         |	&#10006;               | |
@@ -503,7 +504,7 @@ This section describes the differences in controls in vanilla WPF and UWP (with 
 | &#10006;                 |	ColorPicker	           | |
 | ComboBox	                | ComboBox               | |	
 | ToolBar                  |	CommandBar	            | |
-| &#10006;                 |	CommandBarFlyout	      | First introduced in the Windows UI Library |	
+| &#10006;                 |	CommandBarFlyout	      | First introduced in Windows UI Library version 2.0 |	
 | ContentControl           | ContentControl	        | |
 | ContentPresenter         |	ContentPresenter	      | |
 | DataGrid	                | &#10006;               | Available for UWP in the Windows Community Toolkit (albeit with many bugs) |
@@ -511,7 +512,7 @@ This section describes the differences in controls in vanilla WPF and UWP (with 
 | &#10006;                 |	DatePickerFlyout	      | |
 | DockPanel		              |	&#10006;               | Available for UWP in the Windows Community Toolkit |
 | DocumentViewer		         |	&#10006;               | |
-| &#10006;                 |	DropDownButton	        | First introduced in the Windows UI Library |
+| &#10006;                 |	DropDownButton	        | First introduced in Windows UI Library version 2.0 |
 | Expander	                | &#10006;               |	Available for UWP in the Windows Community Toolkit |
 | &#10006;                 |	FlipView	              | |
 | FlowDocumentPageViewer		 |	&#10006;               | |
@@ -527,20 +528,23 @@ This section describes the differences in controls in vanilla WPF and UWP (with 
 | &#10006;                 |	HubSection	            | |
 | &#10006;                 |	HyperlinkButton	       | |
 | Image                    |	Image	                 | |
+| &#10006;                 | InfoBar                | Provides interactive status and message information to the user. First introduced in Windows UI Library version 2.5 |
 | &#10006;                 |	InkCanvas	             | |
 | &#10006;                 |	InkToolbar	            | |
 | ItemsControl             |	ItemsControl	          | |
 | &#10006;                 |	ItemsPresenter	        | |
-| &#10006;                 |	ItemsRepeater	         | First introduced in the Windows UI Library |
+| &#10006;                 |	ItemsRepeater	         | First introduced in Windows UI Library version 2.1 |
 | Label		                  | &#10006;               | Exists in WPF to align with Windows Forms |
 | ListBox                  |	ListBox	               | |
 | ListView	                | ListView	              | |
 | &#10006;                 | MapControl	            | |
 | &#10006;                 |	MediaElement	          | |
 | &#10006;                 |	MediaTransportControls	| |
-| Menu                     |	MenuBar	               | First introduced in the Windows Community Toolkit then Windows UI Library |
+| Menu                     |	MenuBar	               | First introduced in the Windows Community Toolkit then Windows UI Library version 2.0 |
+| MenuItem                 | MenuBarItem            | First introduced in Windows UI Library version 2.0 |
 | ContextMenu	             | MenuFlyout	            | |
 | &#10006;                 |	NavigationView	        | |
+| &#10006;                 |	NumberBox     	        | First introduced in Windows UI Library version 2.3 |
 | Panel		                  | &#10006;               | |
 | &#10006;                 |	ParallaxView	          | |
 | PasswordBox              |	PasswordBox	           | |
@@ -553,9 +557,10 @@ This section describes the differences in controls in vanilla WPF and UWP (with 
 | &#10006;                 |	ProgressRing		         | |
 | &#10006;                 |	PullToRefresh		        | |
 | RadioButton	             | RadioButton		          | |
+| &#10006;   	             | RadioButtons		         | Container to easily create groups for RadioButtons (with accessiblity improvements, etc.) First introduced in Windows UI Library version 2.3 |
 | &#10006;                 |	RatingControl		        | |
 | Rectangle                |	Rectangle		            | |
-| &#10006;                 |	RefreshContainer	      | First introduced in the Windows UI Library |
+| &#10006;                 |	RefreshContainer	      | First introduced in Windows UI Library version 2.0 |
 | &#10006;                 |	RelativePanel		        | |
 | RepeatButton             |	RepeatButton	          | |
 | RichTextBox              |	RichEditBox	           | |
@@ -568,23 +573,23 @@ This section describes the differences in controls in vanilla WPF and UWP (with 
 | &#10006;                 |	SemanticZoom	          | |
 | Separator		              | &#10006;               | |
 | Slider	                  | Slider                 | |
-| &#10006;                 |	SplitButton	           | First introduced in the Windows UI Library |
+| &#10006;                 |	SplitButton	           | First introduced in Windows UI Library version 2.0 |
 | &#10006;                 |	SplitView	             | |
 | StackPanel	              | StackPanel	            | |
 | StatusBar		              | &#10006;               | No longer a UI convention |
-| &#10006;                 | SwipeControl	          | First introduced in the Windows UI Library |
-| TabControl	              | TabView	               | First introduced in the Windows UI Library but now exists as part of WinUI. Originally, Pivot was used to replace tabs. |
-| &#10006;                 |	TeachingTip            |	First introduced in the Windows UI Library |
+| &#10006;                 | SwipeControl	          | First introduced in Windows UI Library version 2.0 |
+| TabControl	              | TabView	               | First introduced in Windows UI Library version 2.2. Originally, Pivot was used to replace tabs. |
+| &#10006;                 |	TeachingTip            |	First introduced in Windows UI Library version 2.1 |
 | TextBlock                |	TextBlock	             | |
 | TextBox                  |	TextBox	               | |
 | &#10006;                 |	TimePicker	            | |
 | &#10006;                 |	TimePickerFlyout	      | |
 | ToggleButton             |	ToggleButton	          | |
-| &#10006;                 |	ToggleSplitButton	     | First introduced in the Windows UI Library |
+| &#10006;                 |	ToggleSplitButton	     | First introduced in Windows UI Library version 2.0 |
 | &#10006;                 |	ToggleSwitch	          | |
 | ToolTip	                 | ToolTip	               | |
 | TreeView                 |	TreeView	              | |
-| &#10006;                 |	TwoPaneView	           | First introduced in the Windows UI Library |
+| &#10006;                 |	TwoPaneView	           | |
 | &#10006;                 |	VariableSizedWrapGrid	 | |
 | Viewbox	                 | Viewbox	               | |
 | &#10006;                 | WebView	               | |
