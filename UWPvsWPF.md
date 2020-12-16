@@ -199,7 +199,7 @@ Legend:
 
 ### Classes/Objects
 
-This section primarily describes differences in properties at the object or class level. As the number of differences in this section may become quite large, classes and properties are listed alphabetically and grouped together where it makes sense.
+This section primarily describes differences in controls and properties at the object or class level. As the number of differences in this section may become quite large, classes and properties are listed alphabetically and grouped together where it makes sense. Only the most used and fundamental controls are included here. See the *Controls* section for a high-level understanding of all controls.
 
 **Grid**
 
