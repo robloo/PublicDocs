@@ -107,6 +107,13 @@ Legend:
   <td>The entire WPF data validation system including the classes/inferfaces: ValidationRule (and all standard implementations), Binding.ValidationRules, IDataErrorInfo, INotifyDataErrorInfo, Binding.ValidatesOnNotifyDataErrors, etc. is not implemented in UWP. This will be added in WinUI 3.0 but the story for using this within the UWP app model with WinUI 3.0 is less clear.</td>
  </tr>
  <tr>
+  <td>DependencyProperty.RegisterReadOnly / 
+  DependencyPropertyKey</td>
+  <td>✔</td>
+  <td>❌</td>
+  <td>Read-only dependency properties are used in WPF for collections and other properties that should never be set, even through binding. It is especially useful for control development. UWP doesn't support this and only implements get-only property accessors which still allow unwanted changes with binding.</td>
+ </tr>
+ <tr>
   <td>OneWayToSource BindingMode</td>
   <td>✔</td>
   <td>❌</td>
