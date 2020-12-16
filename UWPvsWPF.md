@@ -33,7 +33,7 @@ Legend:
   <td>x:Bind Extension</td>
   <td>❌</td>
   <td>✔</td>
-  <td>The x:Bind markup extension has become a powerful feature of UWP over WPF. Compiled function bindings can be used for nearly anything and can replace other missing features like MultiBinding in most situations (Importantly, x:Bind isn't supported in control templates so it cannot replace MultiBinding there). Other advantages of x:Bind include debugging support as well as increased performance because it's compiled.</td>
+  <td>The x:Bind markup extension has become a powerful feature of UWP over WPF. Compiled function bindings can be used for nearly anything and can replace other missing features like MultiBinding in most situations. Other advantages of x:Bind include debugging support as well as increased performance because it's compiled. UWP originally did not support x:Bind in control templates; however, support was added in Windows 10 version 1809.</td>
  </tr>
  <tr>
   <td>x:Load Attribute</td>
