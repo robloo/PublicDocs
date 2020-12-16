@@ -2,7 +2,7 @@ Last Updated 16 December 2020 | License CC BY-SA 4.0
 
 # Overview of WPF & UWP Differences
 
-The Universal Windows Platform (UWP) has its roots in SilverLight instead of being based on the Windows Presentation Foundation (WPF). UWP is implemented natively in C++ instead of WPF which was written in C# and C++ for lower-level functions. Due to being a completely different imlementation of XAML, designed to include more resource constrained devices, and support for more programming languages, there are several differences in UWP compared to WPF. These differences may be new functionality in UWP, slightly different ways of doing things or, more commonly, WPF features missing in UWP. These differences are not summarized by Microsoft which is prohibitive for developers familiar with WPF and that have to port existing code. This document is intended to provide an overview of the differences.
+The Universal Windows Platform (UWP) has its roots in SilverLight instead of being based on the Windows Presentation Foundation (WPF). UWP is implemented natively in C++ instead of WPF which was written in C# and C++ for lower-level functions. Due to being a completely different implementation of XAML, designed to include more resource constrained devices, and support for more programming languages, there are several differences in UWP compared to WPF. These differences may be new functionality in UWP, slightly different ways of doing things or, more commonly, WPF features missing in UWP. These differences are not summarized by Microsoft which is prohibitive for developers familiar with WPF and that have to port existing code. This document is intended to provide an overview of the differences.
 
 ## XAML / Object Model
 
@@ -69,7 +69,13 @@ Legend:
   <td>{DynamicResource} Extension</td>
   <td>✔</td>
   <td>❌</td>
-  <td>The dynamic resource markup extension which is fairly common in WPF doesn't exist in UWP. A partial work-around requires custom markup extensions.</td>
+  <td>The DynamicResource markup extension resolves and assigns the resource value to a XAML attribute at runtime only when its needed (as opposed to StaticResource which is resolved and assigned when XAML is first loaded). DynamicResource is fairly common in WPF but doesn't exist in UWP. A partial work-around requires custom markup extensions.</td>
+ </tr>
+ <tr>
+  <td>{ThemeResource} Extension</td>
+  <td>❌</td>
+  <td>✔</td>
+  <td>The ThemeResource markup extension resolves and assigns the resource value to a XAML attribute depending on the active theme (light/dark/high-contrast). Resource values are automatically re-evaluated when the theme changes.</td>
  </tr>
  <tr>
   <td>Full Markup Extension</td>
