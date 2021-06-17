@@ -40,7 +40,7 @@ Each framework performs differently - signifiantly in some places. The below tab
 | Pixel-perfect rendering       | ✔️｜⭐⭐⭐ | ❌          | ✔️｜⭐⭐⭐ |
 | Lookless controls             | ✔️｜⭐⭐⭐ | ❌          | ✔️｜⭐⭐⭐ |
 | Styling and Themes            | ✔️｜⭐⭐⭐ | ✔️｜⭐      | ✔️｜⭐⭐⭐ |
-| Supports uniform look and feel| ✔️｜⭐⭐⭐ | ✔️｜⭐      | ✔️｜⭐⭐⭐ |
+| Supports uniform look and feel| ✔️｜⭐⭐⭐ | ❌          | ✔️｜⭐⭐⭐ |
 | Per-Platform look and feel    | ❌          | ✔️｜⭐⭐⭐ | ✔️｜⭐      |
 | Native control integration    | ✔️｜⭐      | ✔️｜⭐⭐⭐ | ✔️｜⭐⭐⭐ |
 | XAML Sharing                  | ✔️｜⭐⭐   | ✔️｜⭐      | ✔️｜⭐⭐⭐ |
