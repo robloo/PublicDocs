@@ -33,39 +33,41 @@ Each framework performs differently - signifiantly in some places. The below tab
  * ✔️ means the feature is supported, ❌ means it is not
  * ⭐⭐⭐ is the highest/best rating, ⭐ is the lowest/worst
 
-|                            | Avalonia | MAUI     | Uno      |
-|----------------------------|----------|----------|----------|
-| MVVM Pattern               | ✔️｜⭐⭐⭐ | ✔️｜⭐⭐   | ✔️｜⭐⭐⭐ |
-| MVU Pattern                | ❌          | ✔️｜⭐      | ❌          |
-| Pixel-perfect rendering    | ✔️｜⭐⭐⭐ | ❌          | ✔️｜⭐⭐⭐ |
-| Lookless controls          | ✔️｜⭐⭐⭐ | ❌          | ✔️｜⭐⭐⭐ |
-| Styling and Themes         | ✔️｜⭐⭐⭐ | ✔️｜⭐      | ✔️｜⭐⭐⭐ |
-| Native control integration | ✔️｜⭐      | ✔️｜⭐⭐⭐ | ✔️｜⭐⭐⭐ |
-| XAML Sharing               | ✔️｜⭐⭐   | ✔️｜⭐      | ✔️｜⭐⭐⭐ |
-| C# Code-behind Sharing     | ✔️｜⭐⭐   | ✔️｜⭐      | ✔️｜⭐⭐⭐ |
-| Hot-reloading              | ❌          | ✔️｜⭐⭐⭐ | ✔️｜⭐⭐   |
-| 3rd Party Support          | ✔️｜⭐      | ✔️｜⭐⭐⭐ | ✔️｜⭐⭐   |
-| **Strategy & Development** |
-| Performance (theoretical)  | ⭐⭐⭐ | ⭐⭐   | ⭐⭐   |
-| Mobile app stability       | -       | ⭐⭐   | ⭐⭐   |
-| Desktop app stability      | ⭐⭐⭐ | ⭐⭐   | ⭐      |
-| Available Controls         | ⭐      | ⭐⭐   | ⭐⭐⭐ |
-| Code License               | ⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐   |
-| Free support               | ⭐      | ⭐⭐   | ⭐⭐⭐ |
-| Paid support               | ⭐⭐⭐ | ⭐⭐   | ⭐⭐⭐ |
-| Project speed              | ⭐      | ⭐⭐   | ⭐⭐⭐ |
-| Ease of contribution       | ⭐⭐⭐ | ⭐⭐   | ⭐⭐   |
-| Code-base readability      | ⭐⭐⭐ | ⭐      | ⭐⭐   |
-| **Platform Support** |
-| iOS/Android Mobile         | ❌          | ✔️｜⭐⭐⭐ | ✔️｜⭐⭐⭐ |
-| Windows Desktop            | ✔️｜⭐⭐   | ✔️｜⭐      | ✔️｜⭐⭐⭐ |
-| macOS Desktop              | ✔️｜⭐⭐⭐ | ✔️｜⭐     | ✔️｜⭐       |
-| Linux Desktop              | ✔️｜⭐⭐⭐ | ❌          | ✔️｜⭐      |
-| Web Browser (WASM)         | ❌          | ❌          | ✔️｜⭐⭐⭐ |
-| **Overall Platform Support** |
-| Mobile                     | ❌          | ✔️｜⭐⭐⭐ | ✔️｜⭐⭐⭐ |
-| Desktop                    | ✔️｜⭐⭐⭐ | ✔️｜⭐     | ✔️｜⭐       |
-| Web                        | ❌          | ❌          | ✔️｜⭐⭐⭐ |
+|                               | Avalonia | MAUI     | Uno      |
+|-------------------------------|----------|----------|----------|
+| MVVM Pattern                  | ✔️｜⭐⭐⭐ | ✔️｜⭐⭐   | ✔️｜⭐⭐⭐ |
+| MVU Pattern                   | ❌          | ✔️｜⭐      | ❌          |
+| Pixel-perfect rendering       | ✔️｜⭐⭐⭐ | ❌          | ✔️｜⭐⭐⭐ |
+| Lookless controls             | ✔️｜⭐⭐⭐ | ❌          | ✔️｜⭐⭐⭐ |
+| Styling and Themes            | ✔️｜⭐⭐⭐ | ✔️｜⭐      | ✔️｜⭐⭐⭐ |
+| Supports uniform look and feel| ✔️｜⭐⭐⭐ | ✔️｜⭐      | ✔️｜⭐⭐⭐ |
+| Per-Platform look and feel    | ❌          | ✔️｜⭐⭐⭐ | ✔️｜⭐      |
+| Native control integration    | ✔️｜⭐      | ✔️｜⭐⭐⭐ | ✔️｜⭐⭐⭐ |
+| XAML Sharing                  | ✔️｜⭐⭐   | ✔️｜⭐      | ✔️｜⭐⭐⭐ |
+| C# Code-behind Sharing        | ✔️｜⭐⭐   | ✔️｜⭐      | ✔️｜⭐⭐⭐ |
+| Hot-reloading                 | ❌          | ✔️｜⭐⭐⭐ | ✔️｜⭐⭐   |
+| 3rd Party Support             | ✔️｜⭐      | ✔️｜⭐⭐⭐ | ✔️｜⭐⭐   |
+| **Strategy & Development**    |
+| Performance (theoretical)     | ⭐⭐⭐ | ⭐⭐   | ⭐⭐   |
+| Mobile app stability          | -       | ⭐⭐   | ⭐⭐   |
+| Desktop app stability         | ⭐⭐⭐ | ⭐⭐   | ⭐      |
+| Available Controls            | ⭐      | ⭐⭐   | ⭐⭐⭐ |
+| Code License                  | ⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐   |
+| Free support                  | ⭐      | ⭐⭐   | ⭐⭐⭐ |
+| Paid support                  | ⭐⭐⭐ | ⭐⭐   | ⭐⭐⭐ |
+| Project speed                 | ⭐      | ⭐⭐   | ⭐⭐⭐ |
+| Ease of contribution          | ⭐⭐⭐ | ⭐⭐   | ⭐⭐   |
+| Code-base readability         | ⭐⭐⭐ | ⭐      | ⭐⭐   |
+| **Platform Support**          |
+| iOS/Android Mobile            | ❌          | ✔️｜⭐⭐⭐ | ✔️｜⭐⭐⭐ |
+| Windows Desktop               | ✔️｜⭐⭐   | ✔️｜⭐      | ✔️｜⭐⭐⭐ |
+| macOS Desktop                 | ✔️｜⭐⭐⭐ | ✔️｜⭐     | ✔️｜⭐       |
+| Linux Desktop                 | ✔️｜⭐⭐⭐ | ❌          | ✔️｜⭐      |
+| Web Browser (WASM)            | ❌          | ❌          | ✔️｜⭐⭐⭐ |
+| **Overall Platform Support**  |
+| Mobile                        | ❌          | ✔️｜⭐⭐⭐ | ✔️｜⭐⭐⭐ |
+| Desktop                       | ✔️｜⭐⭐⭐ | ✔️｜⭐     | ✔️｜⭐       |
+| Web                           | ❌          | ❌          | ✔️｜⭐⭐⭐ |
 
 Note the following:
  * The comparison is based on a lot of research and experience with the various frameworks; however, it is subjective in some areas. Also note that experience with Maui is least of the three which may bias rankings.
