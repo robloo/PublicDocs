@@ -90,10 +90,10 @@ On a per-platform basis there are frameworks that perform the best. This is also
 
 Note that:
  * Web/Wasm is a clear advantage of the Uno Platform. Avalonia will have difficulty competing here due to architecture differences (fully rendered with Skia).
- * Avalonia UI is the closest competition to Flutter. It fully renders itself on each platform using Skia. This has major performance benefits over the Uno Platform especially visible on macOS. In this way, Avalonia has the cleanest architecture of all frameworks and perhaps the brightest future.
+ * Avalonia UI is the closest competition to Flutter. It fully renders itself on each platform using Skia (or, optionally, Direct2D on Windows). This has major performance benefits over the Uno Platform especially visible on macOS. In this way, Avalonia has the cleanest architecture of all frameworks and lowest barrier of entry for community engagement.
  * Maui is not listed as best for any platform intentionally. Maui is most useful for small applications without complex UIs. Its usefulness - and ability to share code between platforms - quickly falls behind other frameworks for even moderate app complexity. However, there are certain line-of-business or simpler apps where Maui may be the better choice.
  * Avalonia is best for versions of Windows before Windows 10. While the Uno Platform also has a solution with its Skia backend, it falls behind considerably in features, stability and completeness.
- * As the table above shows, all platforms can be supported very well using two dialects of XAML: the WinUI dialect (formerly UWP) (for Windows and mobile with Uno Platform) and the Avalonia dialect for others. A technique for managing two versions of XAML in the same project and source code will be shared in a future article.
+ * As the table above shows, all platforms can be supported very well using two dialects of XAML: the WinUI/UWP dialect for Windows and mobile with Uno Platform and the Avalonia dialect for others. A technique for managing two versions of XAML in the same project and source code will be shared in a future article.
 
 ---
 
