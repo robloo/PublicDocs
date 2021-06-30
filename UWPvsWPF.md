@@ -501,6 +501,7 @@ This section describes the differences in controls in vanilla WPF and UWP (with 
 | &#10006;                 | AnimatedVisualPlayer   | First introduced in WinUI Library v2.1 |	
 | &#10006;                 |	AutoSuggestBox	        | |
 | Border                   |	Border	                | |
+| &#10006;                 |	BreadcrumbBar 	        | First introduced in WinUI Library v2.6 |
 | BulletDecorator	         |	&#10006;               | |
 | Button                   |	Button	                | |
 | DatePicker               |	CalendarDatePicker	    | UWP DatePicker is different from WPF DatePicker. The WPF DatePicker is closer to the UWP CalendarDatePicker in functionality. |
@@ -520,7 +521,7 @@ This section describes the differences in controls in vanilla WPF and UWP (with 
 | DockPanel		              |	&#10006;               | Available for UWP in the Windows Community Toolkit |
 | DocumentViewer		         |	&#10006;               | |
 | &#10006;                 |	DropDownButton	        | First introduced in WinUI Library v2.0 |
-| Expander	                | &#10006;               |	Available for UWP in the Windows Community Toolkit |
+| Expander	                | Expander               |	First introduced in WinUI Library v2.6. Also available for UWP in the Windows Community Toolkit |
 | &#10006;                 |	FlipView	              | |
 | FlowDocumentPageViewer		 |	&#10006;               | |
 | FlowDocumentReader		     |	&#10006;               | |
@@ -540,7 +541,7 @@ This section describes the differences in controls in vanilla WPF and UWP (with 
 | &#10006;                 |	InkToolbar	            | |
 | ItemsControl             |	ItemsControl	          | |
 | &#10006;                 |	ItemsPresenter	        | |
-| &#10006;                 |	ItemsRepeater	         | First introduced in WinUI Library v2.1 |
+| &#10006;                 |	ItemsRepeater	         | First introduced in WinUI Library v2.1 
 | Label		                  | &#10006;               | Exists in WPF to align with Windows Forms |
 | ListBox                  |	ListBox	               | |
 | ListView	                | ListView	              | |
@@ -556,6 +557,7 @@ This section describes the differences in controls in vanilla WPF and UWP (with 
 | &#10006;                 |	ParallaxView	          | |
 | PasswordBox              |	PasswordBox	           | |
 | &#10006;                 |	PersonPicture		        | |
+| &#10006;                 |	PipsPager     	        | First introduced in WinUI Library v2.6 |
 | &#10006;                 |	Pivot		                | |
 | &#10006;                 |	PivotItem		            | |
 | Popup                    |	Popup		                | |
@@ -602,6 +604,12 @@ This section describes the differences in controls in vanilla WPF and UWP (with 
 | &#10006;                 | WebView	               | |
 | WrapPanel		              | &#10006;               | Available for UWP in the Windows Community Toolkit |
 | Window	                  | &#10006;               |	There is no top-level window concept in UWP |
+| **Icons** |
+| &#10006;                 |	AnimatedIcon           | First introduced in WinUI Library v2.6 |
+| &#10006;                 |	BitmapIcon             | |
+| &#10006;                 |	FontIcon               | |
+| &#10006;                 |	ImageIcon              | First introduced in WinUI Library v2.6 |
+| &#10006;                 |	PathIcon               | |
 
 ## References
 
