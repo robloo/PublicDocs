@@ -541,7 +541,7 @@ This section describes the differences in controls in vanilla WPF and UWP (with 
 | &#10006;                 |	InkToolbar	            | |
 | ItemsControl             |	ItemsControl	          | |
 | &#10006;                 |	ItemsPresenter	        | |
-| &#10006;                 |	ItemsRepeater	         | First introduced in WinUI Library v2.1 
+| &#10006;                 |	ItemsRepeater	         | First introduced in WinUI Library v2.1 |
 | Label		                  | &#10006;               | Exists in WPF to align with Windows Forms |
 | ListBox                  |	ListBox	               | |
 | ListView	                | ListView	              | |
