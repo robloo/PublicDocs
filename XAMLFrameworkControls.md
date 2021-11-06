@@ -18,125 +18,125 @@ The initial list of supported Avalonia controls was taken from [Comparison of Av
 
 Note that *(WCT Version)* indicates a version of the control exists for UWP in the [Windows Community Toolkit](https://docs.microsoft.com/en-us/windows/communitytoolkit/).
 
-| WPF                        | Avalonia                |	UWP / Uno Platform       |	Comments |
-|----------------------------|-------------------------|--------------------------|----------|
-|🔲                          |🔲                        |✅ AppBarButton	          | |
-|🔲                          |🔲                        |✅ AppBarSeparator	       | |
-|🔲                          |🔲                        |✅ AppBarToggleButton	    | |
-|🔲                          |🔲                        |✅ AnimatedVisualPlayer <br/> *(WinUI 2.1)* | |
-|🔲                          |✅ AutoCompleteBox        |✅ AutoSuggestBox	        | |
-|✅ Border                   |✅ Border                 |✅ Border	                | |
-|🔲                          |🔲                        |✅ BreadcrumbBar <br/> *(WinUI 2.6)* | |
-|✅ BulletDecorator	         |✅ BulletDecorator        |🔲                        | |
-|✅ Button                   |✅ Button                 |✅ Button	                | |
-|✅ DatePicker               |✅ CalendarDatePicker     |✅ CalendarDatePicker	    | See differences |
-|✅ Calendar	                |✅ Calendar               |✅ CalendarView	          | |
-|✅ Canvas	                  |✅ Canvas                 |✅ Canvas                 | |	
-|🔲                          |🔲                        |✅ CaptureElement	        | |
-|✅ CheckBox                 |✅ CheckBox               |✅ CheckBox	              | |
-|🔲                          |🔲                        |✅ ColorPicker	           | |
-|✅ ComboBox	                |✅ ComboBox               |✅ ComboBox               | |	
-|✅ ToolBar                  |🔲                        |✅ CommandBar	            | |
-|🔲                          |🔲                        |✅ CommandBarFlyout <br/> *(WinUI 2.0)* | |	
-|✅ ContentControl           |✅ ContentControl         |✅ ContentControl	        | |
-|✅ ContentPresenter         |✅ ContentPresenter       |✅ ContentPresenter	      | |
-|✅ DataGrid	                |✅ DataGrid               |🔲 *(WCT Version)*        | See differences |
-|🔲                          |✅ DatePicker             |✅ DatePicker	            | |
-|🔲                          |✅ DatePickerFlyout       |✅ DatePickerFlyout	      | |
-|✅ DockPanel                |✅ DockPanel              |🔲 *WCT Version*          | |
-|✅ DocumentViewer		         |🔲                        |🔲                        | |
-|🔲                          |🔲                        |✅ DropDownButton <br/> *(WinUI 2.0)* | |
-|✅ Expander	                |✅ Expander               |✅ Expander <br/> *(WinUI 2.6)*       | *WCT Version* as well |
-|🔲                          |✅ Carousel               |✅ FlipView	              | |
-|✅ FlowDocumentPageViewer		 |🔲                        |🔲                        | |
-|✅ FlowDocumentReader		     |🔲                        |🔲                        | |
-|✅ FlowDocumentScrollViewer |🔲                        |🔲                        | |
-|🔲                          |✅ Flyout                 |✅ Flyout	                | |
-|✅ Frame                    |🔲                        |✅ Frame	                 | |
-|✅ Grid                     |✅ Grid                   |✅ Grid                   | |	
-|✅ GridSplitter	            |✅ GridSplitter           |🔲 *(WCT Version)*        | |
-|🔲                          |🔲                        |✅ GridView	              | |
-|✅ GroupBox		               |🔲                        |🔲                        | |
-|🔲                          |🔲                        |✅ Hub	                   | |
-|🔲                          |🔲                        |✅ HubSection	            | |
-|🔲                          |🔲                        |✅ HyperlinkButton	       | |
-|✅ Image                    |✅ Image                  |✅ Image	                 | |
-|🔲                          |🔲                        |✅ InfoBar <br/> *(WinUI 2.5)* | |
-|🔲                          |🔲                        |✅ InkCanvas	             | |
-|🔲                          |🔲                        |✅ InkToolbar             | |
-|✅ ItemsControl             |✅ ItemsControl           |✅ ItemsControl	          | |
-|🔲                          |✅ ItemsPresenter         |✅ ItemsPresenter	        | |
-|🔲                          |✅ ItemsRepeater          |✅ ItemsRepeater <br/> *(WinUI 2.1)* | |
-|✅ Label		                  |✅ Label                  |🔲                        | |
-|✅ ListBox                  |✅ ListBox                |✅ ListBox	               | |
-|✅ ListView	                |🔲                        |✅ ListView	              | |
-|🔲                          |🔲                        |✅ MapControl             | |
-|🔲                          |🔲                        |✅ MediaElement	          | |
-|🔲                          |🔲                        |✅ MediaTransportControls | |
-|✅ Menu                     |✅ Menu                   |✅ MenuBar <br/> *(WinUI 2.0)*     | |
-|✅ MenuItem                 |✅ MenuItem               |✅ MenuBarItem <br/> *(WinUI 2.0)* | |
-|🔲 	                        |✅ MenuFlyout             |✅ MenuFlyout	            | |
-|✅ ContextMenu	             |✅ ContextMenu            |🔲          	             | |
-|🔲                          |🔲                        |✅ NavigationView	        | |
-|🔲                          |🔲                        |✅ NumberBox <br/> *(WinUI 2.3)* | |
-|✅ Panel		                  |✅ Panel                  |🔲                        | |
-|🔲                          |🔲                        |✅ ParallaxView	          | |
-|✅ PasswordBox              |✅ TextBox *(PasswordChar)* |✅ PasswordBox	         | |
-|🔲                          |🔲                        |✅ PersonPicture.         | |
-|🔲                          |🔲                        |✅ PipsPager <br/> *(WinUI 2.6)* | |
-|🔲                          |🔲                        |✅ Pivot		                | |
-|🔲                          |🔲                        |✅ PivotItem		            | |
-|✅ Popup                    |✅ Popup                  |✅ Popup		                | |
-|✅ PrintDialog		            |🔲                        |🔲                        | |
-|✅ ProgressBar              |✅ ProgressBar            |✅ ProgressBar		          | |
-|🔲                          |🔲                        |✅ ProgressRing		         | |
-|🔲                          |🔲                        |✅ PullToRefresh		        | |
-|✅ RadioButton	             |✅ RadioButton            |✅ RadioButton		          | |
-|🔲   	                      |🔲                        |✅ RadioButtons <br/> *(WinUI 2.3)* | |
-|🔲                          |🔲                        |✅ RatingControl		        | |
-|✅ Rectangle                |✅ Rectangle              |✅ Rectangle		            | |
-|🔲                          |🔲                        |✅ RefreshContainer <br/> *(WinUI 2.0)* | |
-|🔲                          |✅ RelativePanel          |✅ RelativePanel		        | |
-|✅ RepeatButton             |✅ RepeatButton           |✅ RepeatButton	          | |
-|✅ RichTextBox              |🔲                        |✅ RichEditBox	           | |
-|🔲                          |🔲                        |✅ RichTextBlock	         | |
-|🔲                          |🔲                        |✅ RichTextBlockOverflow	 | |
-|✅ ScrollBar	               |✅ ScrollBar              |✅ ScrollBar	             | |
-|✅ ScrollContentPresenter   |✅ ScrollContentPresenter |✅ ScrollContentPresenter	| |
-|✅ ScrollViewer	            |✅ ScrollViewer           |✅ ScrollViewer	          | |
-|🔲                          |🔲                        |✅ SearchBox              | |
-|🔲                          |🔲                        |✅ SemanticZoom	          | |
-|✅ Separator		              |✅ Separator              |🔲                        | |
-|✅ Slider	                  |✅ Slider                 |✅ Slider                 | |
-|🔲                          |🔲                        |✅ SplitButton <br/> *(WinUI 2.0)* | |
-|🔲                          |✅ SplitView              |✅ SplitView	             | |
-|✅ StackPanel	              |✅ StackPanel             |✅ StackPanel	            | |
-|✅ StatusBar		              |🔲                        |🔲                        | |
-|🔲                          |🔲                        |✅ SwipeControl <br/> *(WinUI 2.0)* | |
-|✅ TabControl	              |✅ TabControl             |✅ TabView <br/> *(WinUI 2.2)*      | See differences |
-|✅ TabItem                  |✅ TabItem                |✅ TabViewItem <br/> *(WinUI 2.2)*  | See differences |           
-|🔲                          |🔲                        |✅ TeachingTip <br/> *(WinUI 2.1)*  | |
-|✅ TextBlock                |✅ TextBlock              |✅ TextBlock	             | |
-|✅ TextBox                  |✅ TextBox                |✅ TextBox	               | |
-|🔲                          |✅ TimePicker             |✅ TimePicker	            | |
-|🔲                          |✅ TimePickerFlyout       |✅ TimePickerFlyout	      | |
-|✅ ToggleButton             |✅ ToggleButton           |✅ ToggleButton	          | |
-|🔲                          |🔲                        |✅ ToggleSplitButton <br/> *(WinUI 2.0)* | |
-|🔲                          |✅ ToggleSwitch           |✅ ToggleSwitch	          | |
-|✅ ToolTip	                 |✅ ToolTip                |✅ ToolTip	               | |
-|✅ TreeView                 |✅ TreeView               |✅ TreeView	              | |
-|🔲                          |🔲                        |✅ TwoPaneView	           | |
-|🔲                          |🔲                        |✅ VariableSizedWrapGrid	 | |
-|✅ Viewbox	                 |✅ Viewbox                |✅ Viewbox	               | |
-|🔲                          |🔲                        |✅ WebView	               | |
-|✅ WrapPanel		              |✅ WrapPanel              |🔲 *(WCT Version)*        | |
-|✅ Window	                  |✅ Window                 |🔲                        | |
+| WPF                        | Avalonia                |	UWP / Uno Platform       |
+|----------------------------|-------------------------|--------------------------|
+|🔲                          |🔲                        |✅ AppBarButton	          |
+|🔲                          |🔲                        |✅ AppBarSeparator	       |
+|🔲                          |🔲                        |✅ AppBarToggleButton	    |
+|🔲                          |🔲                        |✅ AnimatedVisualPlayer <br/> *(WinUI 2.1)* |
+|🔲                          |✅ AutoCompleteBox        |✅ AutoSuggestBox	        |
+|✅ Border                   |✅ Border                 |✅ Border	                |
+|🔲                          |🔲                        |✅ BreadcrumbBar <br/> *(WinUI 2.6)* |
+|✅ BulletDecorator	         |✅ BulletDecorator        |🔲                        |
+|✅ Button                   |✅ Button                 |✅ Button	                |
+|✅ DatePicker               |✅ CalendarDatePicker     |✅ CalendarDatePicker	    |
+|✅ Calendar	                |✅ Calendar               |✅ CalendarView	          |
+|✅ Canvas	                  |✅ Canvas                 |✅ Canvas                 |
+|🔲                          |🔲                        |✅ CaptureElement	        |
+|✅ CheckBox                 |✅ CheckBox               |✅ CheckBox	              |
+|🔲                          |🔲                        |✅ ColorPicker	           |
+|✅ ComboBox	                |✅ ComboBox               |✅ ComboBox               |
+|✅ ToolBar                  |🔲                        |✅ CommandBar	            |
+|🔲                          |🔲                        |✅ CommandBarFlyout <br/> *(WinUI 2.0)* |
+|✅ ContentControl           |✅ ContentControl         |✅ ContentControl	        |
+|✅ ContentPresenter         |✅ ContentPresenter       |✅ ContentPresenter	      |
+|✅ DataGrid	                |✅ DataGrid               |🔲 *(WCT Version)*        |
+|🔲                          |✅ DatePicker             |✅ DatePicker	            |
+|🔲                          |✅ DatePickerFlyout       |✅ DatePickerFlyout	      |
+|✅ DockPanel                |✅ DockPanel              |🔲 *WCT Version*          |
+|✅ DocumentViewer		         |🔲                        |🔲                        |
+|🔲                          |🔲                        |✅ DropDownButton <br/> *(WinUI 2.0)* |
+|✅ Expander	                |✅ Expander               |✅ Expander <br/> *(WinUI 2.6)*       |
+|🔲                          |✅ Carousel               |✅ FlipView	              |
+|✅ FlowDocumentPageViewer		 |🔲                        |🔲                        |
+|✅ FlowDocumentReader		     |🔲                        |🔲                        |
+|✅ FlowDocumentScrollViewer |🔲                        |🔲                        |
+|🔲                          |✅ Flyout                 |✅ Flyout	                |
+|✅ Frame                    |🔲                        |✅ Frame	                 |
+|✅ Grid                     |✅ Grid                   |✅ Grid                   |
+|✅ GridSplitter	            |✅ GridSplitter           |🔲 *(WCT Version)*        |
+|🔲                          |🔲                        |✅ GridView	              |
+|✅ GroupBox		               |🔲                        |🔲                        |
+|🔲                          |🔲                        |✅ Hub	                   |
+|🔲                          |🔲                        |✅ HubSection	            |
+|🔲                          |🔲                        |✅ HyperlinkButton	       |
+|✅ Image                    |✅ Image                  |✅ Image	                 |
+|🔲                          |🔲                        |✅ InfoBar <br/> *(WinUI 2.5)* |
+|🔲                          |🔲                        |✅ InkCanvas	             |
+|🔲                          |🔲                        |✅ InkToolbar             |
+|✅ ItemsControl             |✅ ItemsControl           |✅ ItemsControl	          |
+|🔲                          |✅ ItemsPresenter         |✅ ItemsPresenter	        |
+|🔲                          |✅ ItemsRepeater          |✅ ItemsRepeater <br/> *(WinUI 2.1)* |
+|✅ Label		                  |✅ Label                  |🔲                        |
+|✅ ListBox                  |✅ ListBox                |✅ ListBox	               |
+|✅ ListView	                |🔲                        |✅ ListView	              |
+|🔲                          |🔲                        |✅ MapControl             |
+|🔲                          |🔲                        |✅ MediaElement	          |
+|🔲                          |🔲                        |✅ MediaTransportControls |
+|✅ Menu                     |✅ Menu                   |✅ MenuBar <br/> *(WinUI 2.0)*     |
+|✅ MenuItem                 |✅ MenuItem               |✅ MenuBarItem <br/> *(WinUI 2.0)* |
+|🔲 	                        |✅ MenuFlyout             |✅ MenuFlyout	            |
+|✅ ContextMenu	             |✅ ContextMenu            |🔲          	             |
+|🔲                          |🔲                        |✅ NavigationView	        |
+|🔲                          |🔲                        |✅ NumberBox <br/> *(WinUI 2.3)* |
+|✅ Panel		                  |✅ Panel                  |🔲                        |
+|🔲                          |🔲                        |✅ ParallaxView	          |
+|✅ PasswordBox              |✅ TextBox *(PasswordChar)* |✅ PasswordBox	         |
+|🔲                          |🔲                        |✅ PersonPicture.         |
+|🔲                          |🔲                        |✅ PipsPager <br/> *(WinUI 2.6)* |
+|🔲                          |🔲                        |✅ Pivot		                |
+|🔲                          |🔲                        |✅ PivotItem		            |
+|✅ Popup                    |✅ Popup                  |✅ Popup		                |
+|✅ PrintDialog		            |🔲                        |🔲                        |
+|✅ ProgressBar              |✅ ProgressBar            |✅ ProgressBar		          |
+|🔲                          |🔲                        |✅ ProgressRing		         |
+|🔲                          |🔲                        |✅ PullToRefresh		        |
+|✅ RadioButton	             |✅ RadioButton            |✅ RadioButton		          |
+|🔲   	                      |🔲                        |✅ RadioButtons <br/> *(WinUI 2.3)* |
+|🔲                          |🔲                        |✅ RatingControl		        |
+|✅ Rectangle                |✅ Rectangle              |✅ Rectangle		            |
+|🔲                          |🔲                        |✅ RefreshContainer <br/> *(WinUI 2.0)* |
+|🔲                          |✅ RelativePanel          |✅ RelativePanel		        |
+|✅ RepeatButton             |✅ RepeatButton           |✅ RepeatButton	          |
+|✅ RichTextBox              |🔲                        |✅ RichEditBox	           |
+|🔲                          |🔲                        |✅ RichTextBlock	         |
+|🔲                          |🔲                        |✅ RichTextBlockOverflow	 |
+|✅ ScrollBar	               |✅ ScrollBar              |✅ ScrollBar	             |
+|✅ ScrollContentPresenter   |✅ ScrollContentPresenter |✅ ScrollContentPresenter	|
+|✅ ScrollViewer	            |✅ ScrollViewer           |✅ ScrollViewer	          |
+|🔲                          |🔲                        |✅ SearchBox              |
+|🔲                          |🔲                        |✅ SemanticZoom	          |
+|✅ Separator		              |✅ Separator              |🔲                        |
+|✅ Slider	                  |✅ Slider                 |✅ Slider                 |
+|🔲                          |🔲                        |✅ SplitButton <br/> *(WinUI 2.0)* |
+|🔲                          |✅ SplitView              |✅ SplitView	             |
+|✅ StackPanel	              |✅ StackPanel             |✅ StackPanel	            |
+|✅ StatusBar		              |🔲                        |🔲                        |
+|🔲                          |🔲                        |✅ SwipeControl <br/> *(WinUI 2.0)* |
+|✅ TabControl	              |✅ TabControl             |✅ TabView <br/> *(WinUI 2.2)*      |
+|✅ TabItem                  |✅ TabItem                |✅ TabViewItem <br/> *(WinUI 2.2)*  |         
+|🔲                          |🔲                        |✅ TeachingTip <br/> *(WinUI 2.1)*  |
+|✅ TextBlock                |✅ TextBlock              |✅ TextBlock	             |
+|✅ TextBox                  |✅ TextBox                |✅ TextBox	               |
+|🔲                          |✅ TimePicker             |✅ TimePicker	            |
+|🔲                          |✅ TimePickerFlyout       |✅ TimePickerFlyout	      |
+|✅ ToggleButton             |✅ ToggleButton           |✅ ToggleButton	          |
+|🔲                          |🔲                        |✅ ToggleSplitButton <br/> *(WinUI 2.0)* |
+|🔲                          |✅ ToggleSwitch           |✅ ToggleSwitch	          |
+|✅ ToolTip	                 |✅ ToolTip                |✅ ToolTip	               |
+|✅ TreeView                 |✅ TreeView               |✅ TreeView	              |
+|🔲                          |🔲                        |✅ TwoPaneView	           |
+|🔲                          |🔲                        |✅ VariableSizedWrapGrid	 |
+|✅ Viewbox	                 |✅ Viewbox                |✅ Viewbox	               |
+|🔲                          |🔲                        |✅ WebView	               |
+|✅ WrapPanel		              |✅ WrapPanel              |🔲 *(WCT Version)*        |
+|✅ Window	                  |✅ Window                 |🔲                        |
 | **Icons** |
-|🔲                          |🔲                        |✅ AnimatedIcon <br/> *(WinUI 2.6)* | |
-|🔲                          |🔲                        |✅ BitmapIcon             | |
-|🔲                          |🔲                        |✅ FontIcon               | |
-|🔲                          |🔲                        |✅ ImageIcon <br/> *(WinUI 2.6)* | |
-|🔲                          |✅ PathIcon               |✅ PathIcon               | |
+|🔲                          |🔲                        |✅ AnimatedIcon <br/> *(WinUI 2.6)* |
+|🔲                          |🔲                        |✅ BitmapIcon             |
+|🔲                          |🔲                        |✅ FontIcon               |
+|🔲                          |🔲                        |✅ ImageIcon <br/> *(WinUI 2.6)* |
+|🔲                          |✅ PathIcon               |✅ PathIcon               |
 
 ## Control Differences
 
