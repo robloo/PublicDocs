@@ -18,7 +18,7 @@ The initial list of supported Avalonia controls was taken from [Comparison of Av
 
 Note that *(WCT Version)* indicates a version of the control exists for UWP in the [Windows Community Toolkit](https://docs.microsoft.com/en-us/windows/communitytoolkit/).
 
-| WPF                        | Avalonia                |	UWP                      |	Comments |
+| WPF                        | Avalonia                |	UWP / Uno Platform       |	Comments |
 |----------------------------|-------------------------|--------------------------|----------|
 |🔲                          |🔲                        |✅ AppBarButton	          | |
 |🔲                          |🔲                        |✅ AppBarSeparator	       | |
