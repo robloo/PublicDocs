@@ -1,3 +1,5 @@
+Last Updated 06 November 2021 | License CC BY-SA 4.0
+
 # XAML Framework Controls
 
 This document lists supported controls for each XAML framework excluding some primitives and shapes (Ellipse, Rect, etc.). It also describes some of the differences in implemenation or usage where appropriate. 
@@ -14,122 +16,132 @@ As WPF is the first XAML framework, it occurs first and all others are listed al
 
 | WPF |	UWP |	Comments |
 |-----|-----|----------|
-| &#10006;                 |	AppBarButton	          | |
-| &#10006;                 |	AppBarSeparator	       | |
-| &#10006;                 | AppBarToggleButton	    | |
-| &#10006;                 | AnimatedVisualPlayer <br/> *(WinUI v2.1)* |  |	
-| &#10006;                 |	AutoSuggestBox	        | |
-| Border                   |	Border	                | |
-| &#10006;                 |	BreadcrumbBar <br/> *(WinUI v2.6)*	        | |
-| BulletDecorator	         |	&#10006;               | |
-| Button                   |	Button	                | |
-| DatePicker               |	CalendarDatePicker	    | See below section |
-| Calendar	                | CalendarView	          | |
-| Canvas	                  | Canvas                 | |	
-| &#10006;                 |	CaptureElement	        | |
-| CheckBox                 |	CheckBox	              | |
-| &#10006;                 |	ColorPicker	           | |
-| ComboBox	                | ComboBox               | |	
-| ToolBar                  |	CommandBar	            | |
-| &#10006;                 |	CommandBarFlyout <br/> *(WinUI v2.0)*	      | |	
-| ContentControl           | ContentControl	        | |
-| ContentPresenter         |	ContentPresenter	      | |
-| DataGrid	               | &#10006;               | Available for UWP in the Windows Community Toolkit (albeit with many bugs) |
-| &#10006;                 |	DatePicker	            | A picker to select a date without a calendar view does not exist in WPF. |
-| &#10006;                 |	DatePickerFlyout	      | |
-| DockPanel		              |	&#10006;               | Available for UWP in the Windows Community Toolkit |
-| DocumentViewer		         |	&#10006;               | |
-| &#10006;                 |	DropDownButton	        | First introduced in WinUI Library v2.0 |
-| Expander	                | Expander               |	First introduced in WinUI Library v2.6. Also available for UWP in the Windows Community Toolkit |
-| &#10006;                 |	FlipView	              | |
-| FlowDocumentPageViewer		 |	&#10006;               | |
-| FlowDocumentReader		     |	&#10006;               | |
-| FlowDocumentScrollViewer |	&#10006;               | |
-| &#10006;                 |	Flyout	                | |
-| Frame                    |	Frame	                 | |
-| Grid                     |	Grid                   | |	
-| GridSplitter	            | &#10006;               |	Available for UWP in the Windows Community Toolkit |
-| &#10006;                 |	GridView	              | |
-| GroupBox		               | &#10006;               | |
-| &#10006;                 |	Hub	                   | |
-| &#10006;                 |	HubSection	            | |
-| &#10006;                 |	HyperlinkButton	       | |
-| Image                    |	Image	                 | |
-| &#10006;                 | InfoBar                | Provides interactive status and message information to the user. First introduced in WinUI Library v2.5 |
-| &#10006;                 |	InkCanvas	             | |
-| &#10006;                 |	InkToolbar	            | |
-| ItemsControl             |	ItemsControl	          | |
-| &#10006;                 |	ItemsPresenter	        | |
-| &#10006;                 |	ItemsRepeater	         | First introduced in WinUI Library v2.1 |
-| Label		                  | &#10006;               | Exists in WPF to align with Windows Forms |
-| ListBox                  |	ListBox	               | |
-| ListView	                | ListView	              | |
-| &#10006;                 | MapControl	            | |
-| &#10006;                 |	MediaElement	          | |
-| &#10006;                 |	MediaTransportControls	| |
-| Menu                     |	MenuBar	               | First introduced in the Windows Community Toolkit then WinUI Library v2.0 |
-| MenuItem                 | MenuBarItem            | First introduced in WinUI Library v2.0 |
-| ContextMenu	             | MenuFlyout	            | |
-| &#10006;                 |	NavigationView	        | |
-| &#10006;                 |	NumberBox     	        | First introduced in WinUI Library v2.3 |
-| Panel		                  | &#10006;               | |
-| &#10006;                 |	ParallaxView	          | |
-| PasswordBox              |	PasswordBox	           | |
-| &#10006;                 |	PersonPicture		        | |
-| &#10006;                 |	PipsPager     	        | First introduced in WinUI Library v2.6 |
-| &#10006;                 |	Pivot		                | |
-| &#10006;                 |	PivotItem		            | |
-| Popup                    |	Popup		                | |
-| PrintDialog		            |	&#10006;               | |
-| ProgressBar              |	ProgressBar		          | |
-| &#10006;                 |	ProgressRing		         | Updated to use Lottie animations in WinUI Library v2.5-v2.6 |
-| &#10006;                 |	PullToRefresh		        | |
-| RadioButton	             | RadioButton		          | |
-| &#10006;   	             | RadioButtons		         | Container to easily create groups for RadioButtons (with accessiblity improvements, etc.) First introduced in WinUI Library v2.3 |
-| &#10006;                 |	RatingControl		        | |
-| Rectangle                |	Rectangle		            | |
-| &#10006;                 |	RefreshContainer	      | First introduced in WinUI Library v2.0 |
-| &#10006;                 |	RelativePanel		        | |
-| RepeatButton             |	RepeatButton	          | |
-| RichTextBox              |	RichEditBox	           | |
-| &#10006;                 |	RichTextBlock	         | |
-| &#10006;                 |	RichTextBlockOverflow	 | |
-| ScrollBar	               | ScrollBar	             | |
-| ScrollContentPresenter   |	ScrollContentPresenter	| |
-| ScrollViewer	            | ScrollViewer	          | |
-| &#10006;                 | SearchBox              | |
-| &#10006;                 |	SemanticZoom	          | |
-| Separator		              | &#10006;               | |
-| Slider	                  | Slider                 | |
-| &#10006;                 |	SplitButton	           | First introduced in WinUI Library v2.0 |
-| &#10006;                 |	SplitView	             | |
-| StackPanel	              | StackPanel	            | |
-| StatusBar		              | &#10006;               | No longer a UI convention |
-| &#10006;                 | SwipeControl	          | First introduced in WinUI Library v2.0 |
-| TabControl	              | TabView	               | First introduced in WinUI Library v2.2. Originally, Pivot was used to replace tabs. |
-| &#10006;                 |	TeachingTip            |	First introduced in WinUI Library v2.1 |
-| TextBlock                |	TextBlock	             | |
-| TextBox                  |	TextBox	               | |
-| &#10006;                 |	TimePicker	            | |
-| &#10006;                 |	TimePickerFlyout	      | |
-| ToggleButton             |	ToggleButton	          | |
-| &#10006;                 |	ToggleSplitButton	     | First introduced in WinUI Library v2.0 |
-| &#10006;                 |	ToggleSwitch	          | |
-| ToolTip	                 | ToolTip	               | |
-| TreeView                 |	TreeView	              | |
-| &#10006;                 |	TwoPaneView	           | |
-| &#10006;                 |	VariableSizedWrapGrid	 | |
-| Viewbox	                 | Viewbox	               | |
-| &#10006;                 | WebView	               | |
-| WrapPanel		              | &#10006;               | Available for UWP in the Windows Community Toolkit |
-| Window	                  | &#10006;               |	There is no top-level window concept in UWP |
+|🔲                          |✅ AppBarButton	         | |
+|🔲                          |✅ AppBarSeparator	       | |
+|🔲                          |✅ AppBarToggleButton	   | |
+|🔲                          |✅ AnimatedVisualPlayer <br/> *(WinUI 2.1)* | |
+|🔲                          |✅ AutoSuggestBox	       | |
+|✅ Border                   |✅ Border	                | |
+|🔲                          |✅ BreadcrumbBar <br/> *(WinUI 2.6)* | |
+|✅ BulletDecorator	        |🔲                        | |
+|✅ Button                   |✅ Button	                | |
+|✅ DatePicker               |✅ CalendarDatePicker	    | See differences |
+|✅ Calendar	                |✅ CalendarView	          | |
+|✅ Canvas	                  |✅ Canvas                 | |	
+|🔲                          |✅ CaptureElement	       | |
+|✅ CheckBox                 |✅ CheckBox	              | |
+|🔲                          |✅ ColorPicker	           | |
+|✅ ComboBox	                |✅ ComboBox               | |	
+|✅ ToolBar                  |✅ CommandBar	            | |
+|🔲                          |✅ CommandBarFlyout <br/> *(WinUI 2.0)* | |	
+|✅ ContentControl           |✅ ContentControl	        | |
+|✅ ContentPresenter         |✅ ContentPresenter	      | |
+|✅ DataGrid	                |🔲 *(WCT Version)*        | See differences |
+|🔲                          |✅ DatePicker	           | |
+|🔲                          |✅ DatePickerFlyout	     | |
+|✅ DockPanel		            |🔲 *WCT Version*          | |
+|✅ DocumentViewer		        |🔲                        | |
+|🔲                          |✅ DropDownButton <br/> *(WinUI 2.0)* | |
+|✅ Expander	                |✅ Expander <br/> *(WinUI 2.6)* | *WCT Version* as well |
+|🔲                          |✅ FlipView	             | |
+|✅ FlowDocumentPageViewer		|🔲                        | |
+|✅ FlowDocumentReader		    |🔲                        | |
+|✅ FlowDocumentScrollViewer |🔲                        | |
+|🔲                          |✅ Flyout	               | |
+|✅ Frame                    |✅ Frame	                | |
+|✅ Grid                     |✅ Grid                   | |	
+|✅ GridSplitter	            |🔲 *(WCT Version)*        | |
+|🔲                          |✅ GridView	             | |
+|✅ GroupBox		              |🔲                        | |
+|🔲                          |✅ Hub	                   | |
+|🔲                          |✅ HubSection	           | |
+|🔲                          |✅ HyperlinkButton	       | |
+|✅ Image                    |✅ Image	                | |
+|🔲                          |✅ InfoBar <br/> *(WinUI 2.5)* | |
+|🔲                          |✅ InkCanvas	             | |
+|🔲                          |✅ InkToolbar             | |
+|✅ ItemsControl             |✅ ItemsControl	          | |
+|🔲                          |✅ ItemsPresenter	       | |
+|🔲                          |✅ ItemsRepeater <br/> *(WinUI 2.1)* | |
+|✅ Label		                |🔲                        | |
+|✅ ListBox                  |✅ ListBox	              | |
+|✅ ListView	                |✅ ListView	              | |
+|🔲                          |✅ MapControl             | |
+|🔲                          |✅ MediaElement	         | |
+|🔲                          |✅ MediaTransportControls | |
+|✅ Menu                     |✅ MenuBar <br/> *(WinUI 2.0)* | |
+|✅ MenuItem                 |✅ MenuBarItem <br/> *(WinUI 2.0)* | |
+|✅ ContextMenu	            |✅ MenuFlyout	            | |
+|🔲                          |✅ NavigationView	       | |
+|🔲                          |✅ NumberBox <br/> *(WinUI 2.3)* | |
+|✅ Panel		                |🔲                        | |
+|🔲                          |✅ ParallaxView	         | |
+|✅ PasswordBox              |✅ PasswordBox	          | |
+|🔲                          |✅ PersonPicture		       | |
+|🔲                          |✅ PipsPager <br/> *(WinUI 2.6)* | |
+|🔲                          |✅ Pivot		               | |
+|🔲                          |✅ PivotItem		           | |
+|✅ Popup                    |✅ Popup		              | |
+|✅ PrintDialog		          |🔲                        | |
+|✅ ProgressBar              |✅ ProgressBar		        | |
+|🔲                          |✅ ProgressRing		       | |
+|🔲                          |✅ PullToRefresh		       | |
+|✅ RadioButton	            |✅ RadioButton		        | |
+|🔲   	                     |✅ RadioButtons <br/> *(WinUI 2.3)* | |
+|🔲                          |✅ RatingControl		       | |
+|✅ Rectangle                |✅ Rectangle		          | |
+|🔲                          |✅ RefreshContainer <br/> *(WinUI 2.0)* | |
+|🔲                          |✅ RelativePanel		       | |
+|✅ RepeatButton             |✅ RepeatButton	          | |
+|✅ RichTextBox              |✅ RichEditBox	          | |
+|🔲                          |✅ RichTextBlock	         | |
+|🔲                          |✅ RichTextBlockOverflow	 | |
+|✅ ScrollBar	              |✅ ScrollBar	            | |
+|✅ ScrollContentPresenter   |✅ ScrollContentPresenter	| |
+|✅ ScrollViewer	            |✅ ScrollViewer	          | |
+|🔲                          |✅ SearchBox              | |
+|🔲                          |✅ SemanticZoom	         | |
+|✅ Separator		            |🔲                        | |
+|✅ Slider	                  |✅ Slider                 | |
+|🔲                          |✅ SplitButton <br/> *(WinUI 2.0)* | |
+|🔲                          |✅ SplitView	             | |
+|✅ StackPanel	              |✅ StackPanel	            | |
+|✅ StatusBar		            |🔲                        | |
+|🔲                          |✅ SwipeControl <br/> *(WinUI 2.0)* | |
+|✅ TabControl	              |✅ TabView <br/> *(WinUI 2.2)* | |
+|🔲                          |✅ TeachingTip <br/> *(WinUI 2.1)* | |
+|✅ TextBlock                |✅ TextBlock	            | |
+|✅ TextBox                  |✅ TextBox	              | |
+|🔲                          |✅ TimePicker	           | |
+|🔲                          |✅ TimePickerFlyout	     | |
+|✅ ToggleButton             |✅ ToggleButton	          | |
+|🔲                          |✅ ToggleSplitButton <br/> *(WinUI 2.0)* | |
+|🔲                          |✅ ToggleSwitch	         | |
+|✅ ToolTip	                |✅ ToolTip	              | |
+|✅ TreeView                 |✅ TreeView	              | |
+|🔲                          |✅ TwoPaneView	           | |
+|🔲                          |✅ VariableSizedWrapGrid	 | |
+|✅ Viewbox	                |✅ Viewbox	              | |
+|🔲                          |✅ WebView	               | |
+|✅ WrapPanel		            |🔲 *(WCT Version)*        | |
+|✅ Window	                  |🔲                        | |
 | **Icons** |
-| &#10006;                 |	AnimatedIcon           | First introduced in WinUI Library v2.6 |
-| &#10006;                 |	BitmapIcon             | |
-| &#10006;                 |	FontIcon               | |
-| &#10006;                 |	ImageIcon              | First introduced in WinUI Library v2.6 |
-| &#10006;                 |	PathIcon               | |
+|🔲                          |✅ AnimatedIcon <br/> *(WinUI 2.6)* | |
+|🔲                          |✅ BitmapIcon             | |
+|🔲                          |✅ FontIcon               | |
+|🔲                          |✅ ImageIcon <br/> *(WinUI 2.6)* | |
+|🔲                          |✅ PathIcon               | |
+
+Note that *(WCT Version)* indicates a version of the control exists for UWP in the [Windows Community Toolkit](https://docs.microsoft.com/en-us/windows/communitytoolkit/).
 
 ## Control Differences
 
- * The UWP DatePicker is different from WPF's DatePicker. The WPF DatePicker is closer to the UWP CalendarDatePicker in functionality.
+ 1. The UWP `DatePicker` is different from WPF's `DatePicker`. The WPF `DatePicker` is closer to the UWP `CalendarDatePicker` in functionality as they both have a drop-down calendar. A picker to select a date without a calendar view does not exist in WPF.
+ 1. The `DataGrid` in both Avalonia and UWP's Windows Community Toolkit is based on the Silverlight version of the control -- not the full-featured WPF version. As such, WPF's `DataGrid` is more powerful in certain areas. In addition, the Windows Community Toolkit version of the control has many bugs that Microsoft announced they will not fix. Avalonia, however, makes an attempt to fix these issues.
+ 1. UWP's `TabView` is designed for top-level document navigation only. It is not always a good replacement for `TabControl` in WPF. Instead, UWP's `Pivot` control is sometimes used for tab functionality.
+ 1. `RadioButtons` is a container to easily create groups of individual `RadioButton` controls (with accessiblity improvements, etc.)
+ 1. `ProgressRing` was updated to use Lottie animations in WinUI Library v2.5-v2.6
+
+## License
+
+This document is licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). For full text see: https://creativecommons.org/licenses/by-sa/4.0/legalcode
