@@ -51,7 +51,7 @@ Note that *(WCT Version)* indicates a version of the control exists for UWP in t
 |✅ FlowDocumentPageViewer		 |🔲                        |🔲                        | |
 |✅ FlowDocumentReader		     |🔲                        |🔲                        | |
 |✅ FlowDocumentScrollViewer |🔲                        |🔲                        | |
-|🔲                          |🔲                        |✅ Flyout	                | |
+|🔲                          |✅ Flyout                 |✅ Flyout	                | |
 |✅ Frame                    |🔲                        |✅ Frame	                 | |
 |✅ Grid                     |✅ Grid                   |✅ Grid                   | |	
 |✅ GridSplitter	            |✅ GridSplitter           |🔲 *(WCT Version)*        | |
@@ -75,7 +75,8 @@ Note that *(WCT Version)* indicates a version of the control exists for UWP in t
 |🔲                          |🔲                        |✅ MediaTransportControls | |
 |✅ Menu                     |✅ Menu                   |✅ MenuBar <br/> *(WinUI 2.0)*     | |
 |✅ MenuItem                 |✅ MenuItem               |✅ MenuBarItem <br/> *(WinUI 2.0)* | |
-|✅ ContextMenu	             |✅ ContextMenu            |✅ MenuFlyout	            | |
+|🔲 	                        |✅ MenuFlyout             |✅ MenuFlyout	            | |
+|✅ ContextMenu	             |✅ ContextMenu            |🔲          	             | |
 |🔲                          |🔲                        |✅ NavigationView	        | |
 |🔲                          |🔲                        |✅ NumberBox <br/> *(WinUI 2.3)* | |
 |✅ Panel		                  |✅ Panel                  |🔲                        | |
@@ -144,7 +145,8 @@ Note that *(WCT Version)* indicates a version of the control exists for UWP in t
  1. UWP's `TabView` is designed for top-level document navigation only. It is not always a good replacement for `TabControl` in WPF. Instead, UWP's `Pivot` control is sometimes used for tab functionality.
  1. `RadioButtons` is a container to easily create groups of individual `RadioButton` controls (with accessiblity improvements, etc.)
  1. `ProgressRing` was updated to use Lottie animations in WinUI Library v2.5-v2.6
-
+ 1. WPF's `ContextMenu` was generalized and replaced by `MenuFlyout` in UWP. Avalonia; however, still supports both.
+ 
 ## License
 
 This document is licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). For full text see: https://creativecommons.org/licenses/by-sa/4.0/legalcode
