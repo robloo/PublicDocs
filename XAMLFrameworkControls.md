@@ -1,4 +1,4 @@
-Last Updated 06 November 2021 | License CC BY-SA 4.0
+Last Updated 11 March 2022 | License CC BY-SA 4.0
 
 # XAML Framework Controls
 
@@ -108,7 +108,7 @@ Note that *(WCT Version)* indicates a version of the control exists for UWP in t
 |🔲                          |🔲                        |✅ SemanticZoom	          |
 |✅ Separator		              |✅ Separator              |🔲                        |
 |✅ Slider	                  |✅ Slider                 |✅ Slider                 |
-|🔲                          |🔲                        |✅ SplitButton <br/> *(WinUI 2.0)* |
+|🔲                          |✅ SplitButton            |✅ SplitButton <br/> *(WinUI 2.0)* |
 |🔲                          |✅ SplitView              |✅ SplitView	             |
 |✅ StackPanel	              |✅ StackPanel             |✅ StackPanel	            |
 |✅ StatusBar		              |🔲                        |🔲                        |
@@ -121,7 +121,7 @@ Note that *(WCT Version)* indicates a version of the control exists for UWP in t
 |🔲                          |✅ TimePicker             |✅ TimePicker	            |
 |🔲                          |✅ TimePickerFlyout       |✅ TimePickerFlyout	      |
 |✅ ToggleButton             |✅ ToggleButton           |✅ ToggleButton	          |
-|🔲                          |🔲                        |✅ ToggleSplitButton <br/> *(WinUI 2.0)* |
+|🔲                          |✅ ToggleSplitButton      |✅ ToggleSplitButton <br/> *(WinUI 2.0)* |
 |🔲                          |✅ ToggleSwitch           |✅ ToggleSwitch	          |
 |✅ ToolTip	                 |✅ ToolTip                |✅ ToolTip	               |
 |✅ TreeView                 |✅ TreeView               |✅ TreeView	              |
