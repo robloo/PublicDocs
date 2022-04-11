@@ -78,7 +78,7 @@ Note that *(WCT Version)* indicates a version of the control exists for UWP in t
 |🔲 	                        |✅ MenuFlyout             |✅ MenuFlyout	            |
 |✅ ContextMenu	             |✅ ContextMenu            |🔲          	             |
 |🔲                          |🔲                        |✅ NavigationView	        |
-|🔲                          |🔲                        |✅ NumberBox <br/> *(WinUI 2.3)* |
+|🔲                          |✅ NumericUpDown          |✅ NumberBox <br/> *(WinUI 2.3)* |
 |✅ Panel		                  |✅ Panel                  |🔲                        |
 |🔲                          |🔲                        |✅ ParallaxView	          |
 |✅ PasswordBox              |✅ TextBox *(PasswordChar)* |✅ PasswordBox	         |
