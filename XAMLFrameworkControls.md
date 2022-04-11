@@ -1,4 +1,4 @@
-Last Updated 11 March 2022 | License CC BY-SA 4.0
+Last Updated 11 April 2022 | License CC BY-SA 4.0
 
 # XAML Framework Controls
 
@@ -45,7 +45,7 @@ Note that *(WCT Version)* indicates a version of the control exists for UWP in t
 |🔲                          |✅ DatePickerFlyout       |✅ DatePickerFlyout	      |
 |✅ DockPanel                |✅ DockPanel              |🔲 *WCT Version*          |
 |✅ DocumentViewer		         |🔲                        |🔲                        |
-|🔲                          |🔲                        |✅ DropDownButton <br/> *(WinUI 2.0)* |
+|🔲                          |✅ DropDownButton         |✅ DropDownButton <br/> *(WinUI 2.0)* |
 |✅ Expander	                |✅ Expander               |✅ Expander <br/> *(WinUI 2.6)*       |
 |🔲                          |✅ Carousel               |✅ FlipView	              |
 |✅ FlowDocumentPageViewer		 |🔲                        |🔲                        |
@@ -82,7 +82,7 @@ Note that *(WCT Version)* indicates a version of the control exists for UWP in t
 |✅ Panel		                  |✅ Panel                  |🔲                        |
 |🔲                          |🔲                        |✅ ParallaxView	          |
 |✅ PasswordBox              |✅ TextBox *(PasswordChar)* |✅ PasswordBox	         |
-|🔲                          |🔲                        |✅ PersonPicture.         |
+|🔲                          |🔲                        |✅ PersonPicture          |
 |🔲                          |🔲                        |✅ PipsPager <br/> *(WinUI 2.6)* |
 |🔲                          |🔲                        |✅ Pivot		                |
 |🔲                          |🔲                        |✅ PivotItem		            |
