@@ -62,14 +62,14 @@ Note that *(WCT Version)* indicates a version of the control exists for UWP in t
 |🔲                          |🔲                        |✅ HyperlinkButton	       |
 |✅ Image                    |✅ Image                  |✅ Image	                 |
 |🔲                          |🔲                        |✅ InfoBar <br/> *(WinUI 2.5)* |
-|🔲                          |🔲                        |✅ InkCanvas	             |
-|🔲                          |🔲                        |✅ InkToolbar             |
+|🔲                          |🔲                        |✅ InkCanvas	<br/> *(N/A in Uno)* |
+|🔲                          |🔲                        |✅ InkToolbar	<br/> *(N/A in Uno)* |
 |✅ ItemsControl             |✅ ItemsControl           |✅ ItemsControl	          |
 |🔲                          |✅ ItemsPresenter         |✅ ItemsPresenter	        |
 |🔲                          |✅ ItemsRepeater          |✅ ItemsRepeater <br/> *(WinUI 2.1)* |
 |✅ Label		                  |✅ Label                  |🔲                        |
 |✅ ListBox                  |✅ ListBox                |✅ ListBox	               |
-|✅ ListView	                |🔲                        |✅ ListView	              |
+|✅ ListView	                |🔲                        |✅ ListView	<br/> *(N/A in Uno)* |
 |🔲                          |🔲                        |✅ MapControl             |
 |🔲                          |🔲                        |✅ MediaElement	          |
 |🔲                          |🔲                        |✅ MediaTransportControls |
