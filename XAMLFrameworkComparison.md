@@ -177,7 +177,7 @@ Mobile app stability of MAUI is ranked the same as the Uno Platform; however, it
 
 The Uno Platform is not MIT license, it is Apache 2.0. The Apache license is not as permissive as MIT and, among other things, this prevents code sharing back into other MIT licensed frameworks. The Uno Platform can use source code from MIT licensed projects such as WinUI, WPF and Avalonia but these projects can't use Uno Platform code. This is why Uno Platform ranks lower here.
 
-Avalonia UI was originally entirely MIT licensed and achieved three stars. However, with the [re-licensing of the composition renderer](https://raw.githubusercontent.com/AvaloniaUI/Avalonia/master/src/Avalonia.Base/Rendering/Composition/License.md) to prohibit modification and distribution in anything other than original binary form this has lowered the score. The composition renderer is the only renderer supported in Avalonia version 11+, others were removed. This makes it prohibitive to modify Avalonia and distribute it in your own application. License terms have yet to be clarified further.
+Avalonia UI was originally entirely MIT licensed and achieved three stars. However, with the [re-licensing of the composition renderer](https://raw.githubusercontent.com/AvaloniaUI/Avalonia/master/src/Avalonia.Base/Rendering/Composition/License.md) to prohibit modification and distribution in anything other than original binary form this has lowered the score. The composition renderer is the only renderer supported in Avalonia version 11+, others were removed. This makes it prohibitive to modify Avalonia and distribute it in your own application. The team has clarified the license will "revert to MIT with v11 going GA" and this section will be updated when that happens.
   </dd>
 
   <dt>Support</dt>
@@ -203,7 +203,7 @@ Avalonia UI has the best overall developer experience. The code base is easy to 
 
 At first glance .NET MAUI seems to have the strongest corporate backing considering it is developed by Microsoft. However, Microsoft is not putting a lot of resources on the project and the long history of abandoning UI frameworks at Microsoft creates uncertainty.
 <br/><br/>
-Avalonia, while originally fully open-source, is now backed by a company setup by some of the core team members. This provides a good measure of stability and income to sustain the project. However, there is caution here due to the increasing corporate reach and closed-source progress of the code base. For example, the composition rendering engine is now not a free-license to modify (while the rest of the code is MIT licensed) and Avalonia XPF is fully closed-source.
+Avalonia, while originally fully open-source, is now backed by a company setup by some of the core team members. This provides a good measure of stability and income to sustain the project. However, there is caution here due to the increasing corporate reach and closed-source progress of the code base. For example, the composition rendering engine is now not a free-license to modify (while the rest of the code is MIT licensed). This should change once v11 is released.
 <br/><br/>
 The Uno Platform; however, remains in a class of its own with its corporate sponsorship by *nventive* and incredible communication and response times. Their partnership and close communication with Microsoft should also be noted.
   </dd>
