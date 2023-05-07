@@ -1,4 +1,4 @@
-Last Updated 29 April 2023 | License CC BY-SA 4.0
+Last Updated 07 May 2023 | License CC BY-SA 4.0
 
 # XAML Framework Comparison
 
@@ -18,7 +18,7 @@ At a very high level the difference in the three cross-platform XAML frameworks 
  * [**.NET MAUI**](https://github.com/dotnet/maui) : Standardizes a set of names, properties and events and applies/links them to platform-specific native controls. Mapping to native controls is a least-common-denominator approach. If a single platform doesn't support a feature it likely won't be in MAUI for all platforms (without dropping into platform-specific code).
  * [**Uno Platform**](https://github.com/unoplatform/uno) : Uses a select few platform-specific primitives to build and render controls. For high level controls this gives nearly pixel-perfect results. This means the Uno Platform behaves like Avalonia UI or Flutter which fully render their controls; however, it also supports direct embedding of platform-specific native controls. It is a hybrid architecture.
 
-Other Microsoft XAML-based frameworks such as WPF and UWP/WinUI are skipped because they were historically not cross-platform. **However, WPF can now run cross-platform using [Wine Mono](https://github.com/madewokherd/wine-mono) or [Avalonia XPF](https://avaloniaui.net/XPF). This possibility should not be overlooked for existing applications with large WPF codebases.** WinUI/UWP itself is already supported cross-platform using the Uno Platform discussed below.
+Other Microsoft XAML-based frameworks such as WPF and UWP/WinUI are skipped because they were historically not cross-platform. However, WPF can now run cross-platform using [Wine Mono](https://github.com/madewokherd/wine-mono) or [Avalonia XPF](https://avaloniaui.net/XPF). WinUI/UWP itself is already supported cross-platform using the Uno Platform discussed below.
 
 **Project links**
 
@@ -27,6 +27,18 @@ Other Microsoft XAML-based frameworks such as WPF and UWP/WinUI are skipped beca
 | Avalonia UI | [avaloniaui.net](https://avaloniaui.net/) | [github.com/AvaloniaUI/Avalonia](https://github.com/AvaloniaUI/Avalonia) | [docs.avaloniaui.net](https://docs.avaloniaui.net/) |
 | .NET MAUI | [maui](https://dotnet.microsoft.com/en-us/apps/maui) | [github.com/dotnet/maui](https://github.com/dotnet/maui) | [docs.microsoft.com/en-us/dotnet/maui/](https://docs.microsoft.com/en-us/dotnet/maui/) |
 | Uno Platform | [platform.uno](https://platform.uno/) | [github.com/unoplatform/uno](https://github.com/unoplatform/uno) | [platform.uno/docs/](https://platform.uno/docs/articles/intro.html) |
+
+**Additional Frameworks**
+
+Additional options are available for .NET cross-platform UI development not featured in this document. These other frameworks or methodologies deserve a mention even though they aren't included in the full comparison.
+
+  1. [WPF](https://github.com/dotnet/wpf) : As mentioned, WPF can now run cross-platform using [Wine Mono](https://github.com/madewokherd/wine-mono) or [Avalonia XPF](https://avaloniaui.net/XPF). This possibility should not be overlooked for existing applications with large WPF codebases.
+  1. [Eto.Forms](https://github.com/picoe/Eto) : A UI framework that, similar to .NET MAUI, constructs UI using platform-native controls. A version of XAML can also be used to serialize and construct the UI.
+  1. [Noesis GUI](https://www.noesisengine.com/) : Intended for game development, Noesis GUI recreates WPF for usage in game engines (like Unity) to construct user-interfaces. XAML support is so extensive it even works with Microsoft Blend. If it worked outside of game engines and had better licensing for smaller applications this is a very interesting tech that pre-dates some other cross-platform XAML implementations.
+  1. [.NET MAUI + Blazor Hybrid](https://learn.microsoft.com/en-us/aspnet/core/blazor/hybrid/tutorials/maui?view=aspnetcore-7.0) : .NET MAUI can host Blazor web apps (within a BlazorWebView control) making it function as more of an application plus services container. This is a very attractive option for those that wish to repackage and distribute existing web apps as mobile applications.
+  1. [.NET MAUI + Avalonia UI Hybrid](https://github.com/AvaloniaUI/AvaloniaMauiHybrid) : .NET MAUI can also host Avalonia UI views (within an AvaloniaView control) again making it function as more of an application plus services container. Since Avalonia is only a UI framework this is an attractive option to easily get all of .NET MAUI's additional platform-abstracted functionality (Essentials) as well as easier mobile packaging and deployment.
+
+Making .NET MAUI into more of an application plus services container and then hosting other UI frameworks like Blazor or Avalonia UI is an attractive option. It's possible this architecture will pick up more traction going forward and is definitely an area to watch closely.
 
 ## Comparison Table
 
@@ -70,7 +82,7 @@ The comparison is based on a lot of research and experience with the various fra
 | Corporate backing             | ⭐⭐    | ⭐⭐   | ⭐⭐⭐ |
 | ▶ **IDE & Tooling Integration** |
 | Visual Studio                 | ✔️｜⭐⭐   | ✔️｜⭐⭐⭐ | ✔️｜⭐⭐   |
-| Visual Studio Code            | ❌          | ✔️｜⭐     | ✔️｜⭐⭐   |
+| Visual Studio Code            | ❌          | ✔️｜⭐⭐   | ✔️｜⭐⭐⭐ |
 | Rider                         | ✔️｜⭐⭐⭐ | ✔️｜⭐     | ✔️｜⭐⭐   |
 | Design tool integration       | ❌          | ❌          | ✔️｜⭐⭐  |
 | ▶ **Platform Support**        |
@@ -214,10 +226,16 @@ The Uno Platform; however, remains in a class of its own with its corporate spon
 None of the frameworks have three stars for Visual Studio integration. This is because Visual Studio historically focused on Windows-first frameworks like WinForms, WPF, UWP and WinUI and hard-coded support for these in a non-extensible way. However, .NET MAUI support is improving quite a bit (from being almost unusable at launch). Uno Platform's Visual Studio integration leaves a lot to be desired and is clearly the worse of the three which contributes to the poor developer experience. This isn't their fault as Microsoft does not reasonably support any other project types using .xaml files. Avalonia support in Visual Studio is provided with solid previewer support and most things work - by using a special .axaml extension - but XAML isn't nearly as smooth to work with as on other IDE's like Rider.
   </dd>
 
+  <dt>Visual Studio Code Integration</dt>
+  <dd>
+
+The Uno Platform team has developed an [extension for Visual Studio Code](https://platform.uno/blog/announcing-net-mobile-debugging-in-vs-code-mobile-development-in-vs-code-with-uno-platform-or-net-maui/) that enables development and, more importantly, debugging of both mobile and web applications. This is a big step forward for VS Code tooling which historically has not been developer friendly as an IDE for C#/.NET applications. Amazingly, the extension also supports .NET MAUI applications. The Uno Platform team really stepped up here and filled a long-standing gap in VS Code support that results in a full three stars for this IDE. Uno Platform apps are now best supported in Visual Studio Code (unless developing as WinUI on Windows where Visual Studio is still best). Note that this extension is not open sourced.
+  </dd>
+
   <dt>Design Tool Integration</dt>
   <dd>
 
-Right now only the Uno Platform supports a design tool (Figma) to build UI. In the past Microsoft Blend was available for WPF to support the same role. The quality and efficiency of generated XAML may be lacking; however, it helps in the designer to developer transition for companies that have a clear separation between these teams.
+Right now only the Uno Platform supports a design tool (Figma) to build UI. This support is provided by a closed-source XAML generator. In the past Microsoft Blend was available for WPF to support the same role. The quality and efficiency of generated XAML may be lacking; however, it helps in the designer to developer transition for companies that have a clear separation between these teams.
 <br/><br/>
 .NET MAUI does not support any design tool and due to its architecture likely never will. However, it has out-of-the-box support for live editing of XAML which gives designers the option of tweaking and adding some UI elements directly in the app before code is added. Uno Platform also supports live editing of XAML.
   </dd>
