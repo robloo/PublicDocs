@@ -1,10 +1,10 @@
-Last Updated 06 November 2021 | License CC BY-SA 4.0
+最后更新时间 2021年11月06日  | 使用 CC BY-SA 4.0 协议分发
 
-# Overview of WPF & UWP Differences
+# WPF 与 UWP 区别总览
 
-The Universal Windows Platform (UWP) has its roots in SilverLight instead of being based on the Windows Presentation Foundation (WPF). UWP is implemented natively in C++ instead of WPF which was written in C# and C++ for lower-level functions. Due to being a completely different implementation of XAML, designed to include more resource constrained devices, and support for more programming languages, there are several differences in UWP compared to WPF. These differences may be new functionality in UWP, slightly different ways of doing things or, more commonly, WPF features missing in UWP. These differences are not summarized by Microsoft which is prohibitive for developers familiar with WPF and that have to port existing code. This document is intended to provide an overview of the differences.
+通用 Windows 平台（UWP）起源于 SilverLight，而不是基于 Windows Presentation Foundation（WPF）。UWP 是用 C++ 实现的，而不是用 C# 和 C++（底层功能）编写的 WPF。UWP 由于是一个完全不同的 XAML 实现，旨在包括更多的资源限制的设备，并支持更多的编程语言，UWP 与 WPF 相比有几个不同之处。这些差异可能是 UWP 的新功能，稍微不同的做事方式，或者更常见的是 UWP 中缺少的 WPF 功能。这些差异并没有被微软总结出来，这对熟悉 WPF 的开发者来说是一个障碍，他们必须要移植现有的代码。本文档旨在提供一个差异的概述。
 
-## XAML / Object Model
+## XAML / 对象模型
 
 This section lists the main differences (primarily from a XAML viewpoint) between UWP and WPF. 
 
@@ -494,12 +494,12 @@ Additional properties such as WPF's `HasLogicalOrientation`, `HorizontalOffset` 
 
 For a list of supported controls and a comparison of their differences, refer to the separate [XAML Framework Controls](https://github.com/robloo/PublicDocs/blob/master/XAMLFrameworkControls.md#Controls) document. This document was originally included here but was separated to allow expansion and inclusion of other frameworks.
 
-## References
+## 引用
 
  1. http://dansuleski.com/so-what-else-could-be-missing-in-uwp/
  2. https://github.com/microsoft/microsoft-ui-xaml/issues/719
 
-## Additional Resources
+## 附加资料
 
  * https://github.com/jbe2277/waf/wiki/UWP-vs.-WPF
 

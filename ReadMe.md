@@ -1,13 +1,11 @@
+此仓库是 https://github.com/robloo/PublicDocs 的机翻+人工校对版本。
+
 # Contents
 
 This repository contains documents and articles that may be publicly useful.
 
-## XAML UI-Frameworks
+## XAML UI 框架
 
- * [XAML Framework Comparison](https://github.com/robloo/PublicDocs/blob/master/XAMLFrameworkComparison.md) : The most complete comparison of three major cross-platform XAML UI frameworks for .NET. This article includes a history of XAML frameworks, an at-a-glance comparison table, as well as detailed remarks explaining ratings.
- * [XAML Framework Controls](https://github.com/robloo/PublicDocs/blob/master/XAMLFrameworkControls.md) : Lists available controls for several XAML framework excluding some primitives and shapes. It also describes some of the differences in implementation or usage where appropriate.
- * [Overview of WPF & UWP Differences](https://github.com/robloo/PublicDocs/blob/master/UWPvsWPF.md) : Lists major differences between WPF and UWP (which became WinUI 3). Microsoft does not provide any such list of differences which are considerable in some places.
-
-## Miscellaneous Topics
-
- * [AI-Driven Development](https://github.com/robloo/PublicDocs/blob/master/AIDrivenDevelopment.md) : An idea for accelerated test-driven development using large-language model AI used in a supervised feedback loop.
+ * [XAML 框架横向对比](https://github.com/1357310795/XAML-UI-Docs/blob/master/XAMLFrameworkComparison.md) : 对 .NET 的三个主要的跨平台 XAML UI 框架的最完整的比较。本文包括 XAML 框架的历史、一目了然的比较表，以及解释评级的详细说明。
+ * [XAML 框架控件一览](https://github.com/1357310795/XAML-UI-Docs/blob/master/XAMLFrameworkControls.md) : 列出了几个 XAML 框架的可用控件，不包括一些基础设施和形状。文章还适当地描述了一些实现或使用上的差异。
+ * [WPF 与 UWP 的差异概述](https://github.com/1357310795/XAML-UI-Docs/PublicDocs/blob/master/UWPvsWPF.md) : 列出了 WPF 和 UWP（后来是 WinUI 3）之间的主要区别。微软没有提供任何这样的差异清单，而这些差异在某些地方是相当大的。
