@@ -6,163 +6,163 @@
 
 ## XAML / 对象模型
 
-This section lists the main differences (primarily from a XAML viewpoint) between UWP and WPF. 
+本节列出了 UWP 和 WPF 之间的主要区别（主要是从 XAML 的角度）。
 
-Legend:
+图例：
 
- * ✔ Indicates the platform (defined by the WPF or UWP column) has the feature
- * ❌ Indicates the feature is generally missing in the platform
- * ⚡ Indicates the feature is only partially implemented compared to other platforms
+ * ✔ 表示平台（由 WPF 或 UWP 列定义）具有该功能。
+ * ❌ 表示该功能在该平台上普遍缺失
+ * ⚡ 表示与其他平台相比，该功能只是部分实现。
 
-### Markup Extensions & Directives
+### 标记扩展和指令
 
 <table>
  <tr>
-   <th>Item</th>
+   <th>项目</th>
    <th>WPF</th>
    <th>UWP</th>
-   <th>Notes</th>
+   <th>备注</th>
  </tr>
  <tr>
-  <td>x:Array Extension</td>
+  <td>x:Array 扩展</td>
   <td>✔</td>
   <td>❌</td>
-  <td>x:Array isn't supported in UWP.</td>
+  <td>x:Array 在 UWP 中不受支持</td>
  </tr>
  <tr>
-  <td>x:Bind Extension</td>
+  <td>x:Bind 扩展</td>
   <td>❌</td>
   <td>✔</td>
-  <td>The x:Bind markup extension has become a powerful feature of UWP over WPF. Compiled function bindings can be used for nearly anything and can replace other missing features like MultiBinding in most situations. Other advantages of x:Bind include debugging support as well as increased performance because it's compiled. UWP originally did not support x:Bind in control templates; however, support was added in Windows 10 version 1809.</td>
+  <td>x:Bind 标记扩展已经成为 UWP 相对于 WPF 的一个强大功能。编译时函数绑定几乎可以用于任何事情，并且在大多数情况下可以取代其他缺失的功能，如 MultiBinding。x:Bind 的其他优势包括调试支持，以及由于它是编译时绑定而性能不错。UWP 最初不支持 ControlTemplate 中的 x:Bind；但是，在 Windows 10 的 1809 版本中增加了支持。</td>
  </tr>
  <tr>
-  <td>x:Load Attribute</td>
+  <td>x:Load 特性</td>
   <td>❌</td>
   <td>✔</td>
-  <td>You can use x:Load to optimize the startup, visual tree creation, and memory usage of your XAML app. Using x:Load has a similar visual effect to Visibility, except that when the element is not loaded, its memory is released and internally a small placeholder is used to mark its place in the visual tree.</td>
+  <td>你可以使用 x:Load 来优化你的 XAML 应用程序的启动、可视化树的创建和内存使用。使用 x:Load 有一个类似于 Visibility 的视觉效果，除了当元素没有被加载时，它的内存会被释放，内部会使用一个小的占位符来标记它在视觉树中的位置。</td>
  </tr>
  <tr>
-  <td>x:Static Extension</td>
+  <td>x:Static 扩展</td>
   <td>✔</td>
   <td>❌</td>
-  <td>The x:Static markup extension isn't implemented in UWP. In WPF this is used to access a static by-value code entity (constant, property, field, or enum).</td>
+  <td>UWP 中没有实现 x:Static 标记扩展。在 WPF 中，这被用来访问一个静态的值类型代码实体（常量、属性、字段或枚举）。</td>
  </tr>
  <tr>
-  <td>x:Type Extension</td>
+  <td>x:Type 扩展</td>
   <td>✔</td>
   <td>❌</td>
-  <td>The x:Type markup extension isn't implemented in UWP. In WPF this is used to get a type similar to `Type.GetType()`.</td>
+  <td>UWP 中没有实现 x:Type 标记扩展。在 WPF 中，这被用来获取一个类似于 `Type.GetType()` 的类型。</td>
  </tr>
  <tr>
-  <td>x:TypeArguments Directive</td>
+  <td>x:TypeArguments 指令</td>
   <td>✔</td>
   <td>❌</td>
-  <td>The x:TypeArguments directive isn't implemented in UWP which causes problems with generics. Missing this requires some work-arounds with classes and creating a non-generic class to use in XAML from a generic one.</td>
+  <td>UWP 中没有实现 x:TypeArguments 指令，这导致了泛型的问题。缺少了这一点，就需要用类来解决一些问题，并在 XAML 中创建一个非泛型的类来使用。</td>
  </tr>
  <tr>
-  <td>x:Uid Directive / .resw for localization</td>
+  <td>x:Uid 指令 / .resw 本地化</td>
   <td>⚡</td>
   <td>✔</td>
-  <td>x:Uid exists in both WPF and UWP. However, using it to localize properties is quite a bit more complex in WPF (using LocBaml, csv files, the commmand line in a manual process). UWP provides a much more integrated localization system using x:Uid and .resw files similar to what existed in Windows Forms. WPF is sorely missing this type of localization support and this is a clear advantage of UWP.</td>
+  <td>x:Uid 在 WPF 和 UWP 中都存在。然而，在 WPF 中使用它来本地化属性是相当复杂的（使用 LocBaml，csv 文件，手动过程中的命令行）。UWP 提供了一个更集成的本地化系统，使用 x:Uid 和 .resw 文件，类似于 Windows Forms 中存在的。WPF 严重缺乏这种类型的本地化支持，这是 UWP 的一个明显优势。</td>
  </tr>
  <tr>
-  <td>{DynamicResource} Extension</td>
+  <td>{DynamicResource} 扩展</td>
   <td>✔</td>
   <td>❌</td>
-  <td>The DynamicResource markup extension resolves and assigns the resource value to a XAML attribute at runtime only when its needed (as opposed to StaticResource which is resolved and assigned when XAML is first loaded). DynamicResource is fairly common in WPF but doesn't exist in UWP. A partial work-around requires custom markup extensions.</td>
+  <td>动态资源（DynamicResource）标记扩展在运行时只在需要的时候解析和分配资源值给 XAML 属性（与静态资源相反，静态资源在 XAML 第一次加载时就被解析和分配）。DynamicResource 在 WPF 中相当常见，但在 UWP 中不存在。一个部分的解决方法需要自定义标记扩展。</td>
  </tr>
  <tr>
-  <td>{ThemeResource} Extension</td>
+  <td>{ThemeResource} 扩展</td>
   <td>❌</td>
   <td>✔</td>
-  <td>The ThemeResource markup extension resolves and assigns the resource value to a XAML attribute depending on the active theme (light/dark/high-contrast). Resource values are automatically re-evaluated when the theme changes.</td>
+  <td>ThemeResource 标记扩展根据系统活动主题（亮/暗/高对比度）解析并将资源值分配给一个 XAML 属性。当系统主题改变时，资源值会自动重新计算。</td>
  </tr>
  <tr>
-  <td>Full Markup Extension</td>
+  <td>完整标记扩展</td>
   <td>✔</td>
   <td>❌</td>
-  <td>UWP only implements a subset of the full markup extension support in WPF. This area needs to be expanded upon in the future.</td>
+  <td>UWP 只实现了 WPF 中完整标记扩展支持的一个子集。这个领域需要在未来进行扩展。</td>
  </tr>
 </table>
  
-### Binding / Dependency Property System
+### 绑定/依赖属性系统
  
 <table>
  <tr>
-   <th>Item</th>
+   <th>项目</th>
    <th>WPF</th>
    <th>UWP</th>
-   <th>Notes</th>
+   <th>备注</th>
  </tr>
  <tr>
-  <td>Coercion</td>
+  <td>强制转换（Coercion）</td>
   <td>✔</td>
   <td>❌</td>
-  <td>Coercion of Dependency Properties is not supported in UWP.</td>
+  <td>UWP 中不支持依赖属性的强制转换（Coercion）。</td>
  </tr>
  <tr>
-  <td>Data (Input) Validation</td>
+  <td>数据（输入）验证</td>
   <td>✔</td>
   <td>❌</td>
-  <td>The entire WPF data validation system including the classes/inferfaces: ValidationRule (and all standard implementations), Binding.ValidationRules, IDataErrorInfo, INotifyDataErrorInfo, Binding.ValidatesOnNotifyDataErrors, etc. is not implemented in UWP. This will be added in WinUI 3.0 but the story for using this within the UWP app model with WinUI 3.0 is less clear.</td>
+  <td>整个WPF的数据验证系统包括类/接口： ValidationRule（以及所有的标准实现），Binding.ValidationRules，IDataErrorInfo，INotifyDataErrorInfo，Binding.ValidatesOnNotifyDataErrors 等在 UWP 中没有实现。这将在 WinUI 3.0 中添加，但在 WinUI 3.0 的 UWP 应用模型中使用这个的情况不太清楚。</td>
  </tr>
  <tr>
   <td>DependencyProperty. RegisterReadOnly / 
   DependencyPropertyKey</td>
   <td>✔</td>
   <td>❌</td>
-  <td>Read-only dependency properties are used in WPF for collections and other properties that should never be set, even through binding. It is especially useful for control development. UWP doesn't support this and only implements get-only property accessors which still allow unwanted changes with binding.</td>
+  <td>只读依赖属性在 WPF 中用于集合和其他属性，即使通过绑定也不应该被设置。它对控件的开发特别有用。UWP 不支持这一点，只实现了只读属性访问器，这仍然允许通过绑定进行不必要的改变。</td>
  </tr>
  <tr>
-  <td>OneWayToSource BindingMode</td>
+  <td>OneWayToSource 绑定模式</td>
   <td>✔</td>
   <td>❌</td>
   <td></td>
  </tr>
  <tr>
-  <td>Binding to ConverterParameter</td>
+  <td>绑定到 ConverterParameter</td>
   <td>✔</td>
   <td>❌</td>
   <td></td>
  </tr>
  <tr>
-  <td>MultiBinding /
+  <td>多路绑定 /
   IMultiValueConverter</td>
   <td>✔</td>
   <td>❌</td>
-  <td>Very useful feature in WPF for advanced binding scenearios no longer exists for UWP. UWP does have function binding with x:Bind though (Used to re-implement converter logic).</td>
+  <td>WPF 中非常有用的高级绑定场景的功能在 UWP 中不再存在。不过 UWP 有 x:Bind 的函数绑定（用于重新实现转换器逻辑）。</td>
  </tr>
  <tr>
   <td>ICommand</td>
   <td>✔</td>
   <td>⚡</td>
-  <td>While the interface technically exists, ICommand is nothing like what it was in WPF. The programmer is now responsible for doing every little part of the command. This was improved in Windows 10 version 1809 which added XamlUICommand and StandardUICommand.</td>
+  <td>虽然接口在技术上存在，但 ICommand 与 WPF 中的情况完全不同。现在程序员要负责实现命令的每一个小部分。这在 Windows 10 1809 版本中得到了改善，该版本增加了 XamlUICommand 和 StandardUICommand。</td>
  </tr>
  <tr>
   <td>RelativeSource / AncestorType</td>
   <td>✔</td>
   <td>⚡</td>
-  <td>Not nearly as powerful in UWP, relative source only supports `{RelativeSource Self}` and `{RelativeSource TemplatedParent}` as compared to more powerful expressions in WPF like `{RelativeSource PreviousData}` or `{Binding RelativeSource={RelativeSource Mode=PreviousData, AncestorType={x:Type TextBox}}`.</td>
+  <td>在 UWP 中并不强大，相对源只支持 `{RelativeSource Self}` 和 `{RelativeSource TemplatedParent}`，相比之下，WPF 中的表达式更强大，如 `{RelativeSource PreviousData}` 或 `{Binding RelativeSource={RelativeSource Mode=PreviousData, AncestorType={x:Type TextBox}}`。</td>
  </tr>
  <tr>
   <td>StringFormat</td>
   <td>✔</td>
   <td>❌</td>
-  <td>XAML such as `{Binding DateValue, StringFormat=Date: {0:dddd yyyy-MM-dd}}` isn't supported in UWP and requires custom converters.</td>
+  <td>类似于 `{Binding DateValue, StringFormat=Date: {0:dddd yyyy-MM-dd}}` 的XAML 在 UWP 中不支持，需要自定义转换器。</td>
  </tr>
 </table>
 
-### Styling
+### 样式
 
 <table>
  <tr>
-   <th>Item</th>
+   <th>项目</th>
    <th>WPF</th>
    <th>UWP</th>
-   <th>Notes</th>
+   <th>备注</th>
  </tr>
  <tr>
-  <td>DataTriggers / PropertyTrigger / EventTrigger within Style.Triggers</td>
+  <td>DataTriggers / PropertyTrigger / Style.Triggers 中的 EventTrigger</td>
   <td>✔</td>
   <td>❌</td>
   <td></td>
@@ -171,99 +171,99 @@ Legend:
   <td>VisualStateManager</td>
   <td>⚡</td>
   <td>✔</td>
-  <td>A different concept from WPF that takes the place of DataTriggers, this is very verbose and more often than not increases complexity compared to data triggers.
+  <td>一个与 WPF 不同的概念取代了 DataTriggers，这是非常冗长的，与数据触发器相比，更多的时候会增加复杂性。
 
-@Felix-Dev VisualStateManager does exist in WPF (it was added in .NET Framework 4.0). It's not as elegant as in UWP though, i.e. it has no VisuaStateManager.Setters property. That means you have to use Storyboards to set your values.</td>
+@Felix-Dev VisualStateManager 在 WPF 中确实存在（它被添加到 .NET Framework 4.0 中）。但它不像 UWP 那样优雅，也就是说，它没有 VisuaStateManager.Setters 属性。这意味着你必须使用 Storyboards 来设置你的值。</td>
  </tr>
  <tr>
-  <td>Implicit DataTemplate</td>
+  <td>隐式 DataTemplate</td>
   <td>✔</td>
   <td>❌</td>
-  <td>Set the DataType property of the DataTemplate to the corresponding type and the template is then applied automatically to all instances of that particular type</td>
+  <td>将 DataTemplate 的 DataType 属性设置为相应的类型，然后模板就会自动应用于该特定类型的所有实例。</td>
  </tr>
  <tr>
-  <td>Binding in Style setter</td>
+  <td>Style setter 中的 Binding</td>
   <td>✔</td>
   <td>❌</td>
-  <td>Any other than TemplateBinding isn't support in a template/style within UWP</td>
+  <td>除了 TemplateBinding 之外，UWP 在 template/style 内不支持绑定。</td>
  </tr>
  <tr>
-  <td>BasedOn default Style</td>
+  <td>BasedOn 默认样式</td>
   <td>✔</td>
   <td>⚡</td>
-  <td>`BasedOn={StaticResource {x:Type TextBlock}` isn't supported in UWP but works in WPF. Instead, BasedOn requires the use of a key which is a problem as not all default styles define one. This is a specific example of the missing x:Type markup extension in UWP.</td>
+  <td>`BasedOn={StaticResource {x:Type TextBlock}}` 在 UWP 中不支持，但在 WPF 中可以使用。相反，BasedOn 需要使用一个键，这是一个问题，因为不是所有的默认样式都定义一个键。这是 UWP 中缺少 x:Type 标记扩展的一个具体例子。</td>
  </tr>
 </table>
 
 ---
 
-### Classes/Objects
+### 类与对象
 
-This section primarily describes differences in controls and properties at the object or class level. As the number of differences in this section may become quite large, classes and properties are listed alphabetically and grouped together where it makes sense. Only the most used and fundamental controls are included here. See the *Controls* section for a high-level understanding of all controls.
+本节主要描述对象或类层面上的控制和属性的差异。由于本节中的差异数量可能会变得相当大，所以类和属性是按字母顺序排列的，并在有意义的地方归为一组。这里只包括最常用的和最基本的控件。请参阅*控件*部分以了解所有控件的高层次情况。
 
 **Grid**
 
 <table>
  <tr>
-   <th>Item</th>
+   <th>项目</th>
    <th>WPF</th>
    <th>UWP</th>
-   <th>Notes</th>
+   <th>备注</th>
  </tr>
  <tr>
   <td>BorderBrush</td>
   <td>❌</td>
   <td>✔</td>
-  <td>This property does not exist in WPF's Grid. It was added in UWP to help flatten the visual tree instead of requiring the use of a Border.</td>
+  <td>这个属性在 WPF 的 Grid 中并不存在。它被添加到 UWP 中，以帮助扁平化视觉树，而不是要求使用一个 Border。</td>
  </tr>
  <tr>
   <td>BorderThickness</td>
   <td>❌</td>
   <td>✔</td>
-  <td>This property does not exist in WPF's Grid. It was added in UWP to help flatten the visual tree instead of requiring the use of a Border.</td>
+  <td>这个属性在 WPF 的 Grid 中并不存在。它被添加到 UWP 中，以帮助扁平化视觉树，而不是要求使用一个 Border。</td>
  </tr>
  <tr>
   <td>ColumnSpacing / RowSpacing</td>
   <td>❌</td>
   <td>✔</td>
-  <td>Similar to StackPanel.Spacing, the Grid's ColumnSpacing and RowSpacing properties provide a quick way to set a uniform horizortal and/or vertical distance between all child controls in a Grid. This was added to UWP and does not exist in WPF.</td>
+  <td>与 StackPanel.Spacing 类似，Grid 的 ColumnSpacing 和 RowSpacing 属性提供了一种快速的方法来设置 Grid 中所有子控件之间统一的水平和/或垂直距离。这是在 UWP 中添加的，在 WPF 中不存在。</td>
  </tr>
  <tr>
   <td>CornerRadius</td>
   <td>❌</td>
   <td>✔</td>
-  <td>This property does not exist in WPF's Grid. It was added in UWP to help flatten the visual tree instead of requiring the use of a Border.</td>
+  <td>这个属性在 WPF 的 Grid 中并不存在。它被添加到 UWP 中，以帮助扁平化视觉树，而不是要求使用一个 Border。</td>
  </tr>
  <tr>
   <td>Padding</td>
   <td>❌</td>
   <td>✔</td>
-  <td>This property does not exist in WPF's Grid. It was added in UWP to help flatten the visual tree instead of requiring the use of a Border.</td>
+  <td>这个属性在 WPF 的 Grid 中并不存在。它被添加到 UWP 中，以帮助扁平化视觉树，而不是要求使用一个 Border。</td>
  </tr>
  <tr>
   <td>ShowGridLines</td>
   <td>✔</td>
   <td>❌</td>
-  <td>While this property exists in WPF, it was only intended for debugging purposes and not production quality code (https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.grid.showgridlines). As such, it was removed from UWP.</td>
+  <td>虽然这个属性在 WPF 中存在，但它只用于调试目的，而不是生产质量代码（https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.grid.showgridlines）。因此，它被从 UWP 中移除。</td>
  </tr>
 </table>
 
 **StackPanel**
 
-Additional properties such as WPF's `HasLogicalOrientation`, `HorizontalOffset` and `VerticalOffset` are purposely excluded from this section as they aren't considered useful.
+额外的属性，如 WPF 的 `HasLogicalOrientation`、`HorizontalOffset` 和 `VerticalOffset`被特意排除在本节之外，因为它们被认为并不实用。
 
 <table>
  <tr>
-   <th>Item</th>
+   <th>项目</th>
    <th>WPF</th>
    <th>UWP</th>
-   <th>Notes</th>
+   <th>备注</th>
  </tr>
  <tr>
   <td>AreHorizontalSnapPointsRegular / AreScrollSnapPointsRegular / AreVerticalSnapPointsRegular</td>
   <td>❌</td>
   <td>✔</td>
-  <td>Information on snapping points does not exist in WPF's StackPanel.</td>
+  <td>在 WPF 的 StackPanel 中不存在关于抓取点（Snap Points）的信息。</td>
  </tr>
  <tr>
   <td>BackgroundSizing</td>
@@ -275,19 +275,19 @@ Additional properties such as WPF's `HasLogicalOrientation`, `HorizontalOffset` 
   <td>BorderBrush</td>
   <td>❌</td>
   <td>✔</td>
-  <td>This property does not exist in WPF's StackPanel. It was added in UWP to help flatten the visual tree instead of requiring the use of a Border.</td>
+  <td>这个属性在 WPF 的 StackPanel 中并不存在。它被添加到 UWP 中，以帮助扁平化视觉树，而不是要求使用一个 Border。</td>
  </tr>
  <tr>
   <td>BorderThickness</td>
   <td>❌</td>
   <td>✔</td>
-  <td>This property does not exist in WPF's StackPanel. It was added in UWP to help flatten the visual tree instead of requiring the use of a Border.</td>
+  <td>这个属性在 WPF 的 StackPanel 中并不存在。它被添加到 UWP 中，以帮助扁平化视觉树，而不是要求使用一个 Border。</td>
  </tr>
  <tr>
   <td>CornerRadius</td>
   <td>❌</td>
   <td>✔</td>
-  <td>This property does not exist in WPF's StackPanel. It was added in UWP to help flatten the visual tree instead of requiring the use of a Border.</td>
+  <td>这个属性在 WPF 的 StackPanel 中并不存在。它被添加到 UWP 中，以帮助扁平化视觉树，而不是要求使用一个 Border。</td>
  </tr>
  <tr>
   <td>ExtentHeight</td>
@@ -305,13 +305,13 @@ Additional properties such as WPF's `HasLogicalOrientation`, `HorizontalOffset` 
   <td>Padding</td>
   <td>❌</td>
   <td>✔</td>
-  <td>This property does not exist in WPF's StackPanel. It was added in UWP to help flatten the visual tree instead of requiring the use of a Border.</td>
+  <td>这个属性在 WPF 的 StackPanel 中并不存在。它被添加到 UWP 中，以帮助扁平化视觉树，而不是要求使用一个 Border。</td>
  </tr>
  <tr>
   <td>Spacing</td>
   <td>❌</td>
   <td>✔</td>
-  <td>The Spacing property is a quick way to set a uniform distance between all child controls in a StackPanel. This was added to UWP and does not exist in WPF.</td>
+  <td>Spacing 属性是设置 StackPanel 中所有子控件之间统一距离的一种快速方法。这是在 UWP 中添加的，在 WPF 中不存在。</td>
  </tr>
 </table>
 
@@ -319,98 +319,99 @@ Additional properties such as WPF's `HasLogicalOrientation`, `HorizontalOffset` 
 
 <table>
  <tr>
-   <th>Item</th>
+   <th>项目</th>
    <th>WPF</th>
    <th>UWP</th>
-   <th>Notes</th>
+   <th>备注</th>
  </tr>
 <tr>
-  <td>IsVisible / IsVisibleChanged Event</td>
+  <td>IsVisible / IsVisibleChanged 事件</td>
   <td>✔</td>
   <td>❌</td>
-  <td>UWP has no way of tracking which controls are actually visible on the display. WPF has the UIElement.IsVisible property and the IsVisibleChanged event. This hinders the ability to optimize controls for performance.</td>
+  <td>UWP 没有办法跟踪哪些控件在显示屏上实际可见。WPF 有 UIElement.IsVisible 属性和 IsVisibleChanged 事件。这阻碍了优化控件性能的能力。</td>
  </tr>
  <tr>
-  <td>Visibility with Visibility.Hidden</td>
+  <td>Visibility.Hidden 状态</td>
   <td>✔</td>
   <td>⚡</td>
-  <td>UWP does not include the Visibility.Hidden enum value used for UIElement.Visibility. Hidden in WPF allowed a control to still be used in measure/layout but appear invisible when rendered for display.</td>
+  <td>UWP 不包括用于 UIElement.Visibility.Hidden 的枚举值。在 WPF 中，Hidden 允许一个控件仍然在测量/布局中使用，但在渲染显示时不可见。</td>
  </tr>
  <tr>
   <td>Clip</td>
   <td>✔</td>
   <td>⚡</td>
-  <td>Both WPF and UWP have UIElement.Clip properties. However, WPF can take any Geometry allowing for non-rectangular clipping. UWP can only use a RectangleGeometry for clipping. WPF: public Geometry UIElement.Clip, UWP: public RectangleGeometry UIElement.Clip</td>
+  <td>WPF 和 UWP 都有 UIElement.Clip 属性。然而，WPF 可以使用任何 Geometry，允许非矩形剪裁。UWP 只能使用一个 RectangleGeometry 进行剪切。WPF: public Geometry UIElement.Clip, UWP: public RectangleGeometry UIElement.Clip</td>
  </tr>
  <tr>
   <td>ClipToBounds</td>
   <td>✔</td>
   <td>❌</td>
-  <td>In WPF it's possible to clip child contents to the parents bounds by setting ClipToBounds to True. UWP doesn't have this property at all. The work-around is to use UIElement.Clip which can only do rectangular clipping.</td>
+  <td>在 WPF 中，通过设置 ClipToBounds 为 True，可以将子控件按照父控件的尺寸进行裁剪。UWP 根本就没有这个属性。解决办法是使用 UIElement.Clip，它只能做矩形的剪切。</td>
  </tr>
  <tr>
   <td>LayoutTransform</td>
   <td>✔</td>
   <td>❌</td>
-  <td>Layout transform is needed to transform elements before layouting. This allows for easily changing textbox direction and then putting it in a table. RenderTransform, as it applies after layout, does not resize parent controls for transformed children. See Transform3D for the UWP equivalent.</td>
+  <td>布局转换是需要在布局前转换元素的。这允许轻松地改变文本框的方向，然后把它放在一个表格里。RenderTransform，因为它是在布局后应用的，所以不会为被转换的子元素调整父控件的大小。参见 Transform3D，了解 UWP 的等同物。</td>
  </tr>
  <tr>
   <td>Projection</td>
   <td>❌</td>
   <td>✔</td>
-  <td>A 3-D projection effect applied to the element. Is more or less obsolete, use Transform3D instead.</td>
+  <td>应用于元素的 3-D 投影效果。多多少少已经过时了，用 Transform3D 代替。</td>
  </tr>
  <tr>
   <td>Transform3D</td>
   <td>❌</td>
   <td>✔</td>
-  <td>Use the Transform3D property to apply a 3-D transform matrix to a XAML element. This lets you create effects where two-dimensional UI appears to exist in 3-D space relative to the user. Transform3D behaves much like RenderTransform, but allows transforms in three-dimensional space and not just two dimensions. It also support animations.</td>
+  <td>使用 Transform3D 属性将一个 3-D 转换矩阵应用到一个 XAML 元素。这可以让你创造出二维用户界面相对于用户来说似乎存在于三维空间的效果。Transform3D 的行为很像 RenderTransform，但允许在三维空间而不仅仅是二维空间进行变换。它也支持动画。</td>
  </tr>
 </table>
 
-**Minor Changes**
+**一些小变动**
 
 <table>
  <tr>
-   <th>Item</th>
+   <th>项目</th>
    <th>WPF</th>
    <th>UWP</th>
-   <th>Notes</th>
+   <th>备注</th>
  </tr>
  <tr>
   <td>Header / HeaderTemplate</td>
   <td>❌</td>
   <td>✔</td>
-  <td>Several controls in UWP support an additional Header content and HeaderTemplate property. This allows for quickly adding a description or title above a control which is useful in data-input scenarios. UWP controls with a header property include: ComboBox, DatePicker, ListViewBase, PasswordBox, TextBox, TimePicker, ToggleSwitch. Notably, the header property is not present on some controls such as: Button and CheckBox.</td>
+  <td>UWP 的一些控件支持额外的 Header 内容和 HeaderTemplate 属性。这允许在控件上方快速添加描述或标题，这在数据输入场景中很有用。具有 Header 属性的 UWP 控件包括：ComboBox, DatePicker, ListViewBase, PasswordBox, TextBox, TimePicker, ToggleSwitch。值得注意的是，标题属性不存在于某些控件上，例如：Button 和 CheckBox。</td>
  </tr>
  <tr>
   <td>ItemsControl. AlternationIndex / AlternationCount</td>
   <td>✔</td>
   <td>❌</td>
-  <td>WPF has an easy way to change the style of items in a list using ItemsControl.AlternationIndex and ItemsControl.AlternationCount. This allows, for example, to change the background color of a listed item for even/odd entries. UWP doesn't support this at all in any controls. The partial work-around in UWP is to create a new control deriving from the framework's implementation and override the PrepareContainerForItemOverride() method.</td>
+  <td>WPF 有一个简单的方法，使用 ItemsControl.AlternationIndex 和 ItemsControl.AlternationCount 来改变列表中项目的风格。例如，这允许改变偶数/多数条目的列表项的背景颜色。UWP 的任何控件都不支持这一点。在 UWP 中的部分解决方法是创建一个新的控件，它来自于框架的实现，并覆盖 PrepareContainerForItemOverride() 方法。</td>
  </tr>
  <tr>
   <td>Thickness</td>
   <td>✔</td>
   <td>⚡</td>
-  <td>The Thickness struct exposes fields for Top, Bottom, Left and Right instead of dependency properties as in WPF. This means you cannot Bind or asign resources to an individual thickness parameter.</td>
+  <td>Thickness 结构暴露了顶部、底部、左侧和右侧的字段，而不是像 WPF 中的依赖属性。这意味着你不能将资源绑定或分配给一个单独的厚度参数。</td>
  </tr>
  <tr>
   <td>Size / Rect / Point</td>
   <td>✔</td>
   <td>✔</td>
-  <td>Size, Rect and Point are fully supported in both WPF and UWP. However, UWP uses single-precision float types for properties instead of double in WPF. This creates an incompatiblity when porting code.</td>
+  <td>在 WPF 和 UWP 中都完全支持 Size、Rect 和 Point。然而，UWP 使用单精度浮点类型的属性，而不是 WPF 的双精度。这在移植代码时产生了不兼容的问题。 
+</td>
  </tr>
 </table>
 
-**Unimplemented Classes**
+**未实现的类**
 
 <table>
  <tr>
-   <th>Item</th>
+   <th>项目</th>
    <th>WPF</th>
    <th>UWP</th>
-   <th>Notes</th>
+   <th>备注</th>
  </tr>
  <tr>
   <td>Adorner</td>
@@ -419,80 +420,80 @@ Additional properties such as WPF's `HasLogicalOrientation`, `HorizontalOffset` 
   <td>https://docs.microsoft.com/en-us/dotnet/framework/wpf/controls/adorners-overview</td>
  </tr>
  <tr>
-  <td>Supplemental Shapes: Arrow, Callout, Star, etc</td>
+  <td>补充图形：Arrow, Callout, Star 等等</td>
   <td>✔</td>
   <td>❌</td>
-  <td>Several shapes present in WPF are missing in UWP.</td>
+  <td>在 WPF 中存在的几个形状在 UWP 中缺失。</td>
  </tr>
  <tr>
   <td>VisualBrush / DrawingBrush</td>
   <td>✔</td>
   <td>❌</td>
-  <td>VisualBrush is not a XAML brush in UWP. Instead, must fall back to composition brushes which are not 1:1 equivalent. DrawingBrush is not supported at all in UWP.</td>
+  <td>VisualBrush 在 UWP 中不是一个 XAML 画笔。相反，必须退回到不是等价的组合画笔。在 UWP 中完全不支持 DrawingBrush。</td>
  </tr>
  <tr>
   <td>Window</td>
   <td>✔</td>
   <td>❌</td>
-  <td>For some good reasons UWP has no concept of a window. This is fine for mobile devices but can be a problem for purely desktop applications. Without a window, there is no way to control an app's size or position. There are currently proposals to add this in the transition to WinUI 3.0.</td>
+  <td>由于一些很好的原因，UWP 没有窗口的概念。这对移动设备来说很好，但对纯粹的桌面应用程序来说可能是个问题。没有窗口，就没有办法控制一个应用程序的大小和位置。目前有建议在过渡到 WinUI 3.0 时增加这个功能。</td>
  </tr>
 </table>
 
 ---
 
-### Other
+### 其他
 
 <table>
  <tr>
-   <th>Item</th>
+   <th>项目</th>
    <th>WPF</th>
    <th>UWP</th>
-   <th>Notes</th>
+   <th>备注</th>
  </tr>
  <tr>
-  <td>Custom Cursor at runtime</td>
+  <td>运行时自定义光标</td>
   <td>✔</td>
   <td>❌</td>
   <td></td>
  </tr>
  <tr>
-  <td>Sub-pixel anti-aliasing</td>
+  <td>亚像素抗锯齿</td>
   <td>✔</td>
   <td>❌</td>
-  <td>Anti-aliasing in UWP along with rendering in general is poor compared to WPF. It's assumed this is for performance reasons on mobile devices and the web (Silverlight).</td>
+  <td>与 WPF 相比，UWP 中的抗锯齿以及一般的渲染都很差。我们认为这是在移动设备和网页（Silverlight）上的性能原因。</td>
  </tr>
  <tr>
-  <td>Nested Types in XAML</td>
+  <td>XAML 中的嵌套类型</td>
   <td>✔</td>
   <td>❌</td>
-  <td>Nesting different types in XAML is generally not possible in UWP. Code such as `&lt;ListBox.ItemsSource&gt;&lt;x:Array&gt;&lt;s:string&gt;foo&lt;s/:string&gt;&lt;x/:Array&gt;` works in WPF but not in UWP.</td>
+  <td>在 UWP 中，在 XAML 中嵌套不同的类型一般是不可能的。诸如 `&lt;ListBox.ItemsSource&gt;&lt;x:Array&gt;&lt;s:string&gt;foo&lt;s/:string&gt;&lt;x/:Array&gt;` 这样的代码在 WPF 中可行，但在 UWP 中不行。</td>
  </tr>
  <tr>
-  <td>Event Tunneling / Event Bubbling / Routed Events</td>
+  <td>隧道事件/冒泡事件/路由事件</td>
   <td>✔</td>
   <td>⚡</td>
-  <td>A lot more events are simply direct in UWP. Some cases of event bubbling such as ButtonBase.Click to parent are not supported in UWP. Event Tunneling, a concept fully supported in WPF, isn't support at all in UWP.</td>
+  <td>更多的事件在 UWP 中是直接的。在 UWP 中不支持一些事件冒泡的情况，如 ButtonBase.Click to parent。隧道事件，一个在 WPF 中完全支持的概念，在 UWP 中根本就不支持。</td>
  </tr>
 </table>
 
-## Quirks
+## 怪异的地方
 
- * Several UWP controls have reentrancy issues. For example, changing the selected item while in a ComboBox SelectionChanged event is largely not possible and will result in a crash. This makes validation directly in the event handler nearly impossible.
- * UWP controls are generally not as powerful as the WPF counterparts. For example, for several years the ComboBox in UWP was not editable. The UWP DatePicker also does not allow typing in a specific date.
- * UWP has no support for data (input) validation. This is a large issue for line-of-business apps migrating from WPF to UWP that heavily use this feature in view models or binding.
- * The UWP styling system is different enough from WPF to require extra effort during porting. UWP uses the VistualStateManger instead of concepts like DataTriggers or EventTriggers from WPF. Styling/Templating are one of the main differences.
- * The ResourceDictionary XAML markup in UWP supports far fewer features than in WPF.
- * UWP seems to follow only the XAML/2006 spec instead of [XAML/2009]((https://docs.microsoft.com/en-us/dotnet/desktop-wpf/xaml-services/xaml-2009-language-features)) supported by WPF 
- * Several UWP controls are sealed and new controls cannot derive from them
- * For advanced rendering, UWP has fewer features built in. This requires falling back to Win2D or composition more often.
- * There are several namespaces differences in UWP and WPF. For example, WPF has System.Windows.Media.Colors while UWP moves this to Windows.UI.Colors.
- * TextBlock and TextBox, for example, do not allow 'null' values for string-type Text properties. Setting null to `Text` will crash the app at runtime. This is one of the largest concerns when porting over from WPF as WPF accepts null without an issue; yet the same code may crash in UWP. The solution is to use `.Text = stringValue ?? string.Empty;` for all controls instead of setting a string directly.
- * In WPF it was possible to build templates using the [FrameworkElementFactory Class](https://docs.microsoft.com/en-us/dotnet/api/system.windows.frameworkelementfactory?view=netcore-3.1) without using XAML. This allowed for entire UI's to be created without markup (since instantiating controls is already possible in C# directly). However, the burden of maintaining two different ways of doing things became too much and Microsoft dropped this ability in UWP and deprecated it for WPF. Instead, it's necessary to write template XAML as a string in code then pass it to XamlReader.Load().
- * In WPF it was possible to get the reference to a control generated from a template using [`Control.Template.FindName("controlName")`](https://docs.microsoft.com/en-us/dotnet/desktop/wpf/controls/how-to-find-controltemplate-generated-elements?view=netframeworkdesktop-4.8). This was very useful combined with data binding when you needed to get a control instance. In UWP `Template.FindName` does not exist. This means to get the control generated from a template you must walk the visual tree using `VisualTreeHelper.GetChild()`. In practice this introduces a timing factor and makes it more difficult than in WPF (you must be sure the template is fully generated).
+ * 几个 UWP 控件有重入问题。例如，在 ComboBox SelectionChanged 事件中改变所选项目是不可能的，会导致崩溃。这使得直接在事件处理程序中进行验证几乎不可能。
+ * UWP 控件通常不像 WPF 控件那样强大。例如，几年来，UWP 的 ComboBox 是不可编辑的。UWP 的 DatePicker 也不允许输入一个特定的日期。
+ * UWP 没有对数据（输入）验证的支持。对于从 WPF 迁移到 UWP 的业务线应用程序来说，这是一个很大的问题，这些应用程序在 ViewModel 或绑定中大量使用这一功能。
+ * UWP 的样式系统与 WPF 有很大的不同，在移植过程中需要额外的努力。UWP 使用 VistualStateManger 而不是 WPF 中的 DataTriggers 或 EventTriggers 等概念。样式/模板是主要的区别之一。
+ * UWP 中的 ResourceDictionary XAML 标记支持的功能比 WPF 少得多。
+ * UWP 似乎只遵循 XAML/2006 规范，而不是 WPF 所支持的 [XAML/2009](https://docs.microsoft.com/en-us/dotnet/desktop-wpf/xaml-services/xaml-2009-language-features)
+ * 一些 UWP 控件是密封的（sealed），新的控件不能从它们继承出来。
+ * 对于高级渲染，UWP 内置的功能较少。这就需要更经常地使用 Win2D 或 composition。
+ * 在 UWP 和 WPF 中有几个命名空间的差异。例如，WPF有 System.Windows.Media.Colors，而 UWP 将其移至 Windows.UI.Colors。
+ * 例如，TextBlock 和 TextBox，不允许字符串类型的 `Text` 属性的 `null` 值。为 `Text` 设置 `null` 将在运行时使应用程序崩溃。这是从 WPF 移植过来的最大问题之一，因为 WPF 接受 null 没有问题；但同样的代码在 UWP 可能会崩溃。解决办法是对所有控件使用 `.Text = stringValue ?? string.Empty;`，而不是直接设置一个字符串。
+ * 在 WPF 中，可以使用 [FrameworkElementFactory Class](https://docs.microsoft.com/en-us/dotnet/api/system.windows.frameworkelementfactory?view=netcore-3.1) 建立模板而不使用 XAML。这允许在没有标记的情况下创建整个 UI（因为在 C# 中已经可以直接实例化控件）。然而，维护两种不同方式的负担变得太重了，微软在 UWP 中放弃了这种能力，并在 WPF 中弃用了它。相反，有必要在代码中把模板 XAML 写成一个字符串，然后把它传递给 XamlReader.Load()。
+ * 在WPF中，可以使用 [`Control.Template.FindName("controlName")`](https://docs.microsoft.com/en-us/dotnet/desktop/wpf/controls/how-to-find-controltemplate-generated-elements?view=netframeworkdesktop-4.8)来获取由模板生成的控件的引用。当你需要获得一个控件实例时，这与数据绑定相结合是非常有用的。在 UWP 中，`Template.FindName` 并不存在。这意味着要获得由模板生成的控件，你必须使用 `VisualTreeHelper.GetChild()` 在视觉树上行走。在实践中，这引入了一个时间因素，并使其比 WPF 中更困难（你必须确保模板是完全生成的）。
 
-## Controls
+## 控件
 
-For a list of supported controls and a comparison of their differences, refer to the separate [XAML Framework Controls](https://github.com/robloo/PublicDocs/blob/master/XAMLFrameworkControls.md#Controls) document. This document was originally included here but was separated to allow expansion and inclusion of other frameworks.
+关于支持的控件的列表和它们之间的差异比较，请参考单独的 [XAML 框架控件一览](https://github.com/1357310795/XAML-UI-Docs/blob/master/XAMLFrameworkControls.md)文档。该文档最初包含在这里，但被分离出来，以便于扩展和包含其他框架。
 
 ## 引用
 
