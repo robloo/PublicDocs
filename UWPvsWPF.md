@@ -453,9 +453,8 @@
  <tr>
   <td>运行时自定义光标</td>
   <td>✔</td>
-  <td>❌</td>
-  <td></td>
- </tr>
+  <td>✔</td>
+  <td>WPF 可以在每个控件上设置 Cursor 属性，UWP 只有 CoreWindow 有 PointerCursor 属性，但是 CommunityToolkit 包提供了一个 Extension，可以实现与 WPF 相同的效果。</tr>
  <tr>
   <td>亚像素抗锯齿</td>
   <td>✔</td>
