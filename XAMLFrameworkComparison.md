@@ -1,4 +1,4 @@
-Last Updated 07 May 2023 | License CC BY-SA 4.0
+Last Updated 27 July 2023 | License CC BY-SA 4.0
 
 # XAML Framework Comparison
 
@@ -72,7 +72,7 @@ The comparison is based on a lot of research and experience with the various fra
 | Mobile app stability          | ⭐      | ⭐⭐   | ⭐⭐   |
 | Desktop app stability         | ⭐⭐⭐ | ⭐⭐   | ⭐      |
 | Available controls            | ⭐      | ⭐⭐   | ⭐⭐⭐ |
-| Code license                  | ⭐      | ⭐⭐⭐ | ⭐⭐   |
+| Code license                  | ⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐   |
 | Free support                  | ⭐      | ⭐⭐   | ⭐⭐⭐ |
 | Paid support                  | ⭐⭐⭐ | ⭐⭐   | ⭐⭐⭐ |
 | Project speed                 | ⭐⭐   | ⭐⭐   | ⭐⭐   |
@@ -82,7 +82,7 @@ The comparison is based on a lot of research and experience with the various fra
 | Corporate backing             | ⭐⭐    | ⭐⭐   | ⭐⭐⭐ |
 | ▶ **IDE & Tooling Integration** |
 | Visual Studio                 | ✔️｜⭐⭐   | ✔️｜⭐⭐⭐ | ✔️｜⭐⭐   |
-| Visual Studio Code            | ❌          | ✔️｜⭐⭐   | ✔️｜⭐⭐⭐ |
+| Visual Studio Code            | ✔️｜TBD     | ✔️｜⭐⭐   | ✔️｜⭐⭐⭐ |
 | Rider                         | ✔️｜⭐⭐⭐ | ✔️｜⭐     | ✔️｜⭐⭐   |
 | Design tool integration       | ❌          | ❌          | ✔️｜⭐⭐  |
 | ▶ **Platform Support**        |
@@ -187,9 +187,9 @@ Mobile app stability of MAUI is ranked the same as the Uno Platform; however, it
   <dt>Code License</dt>
   <dd>
 
-The Uno Platform is not MIT license, it is Apache 2.0. The Apache license is not as permissive as MIT and, among other things, this prevents code sharing back into other MIT licensed frameworks. The Uno Platform can use source code from MIT licensed projects such as WinUI, WPF and Avalonia but these projects can't use Uno Platform code. This is why Uno Platform ranks lower here.
+The Uno Platform is not MIT license, it is Apache 2.0. The Apache license is not as permissive as MIT and, among other things, this prevents code sharing back into other MIT licensed frameworks. The Uno Platform can use source code from MIT licensed projects such as WinUI, WPF and Avalonia but these projects largely can't use Uno Platform code. This is why Uno Platform ranks lower here.
 
-Avalonia UI was originally entirely MIT licensed and achieved three stars. However, with the [re-licensing of the composition renderer](https://raw.githubusercontent.com/AvaloniaUI/Avalonia/master/src/Avalonia.Base/Rendering/Composition/License.md) to prohibit modification and distribution in anything other than original binary form this has lowered the score. The composition renderer is the only renderer supported in Avalonia version 11+, others were removed. This makes it prohibitive to modify Avalonia and distribute it in your own application. The team has clarified the license will "revert to MIT with v11 going GA" and this section will be updated when that happens.
+Avalonia UI is entirely MIT licensed and can freely share code between most .NET foundation and WinUI projects. Avalonia UI is ideal for companies that need full control over their UI framework to push fixes faster than upstream, ensure app-specific compatiblity, or even swap out custom internals.
   </dd>
 
   <dt>Support</dt>
@@ -230,6 +230,8 @@ None of the frameworks have three stars for Visual Studio integration. This is b
   <dd>
 
 The Uno Platform team has developed an [extension for Visual Studio Code](https://platform.uno/blog/announcing-net-mobile-debugging-in-vs-code-mobile-development-in-vs-code-with-uno-platform-or-net-maui/) that enables development and, more importantly, debugging of both mobile and web applications. This is a big step forward for VS Code tooling which historically has not been developer friendly as an IDE for C#/.NET applications. Amazingly, the extension also supports .NET MAUI applications. The Uno Platform team really stepped up here and filled a long-standing gap in VS Code support that results in a full three stars for this IDE. Uno Platform apps are now best supported in Visual Studio Code (unless developing as WinUI on Windows where Visual Studio is still best). Note that this extension is not open sourced.
+
+Avalonia UI [announced](https://avaloniaui.net/Blog/avalonia-for-visual-studio-code-early-access,e2464208-4482-4dd1-bd60-fd11c98983dc) (as of July, 2023) a [preview Visual Studio Code extension](https://github.com/AvaloniaUI/Avalonia-VSCode-Extension) that supports XAML code completion as well as previewing. This makes Avalonia UI much more usable in Visual Studio Code and should make it a viable IDE going forward. This section and the above comparison table will be updated when the extension is publicly released and tested.
   </dd>
 
   <dt>Design Tool Integration</dt>
