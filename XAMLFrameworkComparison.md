@@ -1,4 +1,4 @@
-最后更新时间 2023年5月7日  | 使用 CC BY-SA 4.0 协议分发
+最后更新时间 2023年7月27日  | 使用 CC BY-SA 4.0 协议分发
 
 # XAML 框架横向对比
 
@@ -72,7 +72,7 @@
 | 移动端 APP 稳定性         | ⭐      | ⭐⭐   | ⭐⭐   |
 | 桌面端 APP 稳定性         | ⭐⭐⭐ | ⭐⭐   | ⭐      |
 | 可用控件            | ⭐      | ⭐⭐   | ⭐⭐⭐ |
-| 代码协议（License）                  | ⭐      | ⭐⭐⭐ | ⭐⭐   |
+| 代码协议                  | ⭐⭐⭐  | ⭐⭐⭐ | ⭐⭐   |
 | 免费支持                  | ⭐      | ⭐⭐   | ⭐⭐⭐ |
 | 付费支持                  | ⭐⭐⭐ | ⭐⭐   | ⭐⭐⭐ |
 | 项目活跃度                 | ⭐⭐   | ⭐⭐   | ⭐⭐   |
@@ -82,7 +82,7 @@
 | 背后公司          | ⭐⭐    | ⭐⭐   | ⭐⭐⭐ |
 | ▶ **IDE 与工具整合** |
 | Visual Studio                 | ✔️｜⭐⭐   | ✔️｜⭐⭐⭐ | ✔️｜⭐⭐   |
-| Visual Studio Code            | ❌          | ✔️｜⭐⭐   | ✔️｜⭐⭐⭐ |
+| Visual Studio Code            | ✔️｜待定   | ✔️｜⭐⭐   | ✔️｜⭐⭐⭐ |
 | Rider                         | ✔️｜⭐⭐⭐ | ✔️｜⭐     | ✔️｜⭐⭐   |
 | 设计工具整合       | ❌          | ❌          | ✔️｜⭐⭐  |
 | ▶ **平台支持情况**        |
@@ -186,9 +186,9 @@ MAUI 的移动应用稳定性与 Uno Platform 排名相同；但是，遇到每�
   <dt>代码协议</dt>
   <dd>
 
-Uno Platform 不是 MIT 许可，是 Apache 2.0。Apache 许可证不像 MIT 那样宽松，除此之外，这也阻止了代码共享回到其他 MIT 许可的框架中。Uno Platform 可以使用 MIT 许可项目的源代码，如 WinUI、WPF 和 Avalonia，但这些项目不能使用 Uno Platform 的代码。这就是为什么 Uno Platform 在这里排名较低。
+Uno Platform 不是 MIT 许可，是 Apache 2.0。Apache 许可证不像 MIT 那样宽松，除此之外，它也阻止了代码共享回到其他 MIT 许可的框架中。Uno Platform 可以使用 MIT 许可项目的源代码，如 WinUI、WPF 和 Avalonia，但这些项目基本上不能使用 Uno Platform 的代码。这就是为什么 Uno Platform 在这里排名较低。
 
-Avalonia UI 最初是完全由 MIT 授权的，并获得了三颗星。然而，随着[重新授权分发合成渲染器](https://raw.githubusercontent.com/AvaloniaUI/Avalonia/master/src/Avalonia.Base/Rendering/Composition/License.md)，禁止以原始二进制形式以外的任何形式进行修改和传播，这降低了分数。构图渲染器是 Avalonia 11+ 版本中唯一支持的渲染器，其他的都被删除了。这使得修改 Avalonia 并在你自己的应用程序中分发它变得很困难。团队已经澄清了许可证将“在 v11 版本进入 GA 时恢复到 MIT”，本节将在那时更新。
+Avalonia UI 完全采用 MIT 许可，可以在大多数 .NET 基础和 WinUI 项目之间自由共享代码。Avalonia UI 是那些需要完全控制其 UI 框架的公司的理想选择，这些公司可以比上游更快地推送修复程序，确保应用程序的兼容性，甚至更换自定义的内部结构。
   </dd>
 
   <dt>反馈与支持</dt>
@@ -229,6 +229,8 @@ Avalonia，虽然最初是完全开源的，但现在是由一些核心团队成
   <dd>
 
 Uno Platform 团队开发了一个 [Visual Studio Code的扩展](https://platform.uno/blog/announcing-net-mobile-debugging-in-vs-code-mobile-development-in-vs-code-with-uno-platform-or-net-maui/)，可以实现移动和网络应用的开发，更重要的是可以进行调试。这是 VS Code 工具的一大进步，因为作为 C#/.NET 应用程序的 IDE，VS Code 工具在历史上对开发者并不友好。令人惊讶的是，该扩展还支持 .NET MAUI 应用程序。Uno Platform 团队在这里真正站了出来，填补了 VS Code 支持方面的一个长期空白，从而使这个 IDE 获得了满分三颗星。Uno Platform 应用程序现在在 Visual Studio Code 中得到了最好的支持（除非在 Windows 上作为 WinUI 开发，否则 Visual Studio 仍然是最好的）。请注意，这个扩展不是开源的。
+
+Avalonia UI [发布了](https://avaloniaui.net/Blog/avalonia-for-visual-studio-code-early-access,e2464208-4482-4dd1-bd60-fd11c98983dc)（截至 2023 年 7 月）[预览版 Visual Studio Code 扩展](https://github.com/AvaloniaUI/Avalonia-VSCode-Extension)，支持 XAML 代码补全以及预览。这使得 Avalonia UI 在 Visual Studio Code 中的可用性大大提高，并应使其成为未来可行的集成开发环境。本节和上述比较表将在该扩展公开发布并经过测试后进行更新。
   </dd>
 
   <dt>设计工具整合</dt>
