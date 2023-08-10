@@ -2,6 +2,8 @@ Last Updated 27 July 2023 | License CC BY-SA 4.0
 
 # XAML Framework Comparison
 
+[中文](XAMLFrameworkComparison.zh-CN.md)
+
 XAML-based UI frameworks have evolved considerably over the years. This is best illustrated in the below graphic. The bulk of these frameworks: Avalonia UI, the Uno Platform and .NET MAUI support cross-platform applications. In fact, except for Avalonia UI, the need for cross-platform XAML is the main driving force behind their development. If Microsoft stepped in earlier and created a true Flutter-like cross-platform UI framework years ago we likely never would have ended up with all of these options. This is both good and bad: Good that we now have lots of options to choose from and bad that all have a different object model and dialect of XAML.
 
 While following the various .NET UI frameworks, the same question was being asked: Which XAML UI framework should be used to write apps? This is a valid and important question. For there to be so many options today indicates there is no clear solution. That said, on a per-app basis, the answer to the question is easier as each of the frameworks have clear strengths and weaknesses which can be compared with a specific application's needs. By outlining the strengths and weaknesses in the main XAML-based UI frameworks, this document aims to help companies and developers answer the question:

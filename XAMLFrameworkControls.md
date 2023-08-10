@@ -2,6 +2,8 @@ Last Updated 11 April 2022 | License CC BY-SA 4.0
 
 # XAML Framework Controls
 
+[中文](XAMLFrameworkControls.zh-CN.md)
+
 This document lists supported controls for each XAML framework excluding some primitives and shapes (Ellipse, Rect, etc.). It also describes some of the differences in implemenation or usage where appropriate. 
 
 The following frameworks are included so far:
