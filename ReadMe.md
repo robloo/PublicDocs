@@ -1,3 +1,5 @@
+| [中文](https://github.com/chrisxvin/XAML-UI-Docs/blob/master/ReadMe.zh-CN.md) |
+
 # Contents
 
 This repository contains documents and articles that may be publicly useful.
