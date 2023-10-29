@@ -1,4 +1,4 @@
-Last Updated 27 July 2023 | License CC BY-SA 4.0
+Last Updated 29 October 2023 | License CC BY-SA 4.0
 
 # XAML Framework Comparison
 
@@ -35,6 +35,7 @@ Additional options are available for .NET cross-platform UI development not feat
   1. [WPF](https://github.com/dotnet/wpf) : As mentioned, WPF can now run cross-platform using [Wine Mono](https://github.com/madewokherd/wine-mono) or [Avalonia XPF](https://avaloniaui.net/XPF). This possibility should not be overlooked for existing applications with large WPF codebases.
   1. [Eto.Forms](https://github.com/picoe/Eto) : A UI framework that, similar to .NET MAUI, constructs UI using platform-native controls. A version of XAML can also be used to serialize and construct the UI.
   1. [Noesis GUI](https://www.noesisengine.com/) : Intended for game development, Noesis GUI recreates WPF for usage in game engines (like Unity) to construct user-interfaces. XAML support is so extensive it even works with Microsoft Blend. If it worked outside of game engines and had better licensing for smaller applications this is a very interesting tech that pre-dates some other cross-platform XAML implementations.
+  1. [OpenSilver](https://github.com/OpenSilver/OpenSilver) A cross-platform re-implementation of the Silverlight framework that transpiles C#/XAML/.NET into WebAssembly (or JavaScript) and HTML/CSS. This project only supports the Silverlight dialect of XAML which is a less-powerful derivitive of WPF and the basis for later UWP and WinUI dialects. Like the original Silverlight, applications written with OpenSilver are only designed to run in a web browser.
   1. [.NET MAUI + Blazor Hybrid](https://learn.microsoft.com/en-us/aspnet/core/blazor/hybrid/tutorials/maui?view=aspnetcore-7.0) : .NET MAUI can host Blazor web apps (within a BlazorWebView control) making it function as more of an application plus services container. This is a very attractive option for those that wish to repackage and distribute existing web apps as mobile applications.
   1. [.NET MAUI + Avalonia UI Hybrid](https://github.com/AvaloniaUI/AvaloniaMauiHybrid) : .NET MAUI can also host Avalonia UI views (within an AvaloniaView control) again making it function as more of an application plus services container. Since Avalonia is only a UI framework this is an attractive option to easily get all of .NET MAUI's additional platform-abstracted functionality (Essentials) as well as easier mobile packaging and deployment.
 
